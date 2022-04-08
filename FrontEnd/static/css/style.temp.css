@@ -391,3 +391,80 @@ body {
   padding: 0;
   position: absolute;
   width: 1px; }
+
+#breadcrumbs {
+  --color-1: #C66233;
+  --color-hover-1: #AE562D;
+  --color-2: #0B949E;
+  --color-hover-2: #0A828B;
+  --color-3: #68B3B5;
+  --color-hover-3: #5EA1A3;
+  --color-4: #AC9DAA;
+  --color-hover-4: #9B8E99;
+  --color-5: #27267E;
+  --color-hover-5: #1F1E65;
+  --color-text: #E1E1E1;
+  width: max-content; }
+  #breadcrumbs > .breadcrumbs {
+    list-style: none;
+    display: flex;
+    height: 30px; }
+    #breadcrumbs > .breadcrumbs > .breadcrumbs--item > a {
+      background-size: auto;
+      display: flex;
+      position: relative;
+      height: 30px; }
+    #breadcrumbs > .breadcrumbs > .breadcrumbs--item:first-child > a > .content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-left: -24px; }
+      #breadcrumbs > .breadcrumbs > .breadcrumbs--item:first-child > a > .content::before {
+        content: url(/FrontEnd/static/svg/house-solid.svg);
+        width: 20px;
+        height: 20px;
+        padding-right: 8px;
+        box-sizing: initial; }
+    #breadcrumbs > .breadcrumbs > .breadcrumbs--item:not(:first-child) > a {
+      margin-left: -30px; }
+    #breadcrumbs > .breadcrumbs > .breadcrumbs--item:last-child > a > .content {
+      padding-right: 5px; }
+    #breadcrumbs > .breadcrumbs > .breadcrumbs--item:last-child > a > .end {
+      transform: rotate(180deg);
+      height: 30px; }
+    #breadcrumbs > .breadcrumbs > .breadcrumbs--item > a > .content {
+      height: 30px;
+      width: max-content;
+      padding: 0 20px 0 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: currentColor; }
+      #breadcrumbs > .breadcrumbs > .breadcrumbs--item > a > .content > span {
+        color: var(--color-text);
+        font-family: 'Playfair Display', serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 21px;
+        letter-spacing: 0em;
+        text-align: left; }
+    #breadcrumbs > .breadcrumbs > .breadcrumbs--item:nth-child(1) > a {
+      color: var(--color-1); }
+      #breadcrumbs > .breadcrumbs > .breadcrumbs--item:nth-child(1) > a:hover {
+        color: var(--color-hover-1); }
+    #breadcrumbs > .breadcrumbs > .breadcrumbs--item:nth-child(2) > a {
+      color: var(--color-2); }
+      #breadcrumbs > .breadcrumbs > .breadcrumbs--item:nth-child(2) > a:hover {
+        color: var(--color-hover-2); }
+    #breadcrumbs > .breadcrumbs > .breadcrumbs--item:nth-child(3) > a {
+      color: var(--color-3); }
+      #breadcrumbs > .breadcrumbs > .breadcrumbs--item:nth-child(3) > a:hover {
+        color: var(--color-hover-3); }
+    #breadcrumbs > .breadcrumbs > .breadcrumbs--item:nth-child(4) > a {
+      color: var(--color-4); }
+      #breadcrumbs > .breadcrumbs > .breadcrumbs--item:nth-child(4) > a:hover {
+        color: var(--color-hover-4); }
+    #breadcrumbs > .breadcrumbs > .breadcrumbs--item:nth-child(5) > a {
+      color: var(--color-5); }
+      #breadcrumbs > .breadcrumbs > .breadcrumbs--item:nth-child(5) > a:hover {
+        color: var(--color-hover-5); }

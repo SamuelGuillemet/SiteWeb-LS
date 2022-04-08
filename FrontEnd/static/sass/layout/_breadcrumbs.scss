@@ -1,0 +1,93 @@
+#breadcrumbs {
+    --color-1: #C66233;
+    --color-hover-1: #AE562D;
+    --color-2: #0B949E;
+    --color-hover-2: #0A828B;
+    --color-3: #68B3B5;
+    --color-hover-3: #5EA1A3;
+    --color-4: #AC9DAA;
+    --color-hover-4: #9B8E99;
+    --color-5: #27267E;
+    --color-hover-5: #1F1E65;
+    --color-text: #E1E1E1;
+
+    width: max-content;
+
+    &>.breadcrumbs {
+        list-style: none;
+        display: flex;
+        height: 30px;
+
+        &>.breadcrumbs--item {
+            &>a {
+                background-size: auto;
+                display: flex;
+                position: relative;
+                height: 30px;
+            }
+
+
+            &:first-child>a {
+                &>.content {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    margin-left: -24px;
+
+                    &::before {
+                        content: url(/FrontEnd/static/svg/house-solid.svg);
+                        width: 20px;
+                        height: 20px;
+                        padding-right: 8px;
+                        box-sizing: initial;
+                    }
+                }
+            }
+
+            &:not(:first-child)>a {
+                margin-left: -30px;
+            }
+
+            &:last-child>a {
+                &>.content {
+                    padding-right: 5px;
+                }
+
+                &>.end {
+                    transform: rotate(180deg);
+                    height: 30px;
+                }
+            }
+
+            &>a>.content {
+                height: 30px;
+                width: max-content;
+                padding: 0 20px 0 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                background-color: currentColor;
+
+                &>span {
+                    color: var(--color-text);
+                    font-family: 'Playfair Display', serif;
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 21px;
+                    letter-spacing: 0em;
+                    text-align: left;
+                }
+            }
+
+            @for $i from 1 through 5 {
+                &:nth-child(#{$i})>a {
+                    color : var(--color-#{$i});
+
+                    &:hover {
+                        color: var(--color-hover-#{$i});
+                    }
+                }
+            }
+        }
+    }
+}

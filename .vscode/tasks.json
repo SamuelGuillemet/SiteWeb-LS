@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "watch-sass",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: watch-sass",
+			"detail": "node-sass FrontEnd/static/sass/main.scss FrontEnd/static/css/style.temp.css --watch"
+		}
+	]
+}
