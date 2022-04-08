@@ -8,6 +8,14 @@
 			"problemMatcher": [],
 			"label": "npm: watch-sass",
 			"detail": "node-sass FrontEnd/static/sass/main.scss FrontEnd/static/css/style.temp.css --watch"
+		},
+		{
+			"type": "npm",
+			"script": "build-css",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: build-css",
+			"detail": "npm-run-all compile-sass concat-css prefix-css compress-css"
 		}
 	]
 }

@@ -1,3 +1,121 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
+
+#footer {
+    border-top: 3px outset black;
+    display: flex;
+    flex-direction: column;
+    box-shadow: inset 50.1333px -50.1333px 50.1333px rgba(149, 149, 149, 0.1), inset -50.1333px 50.1333px 50.1333px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(100.267px);
+
+    &>.top {
+        display: flex;
+        height: max-content;
+        flex-direction: row;
+        justify-content: space-between;
+
+        &>.search-bar {
+
+            margin: 0px 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            &>.input {
+                display: flex;
+                flex-direction: row;
+
+                &>input {
+                    border: none;
+                    background-color: rgba(234, 234, 234, 0.346);
+                    padding: 0px;
+                    padding-left: 4px;
+                    padding-right: 40px;
+                    padding-bottom: 2px;
+                    border-bottom: 1px solid black;
+                    font-family: 'Playfair Display', serif;
+                    overflow: hidden;
+                    border-radius: 5px;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+
+
+                &:before {
+                    position: relative;
+                    content: url('/FrontEnd/static/svg/search.svg');
+                    box-sizing: initial;
+                    margin-right: 6px;
+                }
+
+                &>button {
+                    position: relative;
+                    background-image: url('/FrontEnd/static/svg/arrow-right-long-solid.svg');
+                    background-repeat: no-repeat;
+                    background-color: transparent;
+                    border: none;
+                    height: 16px;
+                    width: 16px;
+                    box-sizing: initial;
+                    margin-left: -30px;
+                    align-self: center;
+                    cursor: pointer;
+                }
+            }
+        }
+
+
+        &>.about {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            margin: 10px 16px;
+
+            &>.name {
+                margin: 0px;
+            }
+
+            &>a {
+                margin: 0px;
+                color: black;
+                font-style: normal;
+            }
+        }
+
+    }
+
+    &>.bottom {
+        display: flex;
+        flex-direction: column;
+        height: max-content;
+        border-top: 1px inset black;
+        align-items: center;
+
+        &>.social-media {
+            display: flex;
+            flex-direction: row;
+
+            &>a {
+                border-radius: 50px;
+                height: 40px;
+                width: 40px;
+                border: 2px solid black;
+                margin: 0px 4px 16px 4px;
+                background-size: auto 100%;
+                background-color: white;
+            }
+
+            &>.github {
+                background-image: url('/FrontEnd/static/images/GitHub.png');
+            }
+
+            &>.linkedin {
+                background-image: url('/FrontEnd/static/images/Linkedin.png');
+            }
+        }
+    }
+}
