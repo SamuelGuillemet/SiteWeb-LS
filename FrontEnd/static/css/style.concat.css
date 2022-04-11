@@ -552,3 +552,32 @@ body {
       color: var(--color-5); }
       #breadcrumbs > .breadcrumbs > .breadcrumbs--item:nth-child(5) > a:hover {
         color: var(--color-hover-5); }
+
+#hamburger-menu {
+  margin-left: 10px;
+  width: max-content;
+  cursor: pointer; }
+  #hamburger-menu > span {
+    display: block;
+    width: 28px;
+    height: 2px;
+    border-radius: 9999px;
+    background-color: black; }
+    #hamburger-menu > span:not(:last-child) {
+      margin-bottom: 7px; }
+    #hamburger-menu > span:last-child {
+      padding: 1px 0; }
+  #hamburger-menu,
+  #hamburger-menu > span {
+    transition: all 0.4s ease-in-out; }
+  #hamburger-menu.active {
+    transition-delay: 0.8s;
+    transform: rotate(45deg); }
+    #hamburger-menu.active > span:nth-child(1) {
+      transform: translateY(9px);
+      transition-delay: 0.4s; }
+    #hamburger-menu.active > span:nth-child(2) {
+      width: 0; }
+    #hamburger-menu.active > span:nth-child(3) {
+      transform: translateY(-9px) rotate(90deg);
+      transition-delay: 0.4s; }

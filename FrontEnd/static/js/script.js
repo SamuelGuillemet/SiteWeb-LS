@@ -17,3 +17,8 @@ for (let index = 0; index < breadcrumbsitems.childElementCount; index++) {
         breadcrumbsitems.children[index].children[0].children[2].innerHTML = right;
     }
 }
+
+
+//Hamburger menu
+const hamburger = document.querySelector("#hamburger-menu");
+hamburger.addEventListener("click", () => { hamburger.classList.toggle("active"); });
