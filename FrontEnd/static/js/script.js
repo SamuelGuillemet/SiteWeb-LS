@@ -18,10 +18,10 @@ for (let index = 0; index < breadcrumbsitems.childElementCount; index++) {
     }
 }
 
-document.getElementById("breadcrumbs").style.setProperty('--scale', document.children[0].clientWidth * 0.0012);
+document.getElementById("breadcrumbs").style.setProperty('--scale', document.children[0].clientWidth * 0.0013);
 
 window.addEventListener('resize', () => {
-    document.getElementById("breadcrumbs").style.setProperty('--scale', document.children[0].clientWidth * 0.0012);
+    document.getElementById("breadcrumbs").style.setProperty('--scale', document.children[0].clientWidth * 0.0013);
 });
 
 

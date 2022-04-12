@@ -9,6 +9,11 @@
     box-shadow: inset 50.1333px -50.1333px 50.1333px rgba(149, 149, 149, 0.1), inset -50.1333px 50.1333px 50.1333px rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(100.267px);
 
+    width: 100%;
+    margin-top: 32px;
+
+
+
     &>.top {
         display: flex;
         height: max-content;

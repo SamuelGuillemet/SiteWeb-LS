@@ -393,95 +393,126 @@ body {
   position: absolute;
   width: 1px; }
 
-body {
-  background-image: url("/FrontEnd/static/images/Background.png");
-  background-size: 100%; }
-
 #nav-menu {
-  width: 100%;
-  height: 54px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   border-bottom: 2px black solid;
   background: rgba(255, 255, 255, 0.1);
   box-shadow: inset 50.1333px -50.1333px 50.1333px rgba(149, 149, 149, 0.1), inset -50.1333px 50.1333px 50.1333px rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(100.267px); }
-  #nav-menu > h1 {
-    font-family: 'Hurricane', cursive;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 44px;
-    letter-spacing: -0.015em;
-    margin: 8px 16px 0px 16px;
-    color: #082251;
-    text-shadow: 5px 4px 4px rgba(0, 0, 0, 0.25);
-    align-items: center;
-    flex-shrink: 1;
-    min-width: 100px; }
-  #nav-menu > ul.items {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  backdrop-filter: blur(100.267px);
+  z-index: 100;
+  position: sticky;
+  top: 0; }
+  #nav-menu > .top-nav {
+    width: 100%;
+    height: 54px;
     display: flex;
-    flex-grow: 1;
-    justify-content: space-evenly;
-    align-self: flex-end;
-    margin: 0px 32px; }
-  #nav-menu > #hamburger-menu {
-    display: none;
-    align-self: center;
-    justify-content: flex-end;
-    flex-shrink: 1; }
-  #nav-menu > a.connect {
-    margin: 0 16px 0 8px;
-    background: #E1E1E1;
-    height: 32px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    width: 32px;
-    border-radius: 100%;
-    align-self: center;
-    flex-shrink: 1; }
-    #nav-menu > a.connect > svg {
-      height: 24px;
-      width: 24px;
-      margin: 4px;
-      color: black; }
-    #nav-menu > a.connect:hover {
-      box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25); }
+    flex-direction: row; }
+    #nav-menu > .top-nav > h1 {
+      font-family: 'Hurricane', cursive;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 44px;
+      letter-spacing: -0.015em;
+      margin: 8px 16px 0px 16px;
+      color: #082251;
+      text-shadow: 5px 4px 4px rgba(0, 0, 0, 0.25);
+      align-items: center;
+      flex-shrink: 1;
+      min-width: 100px; }
+    #nav-menu > .top-nav > ul.items {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-grow: 1;
+      justify-content: space-evenly;
+      align-self: flex-end;
+      margin: 0px 32px; }
+      #nav-menu > .top-nav > ul.items > li > a {
+        font-family: 'Playfair Display';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 11px;
+        color: #000000;
+        letter-spacing: -0.015em; }
+    #nav-menu > .top-nav > #hamburger-menu {
+      display: none;
+      align-self: center;
+      justify-content: flex-end;
+      flex-shrink: 1; }
+    #nav-menu > .top-nav > a.connect {
+      margin: 0 16px 0 8px;
+      background: #E1E1E1;
+      height: 32px;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      width: 32px;
+      border-radius: 100%;
+      align-self: center;
+      flex-shrink: 1; }
+      #nav-menu > .top-nav > a.connect > svg {
+        height: 24px;
+        width: 24px;
+        margin: 4px;
+        color: black; }
+      #nav-menu > .top-nav > a.connect:hover {
+        box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25); }
+    @media screen and (max-width: 768px) {
+      #nav-menu > .top-nav > h1 {
+        flex-grow: 1; }
+      #nav-menu > .top-nav > ul.items {
+        display: none; }
+      #nav-menu > .top-nav > #hamburger-menu {
+        display: block; } }
   @media screen and (max-width: 768px) {
-    #nav-menu > ul.items {
-      transition: transform 1.5s, opacity .5s linear;
+    #nav-menu > .mobile-nav > ul.items {
       visibility: hidden;
-      opacity: 0; }
-      #nav-menu > ul.items.active {
-        min-width: 185px;
+      height: 0;
+      opacity: 0;
+      list-style: none;
+      transition: height 2s, opacity 1s linear;
+      margin: 0;
+      padding: 0; }
+      #nav-menu > .mobile-nav > ul.items > li > a {
+        font-family: 'Playfair Display';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 11px;
+        color: #000000;
+        letter-spacing: -0.015em; }
+      #nav-menu > .mobile-nav > ul.items.active {
+        height: max-content;
+        display: flex;
         visibility: visible;
-        display: inline-flex;
         flex-direction: column;
         align-items: center;
-        transform: translateY(142px);
-        opacity: 1;
-        border-radius: 10px;
-        background: rgba(155, 155, 155, 0.8);
-        box-shadow: inset 50.1333px -50.1333px 50.1333px rgba(149, 149, 149, 0.1), inset -50.1333px 50.1333px 50.1333px rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(100.267px); }
-    #nav-menu > #hamburger-menu {
-      display: block; } }
+        opacity: 1; } }
+  @media screen and (min-width: 769px) {
+    #nav-menu > .mobile-nav {
+      display: none; } }
 
 #footer {
   border-top: 3px outset black;
   display: flex;
   flex-direction: column;
   box-shadow: inset 50.1333px -50.1333px 50.1333px rgba(149, 149, 149, 0.1), inset -50.1333px 50.1333px 50.1333px rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(100.267px); }
+  backdrop-filter: blur(100.267px);
+  width: 100%;
+  margin-top: 32px; }
   #footer > .top {
     display: flex;
     height: max-content;
     flex-direction: row;
-    justify-content: space-between; }
+    justify-content: space-between;
+    flex-wrap: wrap; }
+    @media screen and (max-width: 620px) {
+      #footer > .top {
+        justify-content: center; } }
     #footer > .top > .search-bar {
-      margin: 0px 16px;
+      margin: 8px 16px;
       display: flex;
       flex-direction: column;
       justify-content: center; }
@@ -503,12 +534,12 @@ body {
             outline: none; }
         #footer > .top > .search-bar > .input:before {
           position: relative;
-          content: url("/FrontEnd/static/svg/search.svg");
+          content: url("../svg/search.svg");
           box-sizing: initial;
           margin-right: 6px; }
         #footer > .top > .search-bar > .input > button {
           position: relative;
-          background-image: url("/FrontEnd/static/svg/arrow-right-long-solid.svg");
+          background-image: url("../svg/arrow-right-long-solid.svg");
           background-repeat: no-repeat;
           background-color: transparent;
           border: none;
@@ -548,9 +579,9 @@ body {
         background-size: auto 100%;
         background-color: white; }
       #footer > .bottom > .social-media > .github {
-        background-image: url("/FrontEnd/static/images/GitHub.png"); }
+        background-image: url("../images/GitHub.png"); }
       #footer > .bottom > .social-media > .linkedin {
-        background-image: url("/FrontEnd/static/images/Linkedin.png"); }
+        background-image: url("../images/Linkedin.png"); }
 
 #breadcrumbs {
   --color-1: #C66233;
@@ -568,7 +599,11 @@ body {
   #breadcrumbs > .breadcrumbs {
     list-style: none;
     display: flex;
-    height: 30px; }
+    height: 30px;
+    padding-inline-start: 0;
+    padding-left: 40px;
+    margin-block: 0;
+    margin-top: 16px; }
     #breadcrumbs > .breadcrumbs > .breadcrumbs--item > a {
       background-size: auto;
       display: flex;
@@ -580,7 +615,7 @@ body {
       align-items: center;
       padding-left: 0px; }
       #breadcrumbs > .breadcrumbs > .breadcrumbs--item:first-child > a > .content::before {
-        content: url(/FrontEnd/static/svg/house-solid.svg);
+        content: url("../svg/house-solid.svg");
         width: 20px;
         height: 20px;
         padding-right: 8px;
@@ -628,6 +663,12 @@ body {
       color: var(--color-5); }
       #breadcrumbs > .breadcrumbs > .breadcrumbs--item:nth-child(5) > a:hover {
         color: var(--color-hover-5); }
+  @media screen and (max-width: 768px) {
+    #breadcrumbs {
+      transform: scale(var(--scale));
+      transform-origin: left; }
+      #breadcrumbs > .breadcrumbs {
+        padding-left: 5vw; } }
 
 #hamburger-menu {
   margin: 0 10px;
