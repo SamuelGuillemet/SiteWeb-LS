@@ -21,4 +21,10 @@ for (let index = 0; index < breadcrumbsitems.childElementCount; index++) {
 
 //Hamburger menu
 const hamburger = document.querySelector("#hamburger-menu");
-hamburger.addEventListener("click", () => { hamburger.classList.toggle("active"); });
+const navitems = document.querySelector("#nav-items");
+
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navitems.classList.toggle("active");
+});
+

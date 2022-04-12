@@ -14,10 +14,15 @@
         height: max-content;
         flex-direction: row;
         justify-content: space-between;
+        flex-wrap: wrap;
+
+        @media screen and (max-width: 620px) {
+            justify-content: center;
+        }
 
         &>.search-bar {
 
-            margin: 0px 16px;
+            margin: 8px 16px;
             display: flex;
             flex-direction: column;
             justify-content: center;
