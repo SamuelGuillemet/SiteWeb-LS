@@ -51,14 +51,14 @@
 
                 &:before {
                     position: relative;
-                    content: url('/FrontEnd/static/svg/search.svg');
+                    content: url('../svg/search.svg');
                     box-sizing: initial;
                     margin-right: 6px;
                 }
 
                 &>button {
                     position: relative;
-                    background-image: url('/FrontEnd/static/svg/arrow-right-long-solid.svg');
+                    background-image: url('../svg/arrow-right-long-solid.svg');
                     background-repeat: no-repeat;
                     background-color: transparent;
                     border: none;
@@ -115,11 +115,11 @@
             }
 
             &>.github {
-                background-image: url('/FrontEnd/static/images/GitHub.png');
+                background-image: url('../images/GitHub.png');
             }
 
             &>.linkedin {
-                background-image: url('/FrontEnd/static/images/Linkedin.png');
+                background-image: url('../images/Linkedin.png');
             }
         }
     }

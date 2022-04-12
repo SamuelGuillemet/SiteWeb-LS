@@ -468,7 +468,7 @@ body {
       height: 0;
       opacity: 0;
       list-style: none;
-      transition: height 1s, opacity 1s linear;
+      transition: height 2s, opacity 1s linear;
       margin: 0;
       padding: 0; }
       #nav-menu > .mobile-nav > ul.items > li > a {
@@ -486,7 +486,7 @@ body {
         flex-direction: column;
         align-items: center;
         opacity: 1; } }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 769px) {
     #nav-menu > .mobile-nav {
       display: none; } }
 
@@ -528,12 +528,12 @@ body {
             outline: none; }
         #footer > .top > .search-bar > .input:before {
           position: relative;
-          content: url("/FrontEnd/static/svg/search.svg");
+          content: url("../svg/search.svg");
           box-sizing: initial;
           margin-right: 6px; }
         #footer > .top > .search-bar > .input > button {
           position: relative;
-          background-image: url("/FrontEnd/static/svg/arrow-right-long-solid.svg");
+          background-image: url("../svg/arrow-right-long-solid.svg");
           background-repeat: no-repeat;
           background-color: transparent;
           border: none;
@@ -573,9 +573,9 @@ body {
         background-size: auto 100%;
         background-color: white; }
       #footer > .bottom > .social-media > .github {
-        background-image: url("/FrontEnd/static/images/GitHub.png"); }
+        background-image: url("../images/GitHub.png"); }
       #footer > .bottom > .social-media > .linkedin {
-        background-image: url("/FrontEnd/static/images/Linkedin.png"); }
+        background-image: url("../images/Linkedin.png"); }
 
 #breadcrumbs {
   --color-1: #C66233;
@@ -589,12 +589,13 @@ body {
   --color-5: #27267E;
   --color-hover-5: #1F1E65;
   --color-text: #E1E1E1;
-  width: max-content;
-  display: none; }
+  width: max-content; }
   #breadcrumbs > .breadcrumbs {
     list-style: none;
     display: flex;
-    height: 30px; }
+    height: 30px;
+    padding-inline-start: 0;
+    padding-left: 40px; }
     #breadcrumbs > .breadcrumbs > .breadcrumbs--item > a {
       background-size: auto;
       display: flex;
@@ -606,7 +607,7 @@ body {
       align-items: center;
       padding-left: 0px; }
       #breadcrumbs > .breadcrumbs > .breadcrumbs--item:first-child > a > .content::before {
-        content: url(/FrontEnd/static/svg/house-solid.svg);
+        content: url("../svg/house-solid.svg");
         width: 20px;
         height: 20px;
         padding-right: 8px;
@@ -654,6 +655,12 @@ body {
       color: var(--color-5); }
       #breadcrumbs > .breadcrumbs > .breadcrumbs--item:nth-child(5) > a:hover {
         color: var(--color-hover-5); }
+  @media screen and (max-width: 768px) {
+    #breadcrumbs {
+      transform: scale(var(--scale));
+      transform-origin: left; }
+      #breadcrumbs > .breadcrumbs {
+        padding-left: 5vw; } }
 
 #hamburger-menu {
   margin: 0 10px;

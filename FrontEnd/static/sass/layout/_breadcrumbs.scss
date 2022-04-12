@@ -12,12 +12,14 @@
     --color-text: #E1E1E1;
 
     width: max-content;
-    display: none;
 
     &>.breadcrumbs {
         list-style: none;
         display: flex;
         height: 30px;
+        padding-inline-start: 0;
+        padding-left: 40px;
+
 
         &>.breadcrumbs--item {
             &>a {
@@ -36,7 +38,7 @@
                     padding-left: 0px;
 
                     &::before {
-                        content: url(/FrontEnd/static/svg/house-solid.svg);
+                        content: url('../svg/house-solid.svg');
                         width: 20px;
                         height: 20px;
                         padding-right: 8px;
@@ -89,6 +91,15 @@
                     }
                 }
             }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        transform: scale(var(--scale));
+        transform-origin: left;
+
+        &>.breadcrumbs {
+            padding-left: 5vw;
         }
     }
 }
