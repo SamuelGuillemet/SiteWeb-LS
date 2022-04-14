@@ -1,0 +1,128 @@
+#carousel {
+    @media screen and (max-width: 768px) {
+        margin: 0 3vw;
+    }
+
+    margin: 0 32px;
+
+    &>.slider {
+
+        position: relative;
+
+        @media screen and (max-width: 768px) {
+            height: 45vh;
+        }
+
+        height: 60vh;
+        width: 100%;
+
+        overflow: hidden;
+
+        &>.item {
+
+            //Position
+            position: absolute;
+            display: block;
+            opacity: 0;
+            left: -100vw;
+            transition: all 0.5s ease-in-out;
+
+            height: 100%;
+            width: 100%;
+            border: 2px black solid;
+
+            &>.content {
+                height: 95%;
+                width: 95%;
+                margin: 16px 2.5% 0 2.5%;
+                background-color: #dddddd;
+
+                overflow: hidden;
+
+                @media screen and (max-width: 768px) {
+                    margin-top: 2.5%;
+                }
+            }
+
+            &>.learn-more {
+                position: relative;
+                bottom: 8vh;
+                display: flex;
+                justify-content: center;
+
+                &>a {
+                    display: flex;
+                    align-items: center;
+                    padding: 6px;
+                    border-radius: 10px;
+                    background: rgba(255, 255, 255, 0.8);
+                    box-shadow: inset 50.1333px -50.1333px 50.1333px rgba(149, 149, 149, 0.1), inset -50.1333px 50.1333px 50.1333px rgba(255, 255, 255, 0.1);
+                    backdrop-filter: blur(100.267px);
+                    color: black;
+
+                    &>.arrow {
+                        margin-left: 16px;
+                        border-right: 1px solid rgba(0, 0, 0, 0.3);
+                        border-top: 1px solid rgba(0, 0, 0, 0.3);
+                        transform: translateX(-25%) rotate(45deg);
+                        height: 12px;
+                        width: 12px;
+                    }
+                }
+            }
+
+            &.next {
+                left: 100vw;
+                opacity: 0;
+            }
+
+            &.active {
+                display: block;
+                opacity: 1;
+                left: 0;
+            }
+
+        }
+
+    }
+
+    &>.control {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        width: 95%;
+        margin: 0 2.5%;
+
+        @media screen and (max-width: 768px) {
+            bottom: 22.5vh;
+        }
+
+        bottom: 30vh;
+
+        &>div {
+            @media screen and (max-width: 768px) {
+                height: 4vw;
+                width: 4vw;
+            }
+
+            height: 32px;
+            width: 32px;
+
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        &>.arrow-left {
+            border-bottom: 5px solid rgba(0, 0, 0, 0.3);
+            border-left: 5px solid rgba(0, 0, 0, 0.3);
+            transform: translateX(25%) rotate(45deg);
+        }
+
+        &>.arrow-right {
+            border-right: 5px solid rgba(0, 0, 0, 0.3);
+            border-top: 5px solid rgba(0, 0, 0, 0.3);
+            transform: translateX(-25%) rotate(45deg);
+        }
+
+    }
+}

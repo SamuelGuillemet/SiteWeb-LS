@@ -3,5 +3,15 @@
  */
 body {
   color: $text-color;
-  font: normal 125% / 1.4 $text-font-stack;
+  //font: normal 125% / 1.4 $text-font-stack;
+  font: normal 16px 'Playfair Display';
+
+  .text {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 11px;
+    letter-spacing: -0.015em;
+  }
 }

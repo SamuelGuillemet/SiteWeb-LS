@@ -34,3 +34,75 @@ hamburger.addEventListener("click", () => {
     navitems.classList.toggle("active");
 });
 
+// Active class for the nav items
+
+var menuItems = document.querySelectorAll(".menu-items");
+var currentUrl = new URL(window.location.href);
+
+for (let index = 0; index < menuItems[0].childElementCount; index++) {
+    if ((new URL(menuItems[0].children[index].children[0].href)).pathname == currentUrl.pathname) {
+        menuItems[0].children[index].classList.add("active");
+        menuItems[1].children[index].classList.add("active");
+    }
+}
+
+
+//Carousel
+
+var arrowRight = document.getElementById("carousel-arrow-right");
+var arrowLeft = document.getElementById("carousel-arrow-left");
+var carousel = document.getElementById("carousel");
+
+const idMax = carousel.children[0].childElementCount - 1;
+var id = 0;
+
+for (let index = 0; index <= idMax; index++) {
+    carousel.children[0].children[index].children[0].addEventListener("click", () => {
+        shouldRun = !shouldRun;
+    });
+}
+
+var shouldRun = true;
+
+arrowRight.addEventListener("click", arrowRightHandler, true);
+arrowLeft.addEventListener("click", arrowLeftHandler);
+
+function arrowRightHandler(arrow) {
+    if (arrow === undefined) {
+        arrow = false;
+    }
+    if (shouldRun || arrow) {
+        shouldRun = true;
+        carousel.children[0].children[id].classList.remove("active");
+        carousel.children[0].children[NextID(id)].classList.add("active");
+        carousel.children[0].children[NextID(id)].classList.remove("next");
+        carousel.children[0].children[NextID(NextID(id))].classList.add("next");
+        id = NextID(id);
+    }
+}
+
+function arrowLeftHandler() {
+    carousel.children[0].children[id].classList.remove("active");
+    carousel.children[0].children[PrevID(id)].classList.add("active");
+    carousel.children[0].children[NextID(id)].classList.remove("next");
+    carousel.children[0].children[id].classList.add("next");
+    id = PrevID(id);
+}
+
+function NextID(id) {
+    if (id == idMax) {
+        return 0;
+    } else {
+        return id + 1;
+    }
+}
+
+function PrevID(id) {
+    if (id == 0) {
+        return idMax;
+    } else {
+        return id - 1;
+    }
+}
+
+setInterval(arrowRightHandler, 7500);
