@@ -324,11 +324,7 @@ html {
  * Basic styles for links
  */
 a {
-  color: #e50050;
   text-decoration: none; }
-  a:hover, a:active, a:focus {
-    color: #222222;
-    text-decoration: underline; }
 
 /**
  * Basic typography style for copy text
@@ -409,9 +405,10 @@ body {
   z-index: 100;
   position: sticky;
   top: 0; }
-  #nav-menu > a,
-  #nav-menu li.active > a {
-    text-decoration-line: underline; }
+  #nav-menu > a::after,
+  #nav-menu li.active > a::after {
+    visibility: visible !important;
+    width: 100% !important; }
   #nav-menu > .top-nav {
     width: 100%;
     height: 54px;
@@ -444,10 +441,21 @@ body {
         font-family: 'Playfair Display';
         font-style: normal;
         font-weight: 400;
-        font-size: 16px;
+        font-size: 20px;
         line-height: 11px;
         color: #000000;
         letter-spacing: -0.015em; }
+        #nav-menu > .top-nav > ul.items > li > a::after {
+          content: '';
+          display: block;
+          height: 1px;
+          background: #082251;
+          transition: all 0.3s ease-in-out;
+          visibility: hidden;
+          width: 0; }
+        #nav-menu > .top-nav > ul.items > li > a:hover::after {
+          visibility: visible;
+          width: 100%; }
     #nav-menu > .top-nav > #hamburger-menu {
       display: none;
       align-self: center;
@@ -493,6 +501,14 @@ body {
         line-height: 11px;
         color: #000000;
         letter-spacing: -0.015em; }
+        #nav-menu > .mobile-nav > ul.items > li > a::after {
+          content: '';
+          display: block;
+          height: 1px;
+          background: #082251;
+          transition: all 0.3s ease-in-out;
+          visibility: hidden;
+          width: 0; }
       #nav-menu > .mobile-nav > ul.items.active {
         height: max-content;
         display: flex;
@@ -730,19 +746,20 @@ body {
       transition: all 0.5s ease-in-out;
       height: 100%;
       width: 100%;
-      border: 2px black solid; }
+      border: 2px black solid;
+      border-radius: 16px; }
       #carousel > .slider > .item > .content {
-        height: 95%;
-        width: 95%;
-        margin: 16px 2.5% 0 2.5%;
-        background-color: #dddddd;
+        height: 75%;
+        width: 70%;
+        margin: 16px 15% 0 15%;
         overflow: hidden; }
         @media screen and (max-width: 768px) {
           #carousel > .slider > .item > .content {
-            margin-top: 2.5%; } }
+            width: 95%;
+            margin: 2.5% 2.5% 0 2.5%; } }
       #carousel > .slider > .item > .learn-more {
         position: relative;
-        bottom: 8vh;
+        bottom: -4vh;
         display: flex;
         justify-content: center; }
         #carousel > .slider > .item > .learn-more > a {

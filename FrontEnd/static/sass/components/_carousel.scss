@@ -30,23 +30,24 @@
             height: 100%;
             width: 100%;
             border: 2px black solid;
+            border-radius: 16px;
 
             &>.content {
-                height: 95%;
-                width: 95%;
-                margin: 16px 2.5% 0 2.5%;
-                background-color: #dddddd;
+                height: 75%;
+                width: 70%;
+                margin: 16px 15% 0 15%;
 
                 overflow: hidden;
 
                 @media screen and (max-width: 768px) {
-                    margin-top: 2.5%;
+                    width: 95%;
+                    margin: 2.5% 2.5% 0 2.5%;
                 }
             }
 
             &>.learn-more {
                 position: relative;
-                bottom: 8vh;
+                bottom: -4vh;
                 display: flex;
                 justify-content: center;
 

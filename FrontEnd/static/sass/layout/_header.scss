@@ -17,8 +17,9 @@
 
     &,
     li.active {
-        &>a {
-            text-decoration-line: underline;
+        &>a::after {
+            visibility: visible !important;
+            width: 100% !important;
         }
     }
 
@@ -58,10 +59,28 @@
                 font-family: 'Playfair Display';
                 font-style: normal;
                 font-weight: 400;
-                font-size: 16px;
+                font-size: 20px;
                 line-height: 11px;
                 color: #000000;
                 letter-spacing: -0.015em;
+
+                &::after {
+                    content: '';
+                    display: block;
+                    height: 1px;
+                    background: #082251;
+                    transition: all 0.3s ease-in-out;
+                    visibility: hidden;
+                    width: 0;
+                }
+
+                &:hover {
+                    &::after {
+                        visibility: visible;
+                        width: 100%;
+                    }
+                }
+
             }
 
         }
@@ -131,6 +150,16 @@
                     line-height: 11px;
                     color: #000000;
                     letter-spacing: -0.015em;
+
+                    &::after {
+                        content: '';
+                        display: block;
+                        height: 1px;
+                        background: #082251;
+                        transition: all 0.3s ease-in-out;
+                        visibility: hidden;
+                        width: 0;
+                    }
                 }
 
                 &.active {
