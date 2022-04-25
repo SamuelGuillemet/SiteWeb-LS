@@ -1,0 +1,110 @@
+.book {
+    perspective: 5000px;
+    width: 50%;
+    height: 100%;
+    position: relative;
+    transition: all 1s ease;
+    max-width: 560px;
+
+    @media screen and (max-width: 768px) {
+        width: 100%;
+    }
+
+    &>:not(:first-child) {
+        &>.front {
+            background-image: linear-gradient(90deg, #8a8a8a50 0%, rgba(247, 247, 247, 0.5) 10%);
+        }
+    }
+
+    &>:first-child {
+        &>.front {
+            justify-content: space-around;
+
+            &>.title {
+                align-self: center;
+                font-size: 2em;
+            }
+        }
+    }
+
+    &>:not(:last-child) {
+        &>.back {
+            background-image: linear-gradient(-90deg, #8a8a8a50 0%, rgba(247, 247, 247, 0.5) 10%);
+        }
+    }
+
+    &>.page {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        background-color: rgb(255, 251, 246);
+        cursor: pointer;
+        transition: all 1s ease;
+        transform-origin: left center;
+        transform-style: preserve-3d;
+        border-radius: 16px;
+        border: 2px solid black;
+
+        @media screen and (max-width: 768px) {
+            transform-origin: bottom center;
+        }
+
+
+        &.active {
+            z-index: 1;
+        }
+
+        &.flipped {
+            transform: rotateY(-180deg);
+
+            @media screen and (max-width: 768px) {
+                transform: rotateY(0) rotateX(-180deg);
+            }
+        }
+
+        &>div {
+            border-radius: 16px;
+            position: absolute;
+            backface-visibility: hidden;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            &.back {
+                transform: rotateY(180deg);
+
+                @media screen and (max-width: 768px) {
+                    transform: rotateY(0) rotateX(180deg);
+                }
+            }
+
+            &>div,
+            h1 {
+                margin: 2vh 2vw;
+            }
+
+            &>.title {
+                flex-shrink: 1;
+
+                @media screen and (max-width: 768px) {
+                    font-size: 16px;
+                }
+            }
+
+            &>.synopsis {
+                flex-grow: 1;
+                overflow: hidden;
+                max-height: 75%;
+            }
+
+            &>.pagenumber {
+                flex-shrink: 1;
+                align-self: center;
+            }
+        }
+    }
+}

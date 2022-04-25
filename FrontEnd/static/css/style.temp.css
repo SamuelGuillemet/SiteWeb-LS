@@ -307,7 +307,8 @@ template {
  * Set up a decent box model on the root element
  */
 html {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  scroll-behavior: smooth; }
 
 /**
  * Make all elements from the DOM inherit from the parent box-sizing
@@ -331,14 +332,7 @@ a {
  */
 body {
   color: #222222;
-  font: normal 16px 'Playfair Display'; }
-  body .text {
-    font-family: 'Playfair Display';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 11px;
-    letter-spacing: -0.015em; }
+  font: normal 16px 'PT Sans', sans-serif; }
 
 /**
  * Clear inner floats
@@ -404,7 +398,8 @@ body {
   backdrop-filter: blur(100.267px);
   z-index: 100;
   position: sticky;
-  top: 0; }
+  top: 0;
+  padding-bottom: 4px; }
   #nav-menu > a::after,
   #nav-menu li.active > a::after {
     visibility: visible !important;
@@ -438,13 +433,14 @@ body {
       margin: 0px 32px;
       justify-items: center; }
       #nav-menu > .top-nav > ul.items > li > a {
-        font-family: 'Playfair Display';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 11px;
         color: #000000;
-        letter-spacing: -0.015em; }
+        font-family: 'PT Sans', sans-serif;
+        font-style: normal;
+        font-weight: 200;
+        font-size: 16px;
+        line-height: 11px;
+        letter-spacing: -0.015em;
+        font-size: 20px; }
         #nav-menu > .top-nav > ul.items > li > a::after {
           content: '';
           display: block;
@@ -494,12 +490,12 @@ body {
       margin: 0;
       padding: 0; }
       #nav-menu > .mobile-nav > ul.items > li > a {
-        font-family: 'Playfair Display';
+        color: #000000;
+        font-family: 'PT Sans', sans-serif;
         font-style: normal;
-        font-weight: 400;
+        font-weight: 200;
         font-size: 16px;
         line-height: 11px;
-        color: #000000;
         letter-spacing: -0.015em; }
         #nav-menu > .mobile-nav > ul.items > li > a::after {
           content: '';
@@ -526,8 +522,7 @@ body {
   flex-direction: column;
   box-shadow: inset 50.1333px -50.1333px 50.1333px rgba(149, 149, 149, 0.1), inset -50.1333px 50.1333px 50.1333px rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(100.267px);
-  width: 100%;
-  margin-top: 32px; }
+  width: 100%; }
   #footer > .top {
     display: flex;
     height: max-content;
@@ -553,7 +548,7 @@ body {
           padding-right: 40px;
           padding-bottom: 2px;
           border-bottom: 1px solid black;
-          font-family: 'Playfair Display', serif;
+          font-family: 'PT Sans', sans-serif;
           overflow: hidden;
           border-radius: 5px; }
           #footer > .top > .search-bar > .input > input:focus {
@@ -579,7 +574,7 @@ body {
       display: flex;
       flex-direction: column;
       align-items: center;
-      font-family: 'Playfair Display', serif;
+      font-family: 'PT Sans', sans-serif;
       margin: 10px 16px; }
       #footer > .top > .about > .name {
         margin: 0px; }
@@ -663,12 +658,13 @@ body {
       background-color: currentColor; }
       #breadcrumbs > .breadcrumbs > .breadcrumbs--item > a > .content > span {
         color: var(--color-text);
-        font-family: 'Playfair Display', serif;
+        text-align: left;
+        font-family: 'PT Sans', sans-serif;
+        font-style: normal;
+        font-weight: 200;
         font-size: 16px;
-        font-weight: 400;
-        line-height: 21px;
-        letter-spacing: 0em;
-        text-align: left; }
+        line-height: 11px;
+        letter-spacing: -0.015em; }
     #breadcrumbs > .breadcrumbs > .breadcrumbs--item:nth-child(1) > a {
       color: var(--color-1); }
       #breadcrumbs > .breadcrumbs > .breadcrumbs--item:nth-child(1) > a:hover {
@@ -812,3 +808,137 @@ body {
       border-right: 5px solid rgba(0, 0, 0, 0.3);
       border-top: 5px solid rgba(0, 0, 0, 0.3);
       transform: translateX(-25%) rotate(45deg); }
+
+.shelf {
+  display: flex;
+  width: max-content;
+  margin-top: 32px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid black;
+  height: fit-content; }
+  .shelf > div {
+    height: 48px;
+    width: 48px;
+    margin: 8px 24px 0 24px;
+    cursor: pointer;
+    transition: top 0.3s ease-in-out; }
+    @media screen and (max-width: 768px) {
+      .shelf > div {
+        height: 32px;
+        width: 32px; } }
+    .shelf > div > img {
+      height: 48px;
+      width: 48px; }
+      @media screen and (max-width: 768px) {
+        .shelf > div > img {
+          height: 32px;
+          width: 32px; } }
+    .shelf > div:hover > img, .shelf > div.active > img {
+      position: relative;
+      top: -16px; }
+
+.book {
+  perspective: 5000px;
+  width: 50%;
+  height: 100%;
+  position: relative;
+  transition: all 1s ease;
+  max-width: 560px; }
+  @media screen and (max-width: 768px) {
+    .book {
+      width: 100%; } }
+  .book > :not(:first-child) > .front {
+    background-image: linear-gradient(90deg, #8a8a8a50 0%, rgba(247, 247, 247, 0.5) 10%); }
+  .book > :first-child > .front {
+    justify-content: space-around; }
+    .book > :first-child > .front > .title {
+      align-self: center;
+      font-size: 2em; }
+  .book > :not(:last-child) > .back {
+    background-image: linear-gradient(-90deg, #8a8a8a50 0%, rgba(247, 247, 247, 0.5) 10%); }
+  .book > .page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: #fffbf6;
+    cursor: pointer;
+    transition: all 1s ease;
+    transform-origin: left center;
+    transform-style: preserve-3d;
+    border-radius: 16px;
+    border: 2px solid black; }
+    @media screen and (max-width: 768px) {
+      .book > .page {
+        transform-origin: bottom center; } }
+    .book > .page.active {
+      z-index: 1; }
+    .book > .page.flipped {
+      transform: rotateY(-180deg); }
+      @media screen and (max-width: 768px) {
+        .book > .page.flipped {
+          transform: rotateY(0) rotateX(-180deg); } }
+    .book > .page > div {
+      border-radius: 16px;
+      position: absolute;
+      backface-visibility: hidden;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; }
+      .book > .page > div.back {
+        transform: rotateY(180deg); }
+        @media screen and (max-width: 768px) {
+          .book > .page > div.back {
+            transform: rotateY(0) rotateX(180deg); } }
+      .book > .page > div > div,
+      .book > .page > div h1 {
+        margin: 2vh 2vw; }
+      .book > .page > div > .title {
+        flex-shrink: 1; }
+        @media screen and (max-width: 768px) {
+          .book > .page > div > .title {
+            font-size: 16px; } }
+      .book > .page > div > .synopsis {
+        flex-grow: 1;
+        overflow: hidden;
+        max-height: 75%; }
+      .book > .page > div > .pagenumber {
+        flex-shrink: 1;
+        align-self: center; }
+
+body {
+  background-image: url("../images/Background.png");
+  background-size: cover; }
+
+#page-grid {
+  display: grid;
+  grid-template-columns: 0.1fr 2fr 0.1fr;
+  grid-template-rows: 1fr;
+  column-gap: 0px;
+  row-gap: 0px; }
+  @media screen and (max-width: 768px) {
+    #page-grid {
+      grid-template-columns: 16px 2fr 16px; } }
+  #page-grid > .content {
+    background-color: #e5e5e5;
+    grid-area: 1 / 2 / 2 / 3;
+    display: flex;
+    flex-direction: column; }
+    #page-grid > .content > div {
+      height: max-content;
+      display: flex;
+      align-items: center;
+      scroll-margin-block-start: 64px;
+      flex-direction: column; }
+    #page-grid > .content > #articles > .main-content {
+      display: flex;
+      justify-content: center;
+      margin: 32px;
+      width: calc(100% - 64px);
+      height: 60vh; }
+      @media screen and (max-width: 768px) {
+        #page-grid > .content > #articles > .main-content {
+          height: 40vh; } }

@@ -10,9 +10,6 @@
     backdrop-filter: blur(100.267px);
 
     width: 100%;
-    margin-top: 32px;
-
-
 
     &>.top {
         display: flex;
@@ -44,7 +41,7 @@
                     padding-right: 40px;
                     padding-bottom: 2px;
                     border-bottom: 1px solid black;
-                    font-family: 'Playfair Display', serif;
+                    font-family: 'PT Sans', sans-serif;
                     overflow: hidden;
                     border-radius: 5px;
 
@@ -82,7 +79,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            font-family: 'Playfair Display', serif;
+            font-family: 'PT Sans', sans-serif;
             margin: 10px 16px;
 
             &>.name {

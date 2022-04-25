@@ -1,0 +1,41 @@
+.shelf {
+    display: flex;
+    width: max-content;
+
+    margin-top: 32px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid black;
+    height: fit-content;
+
+    &>div {
+        height: 48px;
+        width: 48px;
+
+        @media screen and (max-width: 768px) {
+            height: 32px;
+            width: 32px;
+        }
+
+        margin: 8px 24px 0 24px;
+        cursor: pointer;
+        transition: top 0.3s ease-in-out;
+
+        &>img {
+            height: 48px;
+            width: 48px;
+
+            @media screen and (max-width: 768px) {
+                height: 32px;
+                width: 32px;
+            }
+        }
+
+        &:hover,
+        &.active {
+            &>img {
+                position: relative;
+                top: -16px;
+            }
+        }
+    }
+}
