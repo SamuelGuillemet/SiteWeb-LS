@@ -9,7 +9,8 @@
     border-bottom: 2px black solid;
     background: rgba(255, 255, 255, 0.1);
     box-shadow: inset 50.1333px -50.1333px 50.1333px rgba(149, 149, 149, 0.1), inset -50.1333px 50.1333px 50.1333px rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(100.267px);
+    //backdrop-filter: blur(100.267px);
+    background-color: #d0d0d0f1;
 
     z-index: 100;
     position: sticky;

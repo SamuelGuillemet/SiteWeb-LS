@@ -395,7 +395,7 @@ body {
   border-bottom: 2px black solid;
   background: rgba(255, 255, 255, 0.1);
   box-shadow: inset 50.1333px -50.1333px 50.1333px rgba(149, 149, 149, 0.1), inset -50.1333px 50.1333px 50.1333px rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(100.267px);
+  background-color: #d0d0d0f1;
   z-index: 100;
   position: sticky;
   top: 0;
@@ -958,9 +958,91 @@ body {
           .book > .page > div > .pagenumber {
             margin: 2px 0; } }
 
+.iphone {
+  margin: 32px 0;
+  height: max-content;
+  width: 100%;
+  background: #e0e5ec;
+  border-radius: 2em;
+  box-sizing: border-box;
+  padding: 2em;
+  display: flex;
+  flex-direction: column; }
+  .iphone .title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 0.75em;
+    margin-bottom: 2em; }
+  .iphone .album-cover {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column; }
+    .iphone .album-cover .image {
+      width: 100%;
+      height: 10vh;
+      background-color: #e22d49; }
+      @media screen and (max-width: 768px) {
+        .iphone .album-cover .image {
+          display: none; } }
+    .iphone .album-cover .song-title {
+      text-align: center;
+      padding-bottom: 0;
+      margin-bottom: 0;
+      color: #65717e; }
+    .iphone .album-cover .artist-title {
+      text-align: center;
+      padding: 1em 0;
+      margin: 0;
+      font-size: 0.85em;
+      color: #65717e; }
+  .iphone .track {
+    margin-top: 1em;
+    height: 10px; }
+    .iphone .track div {
+      width: 42%;
+      height: 100%;
+      background: #7e8a98;
+      opacity: 0.75;
+      border-radius: 15px; }
+  .iphone .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 1em 0; }
+  .iphone .lyrics {
+    color: #7e8a98;
+    margin-top: 2em;
+    text-align: center;
+    font-size: 0.75em;
+    display: flex;
+    flex-direction: column; }
+
+.neu {
+  box-shadow: -5px -5px 15px 0px #ffffff9e, 5px 5px 15px 0px #a3b1c6a8;
+  background: #e0e5ec;
+  border-radius: 2em;
+  border: 0; }
+
+.btn {
+  padding: 15px;
+  border-radius: 30px;
+  color: #7e8a98;
+  outline: none;
+  cursor: pointer; }
+  .btn.lg {
+    font-size: 1em; }
+  .btn:active {
+    cursor: pointer;
+    box-shadow: inset -5px -5px 15px 0px #ffffff9e, inset 5px 5px 15px 0px #a3b1c6a8; }
+
+.red {
+  color: #e22d49; }
+
 body {
   background-image: url("../images/Background.png");
-  background-size: contain; }
+  background-size: contain;
+  background-repeat: repeat; }
 
 #page-grid {
   display: grid;
@@ -978,8 +1060,10 @@ body {
     flex-direction: column; }
     #page-grid > .content > div {
       height: max-content;
+      min-height: 75vh;
       display: flex;
       align-items: center;
+      justify-content: space-around;
       scroll-margin-block-start: 64px;
       flex-direction: column; }
       #page-grid > .content > div > .main-content {
@@ -1000,3 +1084,9 @@ body {
       @media screen and (max-width: 768px) {
         #page-grid > .content > #articles > .main-content {
           height: 40vh; } }
+    #page-grid > .content > #podcasts > .main-content {
+      align-items: center;
+      max-width: 600px;
+      height: max-content; }
+    #page-grid > .content > #photos > .main-content > #carousel {
+      max-width: 1200px; }

@@ -4,6 +4,7 @@
 body {
     background-image: url('../images/Background.png');
     background-size: contain;
+    background-repeat: repeat;
 }
 
 
@@ -27,8 +28,10 @@ body {
 
         &>div {
             height: max-content;
+            min-height: 75vh;
             display: flex;
             align-items: center;
+            justify-content: space-around;
             scroll-margin-block-start: 64px;
             flex-direction: column;
 
@@ -60,9 +63,21 @@ body {
             }
         }
 
-        &>#podcasts {}
+        &>#podcasts {
+            &>.main-content {
+                align-items: center;
+                max-width: 600px;
+                height: max-content;
+            }
+        }
 
-        &>#photos {}
+        &>#photos {
+            &>.main-content {
+                &>#carousel {
+                    max-width: 1200px;
+                }
+            }
+        }
 
     }
 }

@@ -1,0 +1,119 @@
+$background-gray: #e0e5ec;
+$gray: #7e8a98;
+$dark-gray: darken(#7e8a98, 10%);
+$red: #e22d49;
+$track: #3fbbe9;
+
+@mixin reverse-neu {
+    box-shadow: inset -5px -5px 15px 0px #ffffff9e,
+        inset 5px 5px 15px 0px #a3b1c6a8;
+}
+
+.iphone {
+    margin: 32px 0;
+    height: max-content;
+    width: 100%;
+    background: $background-gray;
+    border-radius: 2em;
+    box-sizing: border-box;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+
+    .title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 0.75em;
+        margin-bottom: 2em;
+    }
+
+    .album-cover {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+
+        .image {
+            width: 100%;
+            height: 10vh;
+            background-color: #e22d49;
+
+            @media screen and (max-width: 768px) {
+                display: none;
+            }
+
+        }
+
+        .song-title {
+            text-align: center;
+            padding-bottom: 0;
+            margin-bottom: 0;
+            color: $dark-gray;
+        }
+
+        .artist-title {
+            text-align: center;
+            padding: 1em 0;
+            margin: 0;
+            font-size: 0.85em;
+            color: $dark-gray;
+        }
+    }
+
+    .track {
+        margin-top: 1em;
+        height: 10px;
+
+        div {
+            width: 42%;
+            height: 100%;
+            background: $gray;
+            opacity: 0.75;
+            border-radius: 15px;
+        }
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 1em 0;
+    }
+
+    .lyrics {
+        color: $gray;
+        margin-top: 2em;
+        text-align: center;
+        font-size: 0.75em;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.neu {
+    box-shadow: -5px -5px 15px 0px #ffffff9e, 5px 5px 15px 0px #a3b1c6a8;
+    background: $background-gray;
+    border-radius: 2em;
+    border: 0;
+}
+
+.btn {
+    padding: 15px;
+    border-radius: 30px;
+    color: $gray;
+    outline: none;
+    cursor: pointer;
+
+    &.lg {
+        font-size: 1em;
+    }
+
+    &:active {
+        cursor: pointer;
+        @include reverse-neu;
+    }
+}
+
+.red {
+    color: $red;
+}
