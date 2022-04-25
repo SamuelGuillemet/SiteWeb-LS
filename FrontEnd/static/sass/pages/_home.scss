@@ -3,13 +3,13 @@
 // -----------------------------------------------------------------------------
 body {
     background-image: url('../images/Background.png');
-    background-size: cover;
+    background-size: contain;
 }
 
 
 #page-grid {
     display: grid;
-    grid-template-columns: 0.1fr 2fr 0.1fr;
+    grid-template-columns: 64px 2fr 64px;
     grid-template-rows: 1fr;
     column-gap: 0px;
     row-gap: 0px;
@@ -31,6 +31,18 @@ body {
             align-items: center;
             scroll-margin-block-start: 64px;
             flex-direction: column;
+
+            &>.main-content {
+                display: flex;
+                justify-content: center;
+                margin: 32px;
+                width: calc(100% - 64px);
+                height: 60vh;
+
+                @media screen and (max-width: 768px) {
+                    height: 40vh;
+                }
+            }
 
         }
 

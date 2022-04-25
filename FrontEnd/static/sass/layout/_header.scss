@@ -150,7 +150,6 @@
                         background: #082251;
                         transition: all 0.3s ease-in-out;
                         visibility: hidden;
-                        width: 0;
                     }
                 }
 
@@ -161,6 +160,11 @@
                     flex-direction: column;
                     align-items: center;
                     opacity: 1;
+                }
+
+                &:not(.active)>li>a::after {
+                    max-width: max-content;
+
                 }
             }
         }

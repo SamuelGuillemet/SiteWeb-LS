@@ -4,16 +4,13 @@
     }
 
     margin: 0 32px;
+    width: 100%;
 
     &>.slider {
 
         position: relative;
 
-        @media screen and (max-width: 768px) {
-            height: 45vh;
-        }
-
-        height: 60vh;
+        height: 100%;
         width: 100%;
 
         overflow: hidden;
@@ -47,7 +44,7 @@
 
             &>.learn-more {
                 position: relative;
-                bottom: -4vh;
+                bottom: -3vh;
                 display: flex;
                 justify-content: center;
 

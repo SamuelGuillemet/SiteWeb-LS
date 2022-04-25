@@ -12,24 +12,38 @@
 
     &>:not(:first-child) {
         &>.front {
-            background-image: linear-gradient(90deg, #8a8a8a50 0%, rgba(247, 247, 247, 0.5) 10%);
+            background-image: linear-gradient(90deg, #8a8a8a50 0%, rgba(247, 247, 247, 0) 10%);
+
+            @media screen and (max-width: 768px) {
+                background-image: linear-gradient(0deg, #8a8a8a50 0%, rgba(247, 247, 247, 0) 10%);
+            }
         }
     }
 
     &>:first-child {
         &>.front {
-            justify-content: space-around;
+            justify-content: start;
+            background-image: url('../images/HomePage/Journal.png');
+            background-size: cover;
 
             &>.title {
                 align-self: center;
                 font-size: 2em;
+
+                @media screen and (max-width: 768px) {
+                    margin-top: 0;
+                }
             }
         }
     }
 
     &>:not(:last-child) {
         &>.back {
-            background-image: linear-gradient(-90deg, #8a8a8a50 0%, rgba(247, 247, 247, 0.5) 10%);
+            background-image: linear-gradient(-90deg, #8a8a8a50 0%, rgba(247, 247, 247, 0) 10%);
+
+            @media screen and (max-width: 768px) {
+                background-image: linear-gradient(-180deg, #8a8a8a50 0%, rgba(247, 247, 247, 0) 10%);
+            }
         }
     }
 
@@ -39,7 +53,7 @@
         height: 100%;
         top: 0;
         right: 0;
-        background-color: rgb(255, 251, 246);
+        background-color: #EDDEB5;
         cursor: pointer;
         transition: all 1s ease;
         transform-origin: left center;
@@ -99,11 +113,55 @@
                 flex-grow: 1;
                 overflow: hidden;
                 max-height: 75%;
+
+                @media screen and (max-width: 768px) {
+                    display: none;
+                }
+            }
+
+            &>.learn-more {
+                align-self: center;
+                display: flex;
+                justify-content: center;
+                z-index: 10;
+                margin: 32px 0;
+
+                @media screen and (max-width: 768px) {
+                    margin: 0;
+                }
+
+                border: 1px solid black;
+                border-radius: 16px;
+
+                &>a {
+                    display: flex;
+                    align-items: center;
+                    padding: 10px;
+                    border-radius: 16px;
+                    background: rgba(255, 255, 255, 0.2);
+                    box-shadow: inset 50.1333px -50.1333px 50.1333px rgba(149, 149, 149, 0.1), inset -50.1333px 50.1333px 50.1333px rgba(255, 255, 255, 0.1);
+                    backdrop-filter: blur(100.267px);
+                    color: black;
+                    @include text();
+
+                    &>.arrow {
+                        margin-left: 16px;
+                        border-right: 1px solid rgba(0, 0, 0, 0.3);
+                        border-top: 1px solid rgba(0, 0, 0, 0.3);
+                        transform: translateX(-25%) rotate(45deg);
+                        height: 12px;
+                        width: 12px;
+                    }
+                }
             }
 
             &>.pagenumber {
                 flex-shrink: 1;
                 align-self: center;
+
+                @media screen and (max-width: 768px) {
+                    margin: 2px 0;
+                }
             }
         }
     }
