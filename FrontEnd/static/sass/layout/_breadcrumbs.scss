@@ -12,6 +12,7 @@
     --color-text: #E1E1E1;
 
     width: max-content;
+    max-width: 80vw;
 
     &>.breadcrumbs {
         list-style: none;
@@ -92,12 +93,12 @@
         }
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 900px) {
         transform: scale(var(--scale));
         transform-origin: left;
 
         &>.breadcrumbs {
-            padding-left: 5vw;
+            padding-left: 3vw;
         }
     }
 }

@@ -602,7 +602,8 @@ body {
   --color-5: #27267E;
   --color-hover-5: #1F1E65;
   --color-text: #E1E1E1;
-  width: max-content; }
+  width: max-content;
+  max-width: 80vw; }
   #breadcrumbs > .breadcrumbs {
     list-style: none;
     display: flex;
@@ -671,12 +672,12 @@ body {
       color: var(--color-5); }
       #breadcrumbs > .breadcrumbs > .breadcrumbs--item:nth-child(5) > a:hover {
         color: var(--color-hover-5); }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 900px) {
     #breadcrumbs {
       transform: scale(var(--scale));
       transform-origin: left; }
       #breadcrumbs > .breadcrumbs {
-        padding-left: 5vw; } }
+        padding-left: 3vw; } }
 
 .btn {
   padding: 15px;
@@ -833,7 +834,7 @@ body {
         background-image: linear-gradient(0deg, #8a8a8a50 0%, rgba(247, 247, 247, 0) 10%); } }
   .book > :first-child > .front {
     justify-content: start;
-    background-image: url("../images/HomePage/Journal.png");
+    background-image: url("../HomePage/images/Journal.png");
     background-size: cover; }
     .book > :first-child > .front > .title {
       align-self: center;
@@ -1009,7 +1010,8 @@ body {
     background-color: #e5e5e5;
     grid-area: 1 / 2 / 2 / 3;
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    max-width: calc(100vw - 32px); }
     #page-grid > .content > div {
       display: flex;
       align-items: center;
