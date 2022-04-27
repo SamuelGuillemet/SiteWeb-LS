@@ -4,7 +4,8 @@
     height: 100%;
     position: relative;
     transition: all 1s ease;
-    max-width: 560px;
+    max-width: 750px;
+    max-height: 85%;
 
     @media screen and (max-width: 768px) {
         width: 100%;
@@ -28,10 +29,10 @@
 
             &>.title {
                 align-self: center;
-                font-size: 2em;
+                font-size: 1.8em;
 
                 @media screen and (max-width: 768px) {
-                    margin-top: 0;
+                    margin-top: 4px;
                 }
             }
         }
@@ -53,13 +54,10 @@
         height: 100%;
         top: 0;
         right: 0;
-        background-color: #EDDEB5;
         cursor: pointer;
         transition: all 1s ease;
         transform-origin: left center;
         transform-style: preserve-3d;
-        border-radius: 16px;
-        border: 2px solid black;
 
         @media screen and (max-width: 768px) {
             transform-origin: bottom center;
@@ -79,7 +77,7 @@
         }
 
         &>div {
-            border-radius: 16px;
+            border-radius: 2em;
             position: absolute;
             backface-visibility: hidden;
             width: 100%;
@@ -96,9 +94,8 @@
                 }
             }
 
-            &>div,
-            h1 {
-                margin: 2vh 2vw;
+            &>h1 {
+                margin: 2vh 4vw;
             }
 
             &>.title {
@@ -106,10 +103,12 @@
 
                 @media screen and (max-width: 768px) {
                     font-size: 16px;
+                    flex-grow: 1;
                 }
             }
 
             &>.synopsis {
+                margin: 0 4vw;
                 flex-grow: 1;
                 overflow: hidden;
                 max-height: 75%;
@@ -130,28 +129,12 @@
                     margin: 0;
                 }
 
-                border: 1px solid black;
-                border-radius: 16px;
-
                 &>a {
                     display: flex;
-                    align-items: center;
+                    align-items: baseline;
                     padding: 10px;
-                    border-radius: 16px;
-                    background: rgba(255, 255, 255, 0.2);
-                    box-shadow: inset 50.1333px -50.1333px 50.1333px rgba(149, 149, 149, 0.1), inset -50.1333px 50.1333px 50.1333px rgba(255, 255, 255, 0.1);
-                    backdrop-filter: blur(100.267px);
                     color: black;
                     @include text();
-
-                    &>.arrow {
-                        margin-left: 16px;
-                        border-right: 1px solid rgba(0, 0, 0, 0.3);
-                        border-top: 1px solid rgba(0, 0, 0, 0.3);
-                        transform: translateX(-25%) rotate(45deg);
-                        height: 12px;
-                        width: 12px;
-                    }
                 }
             }
 

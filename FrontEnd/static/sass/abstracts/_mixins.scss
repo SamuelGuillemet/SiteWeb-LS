@@ -8,13 +8,17 @@
 /// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
 @mixin on-event($self: false) {
   @if $self {
+
     &,
     &:hover,
     &:active,
     &:focus {
       @content;
     }
-  } @else {
+  }
+
+  @else {
+
     &:hover,
     &:active,
     &:focus {
@@ -32,3 +36,14 @@
   }
 }
 
+@mixin reverse-neu {
+  box-shadow: inset -5px -5px 15px 0px #ffffff9e,
+    inset 5px 5px 15px 0px #a3b1c6a8;
+}
+
+@mixin neu {
+  box-shadow: -5px -5px 15px 0px #ffffff9e, 5px 5px 15px 0px #a3b1c6a8;
+  background: $background-gray;
+  border-radius: 2em;
+  border: 0;
+}

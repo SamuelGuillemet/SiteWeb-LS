@@ -7,7 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hurricane&family=PT+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="static/css/style.temp.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
 
 <body>
@@ -27,10 +28,7 @@
                 <span></span>
             </div>
             <a href="#" class="connect">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                    <path
-                        d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
-                </svg>
+                <i class="fa-solid fa-user"></i>
             </a>
         </section>
         <section class="mobile-nav">
@@ -48,20 +46,14 @@
         <div class="border"></div>
         <div class="content">
             <div id="articles">
-                <div class="shelf">
-                    <div class="articles shelf-icon active">
-                        <img src="static/images/HomePage/newspaper.png" alt="Active newspaper">
-                    </div>
-                    <div class="podcasts shelf-icon">
-                        <img src="static/images/HomePage/podcast.png" alt="Active newspaper">
-                    </div>
-                    <div class="photos shelf-icon">
-                        <img src="static/images/HomePage/pictures.png" alt="Active newspaper">
-                    </div>
+                <div class="shelf buttons neu">
+                    <button class="articles shelf-icon active btn neu"><i class="fa-solid fa-newspaper"></i></button>
+                    <button class="podcasts shelf-icon btn neu"><i class="fa-solid fa-podcast"></i></button>
+                    <button class="photos shelf-icon btn neu"><i class="fa-solid fa-images"></i></button>
                 </div>
                 <div class="main-content">
                     <div class="book">
-                        <div class="page active">
+                        <div class="page active neu">
                             <div class="front">
                                 <h1 class="title">Aperçu des articles</h1>
                             </div>
@@ -83,45 +75,63 @@
                                     avec
                                     des délais d’expiration encore trop courts.
                                 </div>
-                                <div class="learn-more">
-                                    <a href="">EN SAVOIR PLUS<div class="arrow"></div></a>
+                                <div class="learn-more btn neu">
+                                    <a href="">EN SAVOIR PLUS</a>
+                                    <i class="fa-solid fa-chevron-right center"></i>
                                 </div>
                                 <div class="pagenumber">1</div>
                             </div>
                         </div>
-                        <div class="page">
-                            <div class="front">2</div>
-                            <div class="back">3</div>
+                        <div class="page neu">
+                            <div class="front">
+                                <h1 class="title"></h1>
+                                <div class="synopsis"></div>
+                                <div class="learn-more btn neu">
+                                    <a href="">EN SAVOIR PLUS</a>
+                                    <i class="fa-solid fa-chevron-right center"></i>
+                                </div>
+                                <div class="pagenumber">2</div>
+                            </div>
+                            <div class="back">
+                                <h1 class="title"></h1>
+                                <div class="synopsis"></div>
+                                <div class="learn-more btn neu">
+                                    <a href="">EN SAVOIR PLUS</a>
+                                    <i class="fa-solid fa-chevron-right center"></i>
+                                </div>
+                                <div class="pagenumber">3</div>
+                            </div>
                         </div>
-                        <div class="page">
-                            <div class="front">4</div>
+                        <div class="page neu">
+                            <div class="front">
+                                <h1 class="title"></h1>
+                                <div class="synopsis"></div>
+                                <div class="learn-more btn neu">
+                                    <a href="">EN SAVOIR PLUS</a>
+                                    <i class="fa-solid fa-chevron-right center"></i>
+                                </div>
+                                <div class="pagenumber">4</div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="blank"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                    <path fill="#68B3B5" fill-opacity="1"
+                        d="M0,64L48,80C96,96,192,128,288,122.7C384,117,480,75,576,64C672,53,768,75,864,112C960,149,1056,203,1152,192C1248,181,1344,107,1392,69.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+                    </path>
+                </svg>
             </div>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="#68B3B5" fill-opacity="1"
-                    d="M0,64L48,80C96,96,192,128,288,122.7C384,117,480,75,576,64C672,53,768,75,864,112C960,149,1056,203,1152,192C1248,181,1344,107,1392,69.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
-                </path>
-            </svg>
             <div id="podcasts">
-                <div class="shelf">
-                    <div class="articles shelf-icon">
-                        <img src="static/images/HomePage/newspaper.png" alt="Active newspaper">
-                    </div>
-                    <div class="podcasts shelf-icon active">
-                        <img src="static/images/HomePage/podcast.png" alt="Active newspaper">
-                    </div>
-                    <div class="photos shelf-icon">
-                        <img src="static/images/HomePage/pictures.png" alt="Active newspaper">
-                    </div>
+                <div class="shelf buttons neu">
+                    <button class="articles shelf-icon btn neu"><i class="fa-solid fa-newspaper"></i></button>
+                    <button class="podcasts shelf-icon active btn neu"><i class="fa-solid fa-podcast"></i></button>
+                    <button class="photos shelf-icon btn neu"><i class="fa-solid fa-images"></i></button>
                 </div>
                 <div class="main-content">
                     <div class="iphone neu">
                         <div class="title">
-                            <div><i class="fas fa-chevron-left"></i></div>
                             <div>NOW PLAYING</div>
-                            <div><i class="fas fa-ellipsis-v"></i></div>
                         </div>
                         <div class="album-cover">
                             <div class="image"></div>
@@ -133,7 +143,6 @@
                             </h3>
                         </div>
                         <div class="buttons">
-                            <button class="btn lg red neu"><i class="fas fa-heart"></i></button>
                             <button class="btn lg neu"><i class="fas fa-backward"></i></button>
                             <button class="btn lg neu"><i class="fas fa-play"></i></button>
                             <button class="btn lg neu"><i class="fas fa-forward"></i></button>
@@ -147,55 +156,55 @@
                         </div>
                     </div>
                 </div>
+                <div class="blank"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                    <path fill="#68B3B5" fill-opacity="1"
+                        d="M0,64L48,80C96,96,192,128,288,122.7C384,117,480,75,576,64C672,53,768,75,864,112C960,149,1056,203,1152,192C1248,181,1344,107,1392,69.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+                    </path>
+                </svg>
             </div>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="#68B3B5" fill-opacity="1"
-                    d="M0,64L48,80C96,96,192,128,288,122.7C384,117,480,75,576,64C672,53,768,75,864,112C960,149,1056,203,1152,192C1248,181,1344,107,1392,69.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
-                </path>
-            </svg>
             <div id="photos">
-                <div class="shelf">
-                    <div class="articles shelf-icon">
-                        <img src="static/images/HomePage/newspaper.png" alt="Active newspaper">
-                    </div>
-                    <div class="podcasts shelf-icon">
-                        <img src="static/images/HomePage/podcast.png" alt="Active newspaper">
-                    </div>
-                    <div class="photos shelf-icon active">
-                        <img src="static/images/HomePage/pictures.png" alt="Active newspaper">
-                    </div>
+                <div class="shelf buttons neu">
+                    <button class="articles shelf-icon btn neu"><i class="fa-solid fa-newspaper"></i></button>
+                    <button class="podcasts shelf-icon btn neu"><i class="fa-solid fa-podcast"></i></button>
+                    <button class="photos shelf-icon active btn neu"><i class="fa-solid fa-images"></i></button>
                 </div>
                 <div class="main-content">
                     <section id="carousel">
-                        <div class="slider">
-                            <div class="item active" id="item-0">
+                        <div class="slider neu">
+                            <div class="item active neu" id="item-0">
                                 <div class="content"></div>
-                                <span class="learn-more">
-                                    <a href="">EN SAVOIR PLUS<div class="arrow"></div></a>
+                                <span class="neu btn">
+                                    <a href="">EN SAVOIR PLUS</a>
+                                    <i class="fa-solid fa-chevron-right center"></i>
                                 </span>
                             </div>
                             <div class="item next" id="item-1">
                                 <div class="content"></div>
-                                <span class="learn-more">
-                                    <a href="">EN SAVOIR PLUS<div class="arrow"></div></a>
+                                <span class="neu btn">
+                                    <a href="">EN SAVOIR PLUS</a>
+                                    <i class="fa-solid fa-chevron-right center"></i>
                                 </span>
                             </div>
                             <div class="item" id="item-2">
                                 <div class="content"></div>
-                                <span class="learn-more">
-                                    <a href="">EN SAVOIR PLUS<div class="arrow"></div></a>
+                                <span class="neu btn">
+                                    <a href="">EN SAVOIR PLUS</a>
+                                    <i class="fa-solid fa-chevron-right center"></i>
                                 </span>
                             </div>
                             <div class="item" id="item-3">
                                 <div class="content"></div>
-                                <span class="learn-more">
-                                    <a href="">EN SAVOIR PLUS<div class="arrow"></div></a>
+                                <span class="neu btn">
+                                    <a href="">EN SAVOIR PLUS</a>
+                                    <i class="fa-solid fa-chevron-right center"></i>
                                 </span>
                             </div>
                             <div class="item" id="item-4">
                                 <div class="content"></div>
-                                <span class="learn-more">
-                                    <a href="">EN SAVOIR PLUS<div class="arrow"></div></a>
+                                <span class="neu btn">
+                                    <a href="">EN SAVOIR PLUS</a>
+                                    <i class="fa-solid fa-chevron-right center"></i>
                                 </span>
                             </div>
                         </div>
@@ -205,17 +214,22 @@
                         </div>
                     </section>
                 </div>
+                <div class="blank"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                    <path fill="#68B3B5" fill-opacity="1"
+                        d="M0,64L48,80C96,96,192,128,288,122.7C384,117,480,75,576,64C672,53,768,75,864,112C960,149,1056,203,1152,192C1248,181,1344,107,1392,69.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+                    </path>
+                </svg>
             </div>
         </div>
         <div class="border"></div>
     </section>
     <footer id="footer">
         <div class="top">
-            <div class="search-bar">
-                <span class="input">
-                    <input placeholder="Rechercher" type="text">
-                    <button type="submit"></button>
-                </span>
+            <div class="search-bar neu center">
+                <i class="fa-solid fa-magnifying-glass center"></i>
+                <input placeholder="Rechercher" type="text">
+                <button><i class="fa-solid fa-arrow-right center"></i></button>
             </div>
             <span class="about">
                 <p class="name">Lucie Lebreton</p>
@@ -227,8 +241,8 @@
                 <p>© Guillemet Samuel - 2022</p>
             </div>
             <div class="social-media">
-                <a href="#" class="github"></a>
-                <a href="#" class="linkedin"></a>
+                <a href="#" class="github"><i class="fa-brands fa-github center"></i></a>
+                <a href="#" class="linkedin"><i class="fa-brands fa-linkedin center"></i></a>
             </div>
         </div>
     </footer>

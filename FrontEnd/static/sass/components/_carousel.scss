@@ -7,7 +7,6 @@
     width: 100%;
 
     &>.slider {
-
         position: relative;
 
         height: 100%;
@@ -16,21 +15,19 @@
         overflow: hidden;
 
         &>.item {
-
             //Position
             position: absolute;
-            display: block;
+            display: flex;
+            flex-direction: column;
             opacity: 0;
             left: -100vw;
             transition: all 0.5s ease-in-out;
 
             height: 100%;
             width: 100%;
-            border: 2px black solid;
-            border-radius: 16px;
 
             &>.content {
-                height: 75%;
+                flex-grow: 1;
                 width: 70%;
                 margin: 16px 15% 0 15%;
 
@@ -42,30 +39,16 @@
                 }
             }
 
-            &>.learn-more {
-                position: relative;
-                bottom: -3vh;
+            &>span {
+                width: max-content;
                 display: flex;
-                justify-content: center;
+                margin: 2.5% 0;
+                justify-self: center;
+                align-self: center;
 
                 &>a {
-                    display: flex;
-                    align-items: center;
-                    padding: 6px;
-                    border-radius: 10px;
-                    background: rgba(255, 255, 255, 0.8);
-                    box-shadow: inset 50.1333px -50.1333px 50.1333px rgba(149, 149, 149, 0.1), inset -50.1333px 50.1333px 50.1333px rgba(255, 255, 255, 0.1);
-                    backdrop-filter: blur(100.267px);
+                    margin-right: 8px;
                     color: black;
-
-                    &>.arrow {
-                        margin-left: 16px;
-                        border-right: 1px solid rgba(0, 0, 0, 0.3);
-                        border-top: 1px solid rgba(0, 0, 0, 0.3);
-                        transform: translateX(-25%) rotate(45deg);
-                        height: 12px;
-                        width: 12px;
-                    }
                 }
             }
 
@@ -75,7 +58,8 @@
             }
 
             &.active {
-                display: block;
+                display: flex;
+                flex-direction: column;
                 opacity: 1;
                 left: 0;
             }
@@ -91,11 +75,7 @@
         width: 95%;
         margin: 0 2.5%;
 
-        @media screen and (max-width: 768px) {
-            bottom: 22.5vh;
-        }
-
-        bottom: 30vh;
+        bottom: 50%;
 
         &>div {
             @media screen and (max-width: 768px) {

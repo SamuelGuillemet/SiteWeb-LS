@@ -1,3 +1,25 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
+
+
+.btn {
+    padding: 15px;
+    border-radius: 30px;
+    color: $gray;
+    outline: none;
+    cursor: pointer;
+
+    @media screen and (max-width: 768px) {
+        padding: 4px 8px;
+    }
+
+    &.lg {
+        font-size: 1em;
+    }
+
+    &:active {
+        cursor: pointer;
+        @include reverse-neu;
+    }
+}

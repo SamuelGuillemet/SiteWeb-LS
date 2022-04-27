@@ -7,10 +7,7 @@
     display: flex;
     flex-direction: column;
     border-bottom: 2px black solid;
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: inset 50.1333px -50.1333px 50.1333px rgba(149, 149, 149, 0.1), inset -50.1333px 50.1333px 50.1333px rgba(255, 255, 255, 0.1);
-    //backdrop-filter: blur(100.267px);
-    background-color: #d0d0d0f1;
+    background: rgba(218, 218, 218, 0.95);
 
     z-index: 100;
     position: sticky;
@@ -47,8 +44,6 @@
         }
 
         &>ul.items {
-            margin: 0;
-            padding: 0;
             list-style: none;
             display: flex;
             flex-grow: 1;
@@ -99,12 +94,14 @@
             border-radius: 100%;
             align-self: center;
             flex-shrink: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
-            &>svg {
-                height: 24px;
-                width: 24px;
-                margin: 4px;
-                color: black;
+            &>i {
+                color: $dark-gray;
+                font-size: 18px;
+                text-align: center;
             }
 
             &:hover {

@@ -9,5 +9,5 @@
         "**/node_modules": true,
         "**/venv": true,
     },
-    "liveServer.settings.port": 5505
+    "liveServer.settings.port": 5502
 }
