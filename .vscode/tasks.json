@@ -16,6 +16,19 @@
 			"problemMatcher": [],
 			"label": "npm: build-css",
 			"detail": "npm-run-all compile-sass concat-css prefix-css compress-css"
+		},
+		{
+			"label": "Migrate FrontEnd",
+			"command": "rm -rf SiteWebLS/static/ && mkdir SiteWebLS/static && mkdir SiteWebLS/static/css && cp FrontEnd/static/css/style.css SiteWebLS/static/css && cp -r FrontEnd/static/js SiteWebLS/static/js && cp -r FrontEnd/static/svg SiteWebLS/static/svg && cp -r FrontEnd/static/images SiteWebLS/static/images",
+			"type": "shell",
+			"dependsOn": [
+				"npm: build-css"
+			],
+			"problemMatcher": [],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
 		}
 	]
 }
