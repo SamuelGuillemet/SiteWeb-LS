@@ -78,10 +78,21 @@ WSGI_APPLICATION = 'SiteWebLS.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
+""" DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    }
+} """
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'DjangoDev',
+        'USER': 'dev',
+        'PASSWORD': 'q=!*w^9_izaIGD%1f3d9363-fzr94^aa8&kkw2w%f8',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 

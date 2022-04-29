@@ -10,7 +10,7 @@ L&S Site
         <ul class="items menu-items">
             <li><a href="/Photo">Galerie photos</a></li>
             <li><a href="#">Articles</a></li>
-            <li class="active"><a href="#">Acceuil</a></li>
+            <li><a href="{% url 'HomePage:home' %}">Acceuil</a></li>
             <li><a href="#">Podcasts</a></li>
             <li><a href="#">CV</a></li>
         </ul>
@@ -19,7 +19,7 @@ L&S Site
             <span></span>
             <span></span>
         </div>
-        <a href="#" class="connect">
+        <a href="{% url 'admin:index' %}" class="connect">
             <i class="fa-solid fa-user"></i>
         </a>
     </section>
@@ -27,7 +27,7 @@ L&S Site
         <ul class="items menu-items" id="nav-items">
             <li><a href="#">Galerie photos</a></li>
             <li><a href="#">Articles</a></li>
-            <li class="active"><a href="#">Acceuil</a></li>
+            <li><a href="{% url 'HomePage:home' %}">Acceuil</a></li>
             <li><a href="#">Podcasts</a></li>
             <li><a href="#">CV</a></li>
         </ul>
