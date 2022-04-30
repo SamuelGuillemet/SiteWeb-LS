@@ -52,5 +52,15 @@ $dark-gray: darken(#7e8a98, 10%);
             @include neu();
             @include btn();
         }
+
+        & .form-row {
+            &>label {
+                padding-left: 8px
+            }
+
+            &>input {
+                @include neu();
+            }
+        }
     }
 }

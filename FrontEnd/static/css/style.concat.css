@@ -1,36 +1,17 @@
-.neu {
-    -webkit-box-shadow: -5px -5px 15px 0px #ffffff9e, 5px 5px 15px 0px #a3b1c6a8;
-    box-shadow: -5px -5px 15px 0px #ffffff9e, 5px 5px 15px 0px #a3b1c6a8;
-    background: #e0e5ec;
-    border-radius: 2em;
-    border: 0;
-}
-
 .login #container {
-    -webkit-box-shadow: -5px -5px 15px 0px #ffffff9e, 5px 5px 15px 0px #a3b1c6a8;
-    box-shadow: -5px -5px 15px 0px #ffffff9e, 5px 5px 15px 0px #a3b1c6a8;
-    background: #e0e5ec;
-    border-radius: 2em;
-    border: 0;
-}
-
-.login #container>#header {
-    background-color: #e0e5ec;
-}
-
-.login #container>#header a {
-    color: black;
-    font-size: 1.8em;
-}
-
-@media screen and (max-width: 768px) {
-    .login #container>#header a {
-        font-size: 1em;
-    }
-}
-
-.login #container .submit-row>input {
-    -webkit-box-shadow: -5px -5px 15px 0px #ffffff9e, 5px 5px 15px 0px #a3b1c6a8;
+  box-shadow: -5px -5px 15px 0px #ffffff9e, 5px 5px 15px 0px #a3b1c6a8;
+  background: #e0e5ec;
+  border-radius: 2em;
+  border: 0; }
+  .login #container > #header {
+    background-color: #e0e5ec; }
+    .login #container > #header a {
+      color: black;
+      font-size: 1.8em; }
+      @media screen and (max-width: 768px) {
+        .login #container > #header a {
+          font-size: 1em; } }
+  .login #container .submit-row > input {
     box-shadow: -5px -5px 15px 0px #ffffff9e, 5px 5px 15px 0px #a3b1c6a8;
     background: #e0e5ec;
     border-radius: 2em;
@@ -39,22 +20,21 @@
     border-radius: 30px;
     color: black;
     outline: none;
-    cursor: pointer;
-}
+    cursor: pointer; }
+    @media screen and (max-width: 768px) {
+      .login #container .submit-row > input {
+        padding: 4px 8px; } }
+    .login #container .submit-row > input:active {
+      cursor: pointer;
+      box-shadow: inset -5px -5px 15px 0px #ffffff9e, inset 5px 5px 15px 0px #a3b1c6a8; }
+  .login #container .form-row > label {
+    padding-left: 8px; }
+  .login #container .form-row > input {
+    box-shadow: -5px -5px 15px 0px #ffffff9e, 5px 5px 15px 0px #a3b1c6a8;
+    background: #e0e5ec;
+    border-radius: 2em;
+    border: 0; }
 
-@media screen and (max-width: 768px) {
-    .login #container .submit-row>input {
-        padding: 4px 8px;
-    }
-}
-
-.login #container .submit-row>input:active {
-    cursor: pointer;
-    -webkit-box-shadow: inset -5px -5px 15px 0px #ffffff9e, inset 5px 5px 15px 0px #a3b1c6a8;
-    box-shadow: inset -5px -5px 15px 0px #ffffff9e, inset 5px 5px 15px 0px #a3b1c6a8;
-}
-
-/*# sourceMappingURL=additional.css.map */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -382,7 +362,7 @@ html {
  * Basic styles for links
  */
 a {
-  text-decoration: none; }
+  text-decoration: none !important; }
 
 /**
  * Basic typography style for copy text
@@ -490,26 +470,29 @@ body {
       align-self: flex-end;
       margin: 0px 32px;
       justify-items: center; }
-      #nav-menu > .top-nav > ul.items > li > a {
-        color: #000000;
-        font-family: 'PT Sans', sans-serif;
-        font-style: normal;
-        font-weight: 200;
-        font-size: 16px;
-        line-height: 11px;
-        letter-spacing: -0.015em;
-        font-size: 20px; }
-        #nav-menu > .top-nav > ul.items > li > a::after {
-          content: '';
-          display: block;
-          height: 1px;
-          background: #082251;
-          transition: all 0.3s ease-in-out;
-          visibility: hidden;
-          width: 0; }
-        #nav-menu > .top-nav > ul.items > li > a:hover::after {
-          visibility: visible;
-          width: 100%; }
+      #nav-menu > .top-nav > ul.items > li {
+        list-style-type: none !important;
+        padding: 0 !important; }
+        #nav-menu > .top-nav > ul.items > li > a {
+          color: #000000;
+          font-family: 'PT Sans', sans-serif;
+          font-style: normal;
+          font-weight: 200;
+          font-size: 16px;
+          line-height: 11px;
+          letter-spacing: -0.015em;
+          font-size: 20px; }
+          #nav-menu > .top-nav > ul.items > li > a::after {
+            content: '';
+            display: block;
+            height: 1px;
+            background: #082251;
+            transition: all 0.3s ease-in-out;
+            visibility: hidden;
+            width: 0; }
+          #nav-menu > .top-nav > ul.items > li > a:hover::after {
+            visibility: visible;
+            width: 100%; }
     #nav-menu > .top-nav > #hamburger-menu {
       display: none;
       align-self: center;
@@ -549,21 +532,23 @@ body {
       transition: height 2s, opacity 1s linear;
       margin: 0;
       padding: 0; }
-      #nav-menu > .mobile-nav > ul.items > li > a {
-        color: #000000;
-        font-family: 'PT Sans', sans-serif;
-        font-style: normal;
-        font-weight: 200;
-        font-size: 16px;
-        line-height: 11px;
-        letter-spacing: -0.015em; }
-        #nav-menu > .mobile-nav > ul.items > li > a::after {
-          content: '';
-          display: block;
-          height: 1px;
-          background: #082251;
-          transition: all 0.3s ease-in-out;
-          visibility: hidden; }
+      #nav-menu > .mobile-nav > ul.items > li {
+        list-style-type: none !important; }
+        #nav-menu > .mobile-nav > ul.items > li > a {
+          color: #000000;
+          font-family: 'PT Sans', sans-serif;
+          font-style: normal;
+          font-weight: 200;
+          font-size: 16px;
+          line-height: 11px;
+          letter-spacing: -0.015em; }
+          #nav-menu > .mobile-nav > ul.items > li > a::after {
+            content: '';
+            display: block;
+            height: 1px;
+            background: #082251;
+            transition: all 0.3s ease-in-out;
+            visibility: hidden; }
       #nav-menu > .mobile-nav > ul.items.active {
         height: max-content;
         display: flex;
@@ -1051,7 +1036,8 @@ body {
 body {
   background-image: url("../images/Background.png") !important;
   background-size: contain !important;
-  background-repeat: repeat !important; }
+  background-repeat: repeat !important;
+  padding: 0 !important; }
 
 #page-grid {
   display: grid;

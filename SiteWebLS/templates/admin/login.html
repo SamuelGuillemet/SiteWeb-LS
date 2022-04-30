@@ -3,10 +3,13 @@
 
 {% block extrastyle %}{{ block.super }}
 <link rel="stylesheet" type="text/css" href="{% static "admin/css/login.css" %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hurricane&family=PT+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 <link rel="stylesheet" type="text/css" href="{% static "/css/style.css" %}">
 {{ form.media }}
 {% endblock %}
-
 {% block bodyclass %}{{ block.super }} login{% endblock %}
 
 {% block usertools %}{% endblock %}
@@ -68,3 +71,28 @@
 
 </div>
 {% endblock %}
+
+{% block TopPage %}
+{% include 'components/header.html' %}
+<section id="page-grid">
+  <div class="border"></div>
+  <div id="MainContent" class="content">
+    {% endblock TopPage %}
+
+    {% block EndPage %}
+    <div class="blank"></div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path fill="#68B3B5" fill-opacity="1"
+        d="M0,64L48,80C96,96,192,128,288,122.7C384,117,480,75,576,64C672,53,768,75,864,112C960,149,1056,203,1152,192C1248,181,1344,107,1392,69.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+      </path>
+    </svg>
+  </div>
+  <div class="border"></div>
+</section>
+{% include 'components/footer.html' %}
+<script src="{% static 'js/script.js' %}"></script>{% endblock EndPage %}
+</div>
+<div class="border"></div>
+</section>
+{% include 'components/footer.html' %}
+<script src="{% static 'js/script.js' %}"></script>

@@ -130,7 +130,7 @@ function bookMove(drect) {
         }
     } else {
         if (drect === 'right') {
-            book.style.height = '50%'
+            book.style.height = '50%';
         } else if (drect === 'left') {
             book.style.height = '100%'
         }
@@ -163,3 +163,10 @@ for (let i = 0; i < pages.length; i++) {
 }
 
 
+var MainContent = document.getElementById("MainContent");
+var footer = document.getElementById("footer-page");
+
+MainContent.style.minHeight = "calc(100vh - 64px - " + footer.clientHeight + "px)";
+window.addEventListener('resize', () => {
+    MainContent.style.minHeight = "calc(100vh - 64px - " + footer.clientHeight + "px)";
+});

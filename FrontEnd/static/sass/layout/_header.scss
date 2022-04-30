@@ -52,28 +52,32 @@
             margin: 0px 32px;
             justify-items: center;
 
-            &>li>a {
-                color: #000000;
-                @include text();
-                font-size: 20px;
+            &>li {
+                list-style-type: none !important;
+                padding: 0 !important;
 
-                &::after {
-                    content: '';
-                    display: block;
-                    height: 1px;
-                    background: #082251;
-                    transition: all 0.3s ease-in-out;
-                    visibility: hidden;
-                    width: 0;
-                }
+                &>a {
+                    color: #000000;
+                    @include text();
+                    font-size: 20px;
 
-                &:hover {
                     &::after {
-                        visibility: visible;
-                        width: 100%;
+                        content: '';
+                        display: block;
+                        height: 1px;
+                        background: #082251;
+                        transition: all 0.3s ease-in-out;
+                        visibility: hidden;
+                        width: 0;
+                    }
+
+                    &:hover {
+                        &::after {
+                            visibility: visible;
+                            width: 100%;
+                        }
                     }
                 }
-
             }
 
         }
@@ -137,17 +141,21 @@
                 margin: 0;
                 padding: 0;
 
-                &>li>a {
-                    color: #000000;
-                    @include text();
+                &>li {
+                    list-style-type: none !important;
 
-                    &::after {
-                        content: '';
-                        display: block;
-                        height: 1px;
-                        background: #082251;
-                        transition: all 0.3s ease-in-out;
-                        visibility: hidden;
+                    &>a {
+                        color: #000000;
+                        @include text();
+
+                        &::after {
+                            content: '';
+                            display: block;
+                            height: 1px;
+                            background: #082251;
+                            transition: all 0.3s ease-in-out;
+                            visibility: hidden;
+                        }
                     }
                 }
 
