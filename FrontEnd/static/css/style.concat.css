@@ -1,4 +1,60 @@
+.neu {
+    -webkit-box-shadow: -5px -5px 15px 0px #ffffff9e, 5px 5px 15px 0px #a3b1c6a8;
+    box-shadow: -5px -5px 15px 0px #ffffff9e, 5px 5px 15px 0px #a3b1c6a8;
+    background: #e0e5ec;
+    border-radius: 2em;
+    border: 0;
+}
 
+.login #container {
+    -webkit-box-shadow: -5px -5px 15px 0px #ffffff9e, 5px 5px 15px 0px #a3b1c6a8;
+    box-shadow: -5px -5px 15px 0px #ffffff9e, 5px 5px 15px 0px #a3b1c6a8;
+    background: #e0e5ec;
+    border-radius: 2em;
+    border: 0;
+}
+
+.login #container>#header {
+    background-color: #e0e5ec;
+}
+
+.login #container>#header a {
+    color: black;
+    font-size: 1.8em;
+}
+
+@media screen and (max-width: 768px) {
+    .login #container>#header a {
+        font-size: 1em;
+    }
+}
+
+.login #container .submit-row>input {
+    -webkit-box-shadow: -5px -5px 15px 0px #ffffff9e, 5px 5px 15px 0px #a3b1c6a8;
+    box-shadow: -5px -5px 15px 0px #ffffff9e, 5px 5px 15px 0px #a3b1c6a8;
+    background: #e0e5ec;
+    border-radius: 2em;
+    border: 0;
+    padding: 15px;
+    border-radius: 30px;
+    color: black;
+    outline: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .login #container .submit-row>input {
+        padding: 4px 8px;
+    }
+}
+
+.login #container .submit-row>input:active {
+    cursor: pointer;
+    -webkit-box-shadow: inset -5px -5px 15px 0px #ffffff9e, inset 5px 5px 15px 0px #a3b1c6a8;
+    box-shadow: inset -5px -5px 15px 0px #ffffff9e, inset 5px 5px 15px 0px #a3b1c6a8;
+}
+
+/*# sourceMappingURL=additional.css.map */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -521,28 +577,28 @@ body {
     #nav-menu > .mobile-nav {
       display: none; } }
 
-#footer {
+#footer-page {
   border-top: 3px outset black;
   display: flex;
   flex-direction: column;
   width: 100%;
   background-color: rgba(218, 218, 218, 0.95); }
-  #footer > .top {
+  #footer-page > .top {
     display: flex;
     height: max-content;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap; }
     @media screen and (max-width: 620px) {
-      #footer > .top {
+      #footer-page > .top {
         justify-content: center; } }
-    #footer > .top > .search-bar {
+    #footer-page > .top > .search-bar {
       padding: 8px;
       margin: 8px 16px;
       display: flex;
       flex-direction: row;
       justify-content: center; }
-      #footer > .top > .search-bar > input {
+      #footer-page > .top > .search-bar > input {
         border: none;
         background-color: transparent;
         padding: 4px 8px;
@@ -553,41 +609,41 @@ body {
         line-height: 11px;
         letter-spacing: -0.015em;
         overflow: hidden; }
-        #footer > .top > .search-bar > input:focus {
+        #footer-page > .top > .search-bar > input:focus {
           outline: none; }
-      #footer > .top > .search-bar > button {
+      #footer-page > .top > .search-bar > button {
         background-color: transparent;
         border: none;
         font-size: 16px;
         cursor: pointer; }
-    #footer > .top > .about {
+    #footer-page > .top > .about {
       display: flex;
       flex-direction: column;
       align-items: center;
       font-family: 'PT Sans', sans-serif;
       margin: 10px 16px; }
-      #footer > .top > .about > .name {
+      #footer-page > .top > .about > .name {
         margin: 0px; }
-      #footer > .top > .about > a {
+      #footer-page > .top > .about > a {
         margin: 0px;
         color: black;
         font-style: normal; }
-  #footer > .bottom {
+  #footer-page > .bottom {
     display: flex;
     flex-direction: column;
     height: max-content;
     border-top: 1px inset black;
     align-items: center; }
-    #footer > .bottom > .social-media {
+    #footer-page > .bottom > .social-media {
       display: flex;
       flex-direction: row;
       align-items: center; }
-      #footer > .bottom > .social-media > a {
+      #footer-page > .bottom > .social-media > a {
         margin: 0px 4px 16px 4px;
         font-size: 32px; }
-      #footer > .bottom > .social-media > .github {
+      #footer-page > .bottom > .social-media > .github {
         color: black; }
-      #footer > .bottom > .social-media > .linkedin {
+      #footer-page > .bottom > .social-media > .linkedin {
         color: #0e76a8; }
 
 #breadcrumbs {
@@ -822,8 +878,7 @@ body {
   height: 100%;
   position: relative;
   transition: all 1s ease;
-  max-width: 750px;
-  max-height: 85%; }
+  max-width: 750px; }
   @media screen and (max-width: 768px) {
     .book {
       width: 100%; } }
@@ -919,7 +974,8 @@ body {
           letter-spacing: -0.015em; }
       .book > .page > div > .pagenumber {
         flex-shrink: 1;
-        align-self: center; }
+        align-self: center;
+        margin: 8px 0; }
         @media screen and (max-width: 768px) {
           .book > .page > div > .pagenumber {
             margin: 2px 0; } }
@@ -993,9 +1049,9 @@ body {
   padding: 1em 0; }
 
 body {
-  background-image: url("../images/Background.png");
-  background-size: contain;
-  background-repeat: repeat; }
+  background-image: url("../images/Background.png") !important;
+  background-size: contain !important;
+  background-repeat: repeat !important; }
 
 #page-grid {
   display: grid;
@@ -1012,24 +1068,26 @@ body {
     display: flex;
     flex-direction: column;
     max-width: calc(100vw - 32px); }
-    #page-grid > .content > div {
+    #page-grid > .content > .home {
       display: flex;
       align-items: center;
       min-height: calc(95vh - 60px);
       scroll-margin-block-start: 60px;
       flex-direction: column; }
-      #page-grid > .content > div > .main-content {
+      #page-grid > .content > .home > .main-content {
         display: flex;
         justify-content: center;
         margin: 32px;
         width: calc(100% - 64px);
         height: 60vh; }
         @media screen and (max-width: 768px) {
-          #page-grid > .content > div > .main-content {
+          #page-grid > .content > .home > .main-content {
             height: 50vh; } }
-      #page-grid > .content > div > .blank {
+      #page-grid > .content > .home > .blank {
         flex-grow: 1;
         width: 100%; }
+    #page-grid > .content > #articles > .main-content {
+      height: 50vh; }
     #page-grid > .content > #podcasts > .main-content {
       align-items: center;
       max-width: 600px; }

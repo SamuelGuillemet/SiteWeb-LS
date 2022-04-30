@@ -6,6 +6,7 @@
   "scripts": {
     "watch-sass": "node-sass FrontEnd/static/sass/main.scss FrontEnd/static/css/style.temp.css --watch",
     "compile-sass": "node-sass FrontEnd/static/sass/main.scss FrontEnd/static/css/style.comp.css",
+    "compile-additional-sass": "node-sass FrontEnd/static/admin/scss/additional.scss FrontEnd/static/admin/css/additional.css",
     "concat-css": "concat -o FrontEnd/static/css/style.concat.css FrontEnd/static/css/additional.css FrontEnd/static/css/style.comp.css",
     "prefix-css": "postcss --use autoprefixer -b 'last 5 versions' FrontEnd/static/css/style.concat.css -o FrontEnd/static/css/style.prefix.css",
     "compress-css": "node-sass FrontEnd/static/css/style.prefix.css FrontEnd/static/css/style.css --output-style compressed",

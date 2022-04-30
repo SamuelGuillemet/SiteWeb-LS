@@ -1,241 +1,185 @@
-{% extends 'base.html' %}
+{% extends 'base_site.html' %}
 {% block title %}
 L&S Site
 {% endblock title %}
 
-{% block body %}
-<header id="nav-menu">
-    <section class="top-nav">
-        <h1>L&S Site</h1>
-        <ul class="items menu-items">
-            <li><a href="/Photo">Galerie photos</a></li>
-            <li><a href="#">Articles</a></li>
-            <li><a href="{% url 'HomePage:home' %}">Acceuil</a></li>
-            <li><a href="#">Podcasts</a></li>
-            <li><a href="#">CV</a></li>
-        </ul>
-        <div id="hamburger-menu">
-            <span></span>
-            <span></span>
-            <span></span>
+{% block MainContent %}
+<div id="articles" class="home">
+    <div class="shelf buttons neu">
+        <button class="articles shelf-icon active btn neu"><i class="fa-solid fa-newspaper"></i></button>
+        <button class="podcasts shelf-icon btn neu"><i class="fa-solid fa-podcast"></i></button>
+        <button class="photos shelf-icon btn neu"><i class="fa-solid fa-images"></i></button>
+    </div>
+    <div class="main-content">
+        <div class="book">
+            <div class="page active neu">
+                <div class="front">
+                    <h1 class="title">Aperçu des articles</h1>
+                </div>
+                <div class="back">
+                    <h1 class="title">
+                        L’Afrique face à un embouteillage de vaccins contre le Covid-19
+                    </h1>
+                    <div class="synopsis">
+                        Après avoir souffert d’une pénurie de vaccins au pic de la pandémie de Covid-19,
+                        l’Afrique croule aujourd’hui sous des millions de doses que la plupart des pays
+                        ne
+                        sont pas en mesure d’absorber. En cause, le manque de moyens logistiques pour
+                        les
+                        distribuer, ou de volontaires parmi des populations, toujours peu convaincues de
+                        la
+                        nécessité de se protéger par la vaccination. Les dons promis par les pays riches
+                        dans le cadre d’accords bilatéraux, et les livraisons assurées à travers le
+                        mécanisme de solidarité internationale Covax affluent de manière désordonnée et
+                        avec
+                        des délais d’expiration encore trop courts.
+                    </div>
+                    <div class="learn-more btn neu">
+                        <a href="">EN SAVOIR PLUS</a>
+                        <i class="fa-solid fa-chevron-right center"></i>
+                    </div>
+                    <div class="pagenumber">1</div>
+                </div>
+            </div>
+            <div class="page neu">
+                <div class="front">
+                    <h1 class="title"></h1>
+                    <div class="synopsis"></div>
+                    <div class="learn-more btn neu">
+                        <a href="">EN SAVOIR PLUS</a>
+                        <i class="fa-solid fa-chevron-right center"></i>
+                    </div>
+                    <div class="pagenumber">2</div>
+                </div>
+                <div class="back">
+                    <h1 class="title"></h1>
+                    <div class="synopsis"></div>
+                    <div class="learn-more btn neu">
+                        <a href="">EN SAVOIR PLUS</a>
+                        <i class="fa-solid fa-chevron-right center"></i>
+                    </div>
+                    <div class="pagenumber">3</div>
+                </div>
+            </div>
+            <div class="page neu">
+                <div class="front">
+                    <h1 class="title"></h1>
+                    <div class="synopsis"></div>
+                    <div class="learn-more btn neu">
+                        <a href="">EN SAVOIR PLUS</a>
+                        <i class="fa-solid fa-chevron-right center"></i>
+                    </div>
+                    <div class="pagenumber">4</div>
+                </div>
+            </div>
         </div>
-        <a href="{% url 'admin:index' %}" class="connect">
-            <i class="fa-solid fa-user"></i>
-        </a>
-    </section>
-    <section class="mobile-nav">
-        <ul class="items menu-items" id="nav-items">
-            <li><a href="#">Galerie photos</a></li>
-            <li><a href="#">Articles</a></li>
-            <li><a href="{% url 'HomePage:home' %}">Acceuil</a></li>
-            <li><a href="#">Podcasts</a></li>
-            <li><a href="#">CV</a></li>
-        </ul>
-    </section>
-</header>
+    </div>
+    <div class="blank"></div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#68B3B5" fill-opacity="1"
+            d="M0,64L48,80C96,96,192,128,288,122.7C384,117,480,75,576,64C672,53,768,75,864,112C960,149,1056,203,1152,192C1248,181,1344,107,1392,69.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+        </path>
+    </svg>
+</div>
+<div id="podcasts" class="home">
+    <div class="shelf buttons neu">
+        <button class="articles shelf-icon btn neu"><i class="fa-solid fa-newspaper"></i></button>
+        <button class="podcasts shelf-icon active btn neu"><i class="fa-solid fa-podcast"></i></button>
+        <button class="photos shelf-icon btn neu"><i class="fa-solid fa-images"></i></button>
+    </div>
+    <div class="main-content">
+        <div class="iphone neu">
+            <div class="title">
+                <div>NOW PLAYING</div>
+            </div>
+            <div class="album-cover">
+                <div class="image"></div>
+                <h2 class="song-title">
+                    Redbone
+                </h2>
+                <h3 class="artist-title">
+                    Childish Gambino
+                </h3>
+            </div>
+            <div class="buttons">
+                <button class="btn lg neu"><i class="fas fa-backward"></i></button>
+                <button class="btn lg neu"><i class="fas fa-play"></i></button>
+                <button class="btn lg neu"><i class="fas fa-forward"></i></button>
+            </div>
+            <div class="track neu">
+                <div></div>
+            </div>
+            <div class="lyrics">
+                <i class="fas fa-angle-up"></i>
+                <span>LYRICS</span>
+            </div>
+        </div>
+    </div>
+    <div class="blank"></div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#68B3B5" fill-opacity="1"
+            d="M0,64L48,80C96,96,192,128,288,122.7C384,117,480,75,576,64C672,53,768,75,864,112C960,149,1056,203,1152,192C1248,181,1344,107,1392,69.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+        </path>
+    </svg>
+</div>
+<div id="photos" class="home">
+    <div class="shelf buttons neu">
+        <button class="articles shelf-icon btn neu"><i class="fa-solid fa-newspaper"></i></button>
+        <button class="podcasts shelf-icon btn neu"><i class="fa-solid fa-podcast"></i></button>
+        <button class="photos shelf-icon active btn neu"><i class="fa-solid fa-images"></i></button>
+    </div>
+    <div class="main-content">
+        <section id="carousel">
+            <div class="slider neu">
+                <div class="item active neu" id="item-0">
+                    <div class="content"></div>
+                    <span class="neu btn">
+                        <a href="">EN SAVOIR PLUS</a>
+                        <i class="fa-solid fa-chevron-right center"></i>
+                    </span>
+                </div>
+                <div class="item next" id="item-1">
+                    <div class="content"></div>
+                    <span class="neu btn">
+                        <a href="">EN SAVOIR PLUS</a>
+                        <i class="fa-solid fa-chevron-right center"></i>
+                    </span>
+                </div>
+                <div class="item" id="item-2">
+                    <div class="content"></div>
+                    <span class="neu btn">
+                        <a href="">EN SAVOIR PLUS</a>
+                        <i class="fa-solid fa-chevron-right center"></i>
+                    </span>
+                </div>
+                <div class="item" id="item-3">
+                    <div class="content"></div>
+                    <span class="neu btn">
+                        <a href="">EN SAVOIR PLUS</a>
+                        <i class="fa-solid fa-chevron-right center"></i>
+                    </span>
+                </div>
+                <div class="item" id="item-4">
+                    <div class="content"></div>
+                    <span class="neu btn">
+                        <a href="">EN SAVOIR PLUS</a>
+                        <i class="fa-solid fa-chevron-right center"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="control">
+                <div class="arrow-left" id="carousel-arrow-left"></div>
+                <div class="arrow-right" id="carousel-arrow-right"></div>
+            </div>
+        </section>
+    </div>
+    <div class="blank"></div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#68B3B5" fill-opacity="1"
+            d="M0,64L48,80C96,96,192,128,288,122.7C384,117,480,75,576,64C672,53,768,75,864,112C960,149,1056,203,1152,192C1248,181,1344,107,1392,69.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+        </path>
+    </svg>
+</div>
 
-<section id="page-grid">
-    <div class="border"></div>
-    <div class="content">
-        <div id="articles">
-            <div class="shelf buttons neu">
-                <button class="articles shelf-icon active btn neu"><i class="fa-solid fa-newspaper"></i></button>
-                <button class="podcasts shelf-icon btn neu"><i class="fa-solid fa-podcast"></i></button>
-                <button class="photos shelf-icon btn neu"><i class="fa-solid fa-images"></i></button>
-            </div>
-            <div class="main-content">
-                <div class="book">
-                    <div class="page active neu">
-                        <div class="front">
-                            <h1 class="title">Aperçu des articles</h1>
-                        </div>
-                        <div class="back">
-                            <h1 class="title">
-                                L’Afrique face à un embouteillage de vaccins contre le Covid-19
-                            </h1>
-                            <div class="synopsis">
-                                Après avoir souffert d’une pénurie de vaccins au pic de la pandémie de Covid-19,
-                                l’Afrique croule aujourd’hui sous des millions de doses que la plupart des pays
-                                ne
-                                sont pas en mesure d’absorber. En cause, le manque de moyens logistiques pour
-                                les
-                                distribuer, ou de volontaires parmi des populations, toujours peu convaincues de
-                                la
-                                nécessité de se protéger par la vaccination. Les dons promis par les pays riches
-                                dans le cadre d’accords bilatéraux, et les livraisons assurées à travers le
-                                mécanisme de solidarité internationale Covax affluent de manière désordonnée et
-                                avec
-                                des délais d’expiration encore trop courts.
-                            </div>
-                            <div class="learn-more btn neu">
-                                <a href="">EN SAVOIR PLUS</a>
-                                <i class="fa-solid fa-chevron-right center"></i>
-                            </div>
-                            <div class="pagenumber">1</div>
-                        </div>
-                    </div>
-                    <div class="page neu">
-                        <div class="front">
-                            <h1 class="title"></h1>
-                            <div class="synopsis"></div>
-                            <div class="learn-more btn neu">
-                                <a href="">EN SAVOIR PLUS</a>
-                                <i class="fa-solid fa-chevron-right center"></i>
-                            </div>
-                            <div class="pagenumber">2</div>
-                        </div>
-                        <div class="back">
-                            <h1 class="title"></h1>
-                            <div class="synopsis"></div>
-                            <div class="learn-more btn neu">
-                                <a href="">EN SAVOIR PLUS</a>
-                                <i class="fa-solid fa-chevron-right center"></i>
-                            </div>
-                            <div class="pagenumber">3</div>
-                        </div>
-                    </div>
-                    <div class="page neu">
-                        <div class="front">
-                            <h1 class="title"></h1>
-                            <div class="synopsis"></div>
-                            <div class="learn-more btn neu">
-                                <a href="">EN SAVOIR PLUS</a>
-                                <i class="fa-solid fa-chevron-right center"></i>
-                            </div>
-                            <div class="pagenumber">4</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="blank"></div>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="#68B3B5" fill-opacity="1"
-                    d="M0,64L48,80C96,96,192,128,288,122.7C384,117,480,75,576,64C672,53,768,75,864,112C960,149,1056,203,1152,192C1248,181,1344,107,1392,69.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
-                </path>
-            </svg>
-        </div>
-        <div id="podcasts">
-            <div class="shelf buttons neu">
-                <button class="articles shelf-icon btn neu"><i class="fa-solid fa-newspaper"></i></button>
-                <button class="podcasts shelf-icon active btn neu"><i class="fa-solid fa-podcast"></i></button>
-                <button class="photos shelf-icon btn neu"><i class="fa-solid fa-images"></i></button>
-            </div>
-            <div class="main-content">
-                <div class="iphone neu">
-                    <div class="title">
-                        <div>NOW PLAYING</div>
-                    </div>
-                    <div class="album-cover">
-                        <div class="image"></div>
-                        <h2 class="song-title">
-                            Redbone
-                        </h2>
-                        <h3 class="artist-title">
-                            Childish Gambino
-                        </h3>
-                    </div>
-                    <div class="buttons">
-                        <button class="btn lg neu"><i class="fas fa-backward"></i></button>
-                        <button class="btn lg neu"><i class="fas fa-play"></i></button>
-                        <button class="btn lg neu"><i class="fas fa-forward"></i></button>
-                    </div>
-                    <div class="track neu">
-                        <div></div>
-                    </div>
-                    <div class="lyrics">
-                        <i class="fas fa-angle-up"></i>
-                        <span>LYRICS</span>
-                    </div>
-                </div>
-            </div>
-            <div class="blank"></div>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="#68B3B5" fill-opacity="1"
-                    d="M0,64L48,80C96,96,192,128,288,122.7C384,117,480,75,576,64C672,53,768,75,864,112C960,149,1056,203,1152,192C1248,181,1344,107,1392,69.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
-                </path>
-            </svg>
-        </div>
-        <div id="photos">
-            <div class="shelf buttons neu">
-                <button class="articles shelf-icon btn neu"><i class="fa-solid fa-newspaper"></i></button>
-                <button class="podcasts shelf-icon btn neu"><i class="fa-solid fa-podcast"></i></button>
-                <button class="photos shelf-icon active btn neu"><i class="fa-solid fa-images"></i></button>
-            </div>
-            <div class="main-content">
-                <section id="carousel">
-                    <div class="slider neu">
-                        <div class="item active neu" id="item-0">
-                            <div class="content"></div>
-                            <span class="neu btn">
-                                <a href="">EN SAVOIR PLUS</a>
-                                <i class="fa-solid fa-chevron-right center"></i>
-                            </span>
-                        </div>
-                        <div class="item next" id="item-1">
-                            <div class="content"></div>
-                            <span class="neu btn">
-                                <a href="">EN SAVOIR PLUS</a>
-                                <i class="fa-solid fa-chevron-right center"></i>
-                            </span>
-                        </div>
-                        <div class="item" id="item-2">
-                            <div class="content"></div>
-                            <span class="neu btn">
-                                <a href="">EN SAVOIR PLUS</a>
-                                <i class="fa-solid fa-chevron-right center"></i>
-                            </span>
-                        </div>
-                        <div class="item" id="item-3">
-                            <div class="content"></div>
-                            <span class="neu btn">
-                                <a href="">EN SAVOIR PLUS</a>
-                                <i class="fa-solid fa-chevron-right center"></i>
-                            </span>
-                        </div>
-                        <div class="item" id="item-4">
-                            <div class="content"></div>
-                            <span class="neu btn">
-                                <a href="">EN SAVOIR PLUS</a>
-                                <i class="fa-solid fa-chevron-right center"></i>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="control">
-                        <div class="arrow-left" id="carousel-arrow-left"></div>
-                        <div class="arrow-right" id="carousel-arrow-right"></div>
-                    </div>
-                </section>
-            </div>
-            <div class="blank"></div>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="#68B3B5" fill-opacity="1"
-                    d="M0,64L48,80C96,96,192,128,288,122.7C384,117,480,75,576,64C672,53,768,75,864,112C960,149,1056,203,1152,192C1248,181,1344,107,1392,69.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
-                </path>
-            </svg>
-        </div>
-    </div>
-    <div class="border"></div>
-</section>
-<footer id="footer">
-    <div class="top">
-        <div class="search-bar neu center">
-            <i class="fa-solid fa-magnifying-glass center"></i>
-            <input placeholder="Rechercher" type="text">
-            <button><i class="fa-solid fa-arrow-right center"></i></button>
-        </div>
-        <span class="about">
-            <p class="name">Lucie Lebreton</p>
-            <a href="mailto:lucie.lebreton12@gmail.com">lucie.lebreton12@gmail.com</a>
-        </span>
-    </div>
-    <div class="bottom">
-        <div class="copyright">
-            <p>© Guillemet Samuel - 2022</p>
-        </div>
-        <div class="social-media">
-            <a href="#" class="github"><i class="fa-brands fa-github center"></i></a>
-            <a href="#" class="linkedin"><i class="fa-brands fa-linkedin center"></i></a>
-        </div>
-    </div>
-</footer>
-{%endblock body%}
+
+{%endblock MainContent%}

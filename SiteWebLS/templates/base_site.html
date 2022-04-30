@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block body %}
+<header id="nav-menu">
+    <section class="top-nav">
+        <h1>L&S Site</h1>
+        <ul class="items menu-items">
+            <li><a href="/Photo">Galerie photos</a></li>
+            <li><a href="#">Articles</a></li>
+            <li><a href="{% url 'HomePage:home' %}">Acceuil</a></li>
+            <li><a href="#">Podcasts</a></li>
+            <li><a href="#">CV</a></li>
+        </ul>
+        <div id="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <a href="{% url 'admin:index' %}" class="connect">
+            <i class="fa-solid fa-user"></i>
+        </a>
+    </section>
+    <section class="mobile-nav">
+        <ul class="items menu-items" id="nav-items">
+            <li><a href="#">Galerie photos</a></li>
+            <li><a href="#">Articles</a></li>
+            <li><a href="{% url 'HomePage:home' %}">Acceuil</a></li>
+            <li><a href="#">Podcasts</a></li>
+            <li><a href="#">CV</a></li>
+        </ul>
+    </section>
+</header>
+<section id="page-grid">
+    <div class="border"></div>
+    <div class="content">
+        {% block MainContent %}{% endblock %}
+    </div>
+    <div class="border"></div>
+</section>
+<footer id="footer-page">
+    <div class="top">
+        <div class="search-bar neu center">
+            <i class="fa-solid fa-magnifying-glass center"></i>
+            <input placeholder="Rechercher" type="text">
+            <button><i class="fa-solid fa-arrow-right center"></i></button>
+        </div>
+        <span class="about">
+            <p class="name">Lucie Lebreton</p>
+            <a href="mailto:lucie.lebreton12@gmail.com">lucie.lebreton12@gmail.com</a>
+        </span>
+    </div>
+    <div class="bottom">
+        <div class="copyright">
+            <p>© Guillemet Samuel - 2022</p>
+        </div>
+        <div class="social-media">
+            <a href="#" class="github"><i class="fa-brands fa-github center"></i></a>
+            <a href="#" class="linkedin"><i class="fa-brands fa-linkedin center"></i></a>
+        </div>
+    </div>
+</footer>
+{% endblock body %}

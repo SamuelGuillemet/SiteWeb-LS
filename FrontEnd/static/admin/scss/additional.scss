@@ -1,0 +1,56 @@
+@mixin reverse-neu {
+    box-shadow: inset -5px -5px 15px 0px #ffffff9e,
+        inset 5px 5px 15px 0px #a3b1c6a8;
+}
+
+@mixin neu {
+    box-shadow: -5px -5px 15px 0px #ffffff9e, 5px 5px 15px 0px #a3b1c6a8;
+    background: $background-gray;
+    border-radius: 2em;
+    border: 0;
+}
+
+$background-gray: #e0e5ec;
+$gray: #7e8a98;
+$dark-gray: darken(#7e8a98, 10%);
+
+@mixin btn {
+    padding: 15px;
+    border-radius: 30px;
+    color: black;
+    outline: none;
+    cursor: pointer;
+
+    @media screen and (max-width: 768px) {
+        padding: 4px 8px;
+    }
+
+    &:active {
+        cursor: pointer;
+        @include reverse-neu;
+    }
+}
+
+.login {
+    #container {
+        @include neu();
+
+        &>#header {
+            background-color: $background-gray;
+
+            & a {
+                color: black;
+                font-size: 1.8em;
+
+                @media screen and (max-width: 768px) {
+                    font-size: 1em;
+                }
+            }
+        }
+
+        & .submit-row>input {
+            @include neu();
+            @include btn();
+        }
+    }
+}

@@ -2,9 +2,9 @@
 // This file contains styles that are specific to the home page.
 // -----------------------------------------------------------------------------
 body {
-    background-image: url('../images/Background.png');
-    background-size: contain;
-    background-repeat: repeat;
+    background-image: url('../images/Background.png') !important;
+    background-size: contain !important;
+    background-repeat: repeat !important;
 }
 
 
@@ -27,7 +27,7 @@ body {
         max-width: calc(100vw - 32px);
 
 
-        &>div {
+        &>.home {
             display: flex;
             align-items: center;
             min-height: calc(95vh - 60px);
@@ -49,6 +49,12 @@ body {
             &>.blank {
                 flex-grow: 1;
                 width: 100%;
+            }
+        }
+
+        &>#articles {
+            &>.main-content {
+                height: 50vh;
             }
         }
 

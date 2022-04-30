@@ -5,7 +5,7 @@
     position: relative;
     transition: all 1s ease;
     max-width: 750px;
-    max-height: 85%;
+    //max-height: 85%;
 
     @media screen and (max-width: 768px) {
         width: 100%;
@@ -141,6 +141,7 @@
             &>.pagenumber {
                 flex-shrink: 1;
                 align-self: center;
+                margin: 8px 0;
 
                 @media screen and (max-width: 768px) {
                     margin: 2px 0;

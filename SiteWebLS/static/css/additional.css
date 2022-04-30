@@ -1,0 +1,29 @@
+.login #container {
+  box-shadow: -5px -5px 15px 0px #ffffff9e, 5px 5px 15px 0px #a3b1c6a8;
+  background: #e0e5ec;
+  border-radius: 2em;
+  border: 0; }
+  .login #container > #header {
+    background-color: #e0e5ec; }
+    .login #container > #header a {
+      color: black;
+      font-size: 1.8em; }
+      @media screen and (max-width: 768px) {
+        .login #container > #header a {
+          font-size: 1em; } }
+  .login #container .submit-row > input {
+    box-shadow: -5px -5px 15px 0px #ffffff9e, 5px 5px 15px 0px #a3b1c6a8;
+    background: #e0e5ec;
+    border-radius: 2em;
+    border: 0;
+    padding: 15px;
+    border-radius: 30px;
+    color: black;
+    outline: none;
+    cursor: pointer; }
+    @media screen and (max-width: 768px) {
+      .login #container .submit-row > input {
+        padding: 4px 8px; } }
+    .login #container .submit-row > input:active {
+      cursor: pointer;
+      box-shadow: inset -5px -5px 15px 0px #ffffff9e, inset 5px 5px 15px 0px #a3b1c6a8; }

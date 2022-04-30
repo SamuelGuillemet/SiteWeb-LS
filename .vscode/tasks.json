@@ -19,16 +19,25 @@
 		},
 		{
 			"label": "Migrate FrontEnd",
-			"command": "rm -rf SiteWebLS/static/ && mkdir SiteWebLS/static && mkdir SiteWebLS/static/css && cp FrontEnd/static/css/style.css SiteWebLS/static/css && cp -r FrontEnd/static/js SiteWebLS/static/js && cp -r FrontEnd/static/svg SiteWebLS/static/svg && cp -r FrontEnd/static/images SiteWebLS/static/images",
+			"command": "rm -rf SiteWebLS/static/ && mkdir SiteWebLS/static && mkdir SiteWebLS/static/css && cp FrontEnd/static/css/style.css SiteWebLS/static/css && cp -r FrontEnd/static/js SiteWebLS/static/js && cp -r FrontEnd/static/svg SiteWebLS/static/svg && cp -r FrontEnd/static/images SiteWebLS/static/images && cp FrontEnd/static/admin/css/additional.css SiteWebLS/static/css",
 			"type": "shell",
 			"dependsOn": [
-				"npm: build-css"
+				"npm: build-css",
+				"npm: compile-additional-sass"
 			],
 			"problemMatcher": [],
 			"group": {
 				"kind": "build",
 				"isDefault": true
 			}
+		},
+		{
+			"type": "npm",
+			"script": "compile-additional-sass",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: compile-additional-sass",
+			"detail": "node-sass FrontEnd/static/admin/scss/additional.scss FrontEnd/static/admin/css/additional.css"
 		}
 	]
 }
