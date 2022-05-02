@@ -5,8 +5,23 @@
 
 {% block MainContent %}
 
-<h2>{% translate 'Page not found' %}</h2>
+<div class="container-404">
+    <div class="number">
+        <div class="letter--1 letter">4</div>
+        <div class="letter--2 letter">0</div>
+        <div class="letter--3 letter">4</div>
+    </div>
+    <h2 class="not-found">PAGE NOT FOUND</h2>
+    <p>
+        The page you are looking for might have been removed had its name changed or is temporarily
+        unavailable.
+        Please try the following:
+    </p>
+    <button class="btn neu" onclick="window.location.href='/'">
+        <i class="fa-solid fa-home"></i>
+        <span>Home page</span>
+    </button>
+</div>
 
-<p>{% translate 'We’re sorry, but the requested page could not be found.' %}</p>
 
 {% endblock %}
