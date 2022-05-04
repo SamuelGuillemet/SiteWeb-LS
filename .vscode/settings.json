@@ -10,5 +10,6 @@
         "**/node_modules": true,
         "**/venv": false,
     },
-    "liveServer.settings.port": 5501
+    "liveServer.settings.port": 5501,
+    "java.dependency.syncWithFolderExplorer": false
 }

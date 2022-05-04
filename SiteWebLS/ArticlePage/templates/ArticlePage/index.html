@@ -55,6 +55,8 @@
             <button class="choice-publi-btn"
                 name="{{article.publication}}">{{article.publication|publihandle:'NO'}}</button>
         </div>
+        {% empty %}
+        <h1>Désolé il n'existe aucun article correspondant à votre sélection...</h1>
         {% endfor %}
     </div>
 </div>

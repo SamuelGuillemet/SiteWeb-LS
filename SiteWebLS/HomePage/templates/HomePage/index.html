@@ -1,4 +1,5 @@
 {% extends 'base_site.html' %}
+{% load extra_home %}
 {% block title %}
 L&S Site
 {% endblock title %}
@@ -12,66 +13,38 @@ L&S Site
     </div>
     <div class="main-content">
         <div class="book">
-            <div class="page active neu">
+            {% for article in article_list %}
+            {% if forloop.counter|modulo:'even' or forloop.first %}
+            <div class="page {% if forloop.first %}active {% endif %}neu">
+                {% endif %}
+                {% if forloop.first %}
                 <div class="front">
                     <h1 class="title">Aperçu des articles</h1>
                 </div>
                 <div class="back">
-                    <h1 class="title">
-                        L’Afrique face à un embouteillage de vaccins contre le Covid-19
-                    </h1>
-                    <div class="synopsis">
-                        Après avoir souffert d’une pénurie de vaccins au pic de la pandémie de Covid-19,
-                        l’Afrique croule aujourd’hui sous des millions de doses que la plupart des pays
-                        ne
-                        sont pas en mesure d’absorber. En cause, le manque de moyens logistiques pour
-                        les
-                        distribuer, ou de volontaires parmi des populations, toujours peu convaincues de
-                        la
-                        nécessité de se protéger par la vaccination. Les dons promis par les pays riches
-                        dans le cadre d’accords bilatéraux, et les livraisons assurées à travers le
-                        mécanisme de solidarité internationale Covax affluent de manière désordonnée et
-                        avec
-                        des délais d’expiration encore trop courts.
-                    </div>
+                    <h1 class="title">{{article.title}}</h1>
+                    <div class="synopsis">{{article.article}}</div>
                     <div class="learn-more btn neu">
-                        <a href="">EN SAVOIR PLUS</a>
+                        <a href="#">EN SAVOIR PLUS</a>
                         <i class="fa-solid fa-chevron-right center"></i>
                     </div>
-                    <div class="pagenumber">1</div>
+                    <div class="pagenumber">{{forloop.counter}}</div>
                 </div>
+                {% else %}
+                <div class="{% if forloop.counter|modulo:'even' %}front{% else %}back{% endif %}">
+                    <h1 class="title">{{article.title}}</h1>
+                    <div class="synopsis">{{article.article}}</div>
+                    <div class="learn-more btn neu">
+                        <a href="#">EN SAVOIR PLUS</a>
+                        <i class="fa-solid fa-chevron-right center"></i>
+                    </div>
+                    <div class="pagenumber">{{forloop.counter}}</div>
+                </div>
+                {% endif %}
+                {% if forloop.counter|modulo:'odd' or forloop.first or forloop.last %}
             </div>
-            <div class="page neu">
-                <div class="front">
-                    <h1 class="title"></h1>
-                    <div class="synopsis"></div>
-                    <div class="learn-more btn neu">
-                        <a href="">EN SAVOIR PLUS</a>
-                        <i class="fa-solid fa-chevron-right center"></i>
-                    </div>
-                    <div class="pagenumber">2</div>
-                </div>
-                <div class="back">
-                    <h1 class="title"></h1>
-                    <div class="synopsis"></div>
-                    <div class="learn-more btn neu">
-                        <a href="">EN SAVOIR PLUS</a>
-                        <i class="fa-solid fa-chevron-right center"></i>
-                    </div>
-                    <div class="pagenumber">3</div>
-                </div>
-            </div>
-            <div class="page neu">
-                <div class="front">
-                    <h1 class="title"></h1>
-                    <div class="synopsis"></div>
-                    <div class="learn-more btn neu">
-                        <a href="">EN SAVOIR PLUS</a>
-                        <i class="fa-solid fa-chevron-right center"></i>
-                    </div>
-                    <div class="pagenumber">4</div>
-                </div>
-            </div>
+            {% endif %}
+            {% endfor %}
         </div>
     </div>
     <div class="blank"></div>
