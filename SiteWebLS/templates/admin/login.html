@@ -73,7 +73,7 @@
 {% endblock %}
 
 {% block TopPage %}
-{% include 'components/header.html' %}
+{% include 'include/header.html' %}
 <section id="page-grid">
   <div class="border"></div>
   <div id="MainContent" class="content">
@@ -89,10 +89,6 @@
   </div>
   <div class="border"></div>
 </section>
-{% include 'components/footer.html' %}
-<script src="{% static 'js/script.js' %}"></script>{% endblock EndPage %}
-</div>
-<div class="border"></div>
-</section>
-{% include 'components/footer.html' %}
+{% include 'include/footer.html' %}
 <script src="{% static 'js/script.js' %}"></script>
+{% endblock EndPage %}

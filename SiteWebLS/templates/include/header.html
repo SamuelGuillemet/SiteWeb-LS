@@ -3,7 +3,7 @@
         <h1>L&S Site</h1>
         <ul class="items menu-items">
             <li><a href="/Photo">Galerie photos</a></li>
-            <li><a href="#">Articles</a></li>
+            <li><a href="{% url 'ArticlePage:home' %}">Articles</a></li>
             <li><a href="{% url 'HomePage:home' %}">Accueil</a></li>
             <li><a href="#">Podcasts</a></li>
             <li><a href="#">CV</a></li>
@@ -20,7 +20,7 @@
     <section class="mobile-nav">
         <ul class="items menu-items" id="nav-items">
             <li><a href="#">Galerie photos</a></li>
-            <li><a href="#">Articles</a></li>
+            <li><a href="{% url 'ArticlePage:home' %}">Articles</a></li>
             <li><a href="{% url 'HomePage:home' %}">Accueil</a></li>
             <li><a href="#">Podcasts</a></li>
             <li><a href="#">CV</a></li>

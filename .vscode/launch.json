@@ -1,0 +1,15 @@
+{
+    "configurations": [
+        {
+            "name": "Python : Django",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/SiteWebLS/manage.py",
+            "args": [
+                "runserver"
+            ],
+            "django": true,
+            "justMyCode": true
+        }
+    ]
+}

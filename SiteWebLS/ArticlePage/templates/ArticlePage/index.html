@@ -1,0 +1,31 @@
+{% extends 'base_site.html' %}
+{% load extra_article %}
+{% load static %}
+
+{% block MainContent %}
+<div class="container">
+    {% for themeId in theme_list %}
+    <div class="choice">
+        <input type="checkbox" name="{{themeId}}" id="{{themeId}}">
+        <label for="{{themeId}}">{{themeId|themehandle:None}}</label>
+    </div>
+    {% endfor %}
+    {% for publiId in publi_list %}
+    <div class="choice-publi">
+        <input type="checkbox" name="{{publiId}}" id="publication">
+        <label for="{{publiId}}">{{publiId|publihandle:None}}</label>
+    </div>
+    {% endfor %}
+    {% for article in article_list %}
+    <h1>{{article.title}}</h1>
+    <h2>{{article.author}}</h2>
+    {% for themeId in theme_list %}
+    <h3>{{themeId}} - {{ article.theme|getattribute:themeId}}</h3>
+    {% endfor %}
+    {% endfor %}
+</div>
+{% endblock %}
+
+{% block extraScript %}
+<script src="{% static 'js/article.js' %}"></script>
+{% endblock extraScript %}
