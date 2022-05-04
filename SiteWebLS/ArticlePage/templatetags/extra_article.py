@@ -17,6 +17,8 @@ register.filter('getattribute', getattribute)
 def themehandle(value, arg):
     name = Theme._meta.get_field(value).verbose_name
     number = Theme.objects.filter(**{value: True}).count()
+    if arg == 'NO':
+        return name
     return name + " : " + number.__str__()
 
 
@@ -30,6 +32,8 @@ def publicationhandle(value, arg):
         if choice[0] == value:
             name = choice[1]
             break
+    if arg == 'NO':
+        return name
     number = Article.objects.filter(**{'publication': value}).count()
     return name + " : " + number.__str__()
 

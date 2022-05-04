@@ -33,5 +33,6 @@ def createFilter(request):
                     value = request.GET.get(para, None) == 'True'
                     filter = {'theme__{}'.format(para): value}
                     Q_filter2 = Q(**filter) | Q_filter2
+            qo = Q_filter1 & Q_filter2
             queryset = queryset.filter(Q_filter1 & Q_filter2)
             return queryset

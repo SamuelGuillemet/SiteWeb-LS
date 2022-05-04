@@ -78,3 +78,15 @@
     opacity: 1;
   }
 }
+
+.blank {
+  flex-grow: 1;
+  width: 100%;
+  border: none !important;
+}
+
+@keyframes check {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

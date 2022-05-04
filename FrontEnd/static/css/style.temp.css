@@ -402,6 +402,15 @@ body {
     transform: translateY(0);
     opacity: 1; } }
 
+.blank {
+  flex-grow: 1;
+  width: 100%;
+  border: none !important; }
+
+@keyframes check {
+  to {
+    stroke-dashoffset: 0; } }
+
 #nav-menu {
   display: flex;
   flex-direction: column;
@@ -1042,9 +1051,6 @@ body {
         @media screen and (max-width: 768px) {
           #page-grid > .content > .home > .main-content {
             height: 50vh; } }
-      #page-grid > .content > .home > .blank {
-        flex-grow: 1;
-        width: 100%; }
     #page-grid > .content > #articles > .main-content {
       height: 50vh; }
     #page-grid > .content > #podcasts > .main-content {
@@ -1095,3 +1101,146 @@ body {
   @media screen and (max-width: 768px) {
     .not-found {
       font-size: 3em; } }
+
+.choice,
+.choice-publi {
+  display: flex;
+  justify-content: space-between;
+  width: max-content;
+  margin: .5rem;
+  align-items: center; }
+  .choice span,
+  .choice-publi span {
+    margin-left: 0.5rem;
+    font-family: 'PT Sans', sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 11px;
+    letter-spacing: -0.015em;
+    line-height: 20px;
+    font-size: 18px; }
+
+.container-article {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100%; }
+  .container-article .themes-filter {
+    padding: 2em;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 16px 32px;
+    max-width: 250px;
+    flex-wrap: wrap; }
+    @media screen and (max-width: 768px) {
+      .container-article .themes-filter {
+        margin: 16px auto; } }
+    .container-article .themes-filter > div {
+      padding: 1em 0;
+      border-bottom: 2px black solid;
+      font-family: 'PT Sans', sans-serif;
+      font-style: normal;
+      font-weight: 200;
+      font-size: 16px;
+      line-height: 11px;
+      letter-spacing: -0.015em;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 1.5em;
+      line-height: normal; }
+    .container-article .themes-filter > .reset-filter {
+      margin: 32px 0; }
+
+.check-input {
+  display: none; }
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 3px;
+  transition: 0.3s all; }
+  .checkbox svg {
+    width: 20px;
+    height: 20px; }
+  .checkbox::before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: #26bfbf66;
+    z-index: -1; }
+
+.check-input:checked + .checkbox {
+  background: #26bfbf;
+  border: 2px solid #26bfbf; }
+  .check-input:checked + .checkbox svg path {
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    stroke: #fff;
+    stroke-width: 3;
+    animation: check 4s forwards; }
+
+.grid-article {
+  height: max-content;
+  margin: 32px 5%;
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); }
+  @media screen and (max-width: 768px) {
+    .grid-article {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); } }
+  .grid-article .item-article {
+    background-color: rgba(0, 0, 0, 0.02);
+    height: max-content;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    margin: 8px;
+    border-top: 1px #65717e solid;
+    border-bottom: 1px #65717e solid; }
+    @media screen and (max-width: 768px) {
+      .grid-article .item-article {
+        padding: 8px; } }
+  .grid-article h1 {
+    margin: 0;
+    color: black; }
+  .grid-article .details {
+    display: flex;
+    margin-left: 16px;
+    align-items: baseline; }
+    .grid-article .details > h2 {
+      font-family: 'PT Sans', sans-serif;
+      font-style: normal;
+      font-weight: 200;
+      font-size: 16px;
+      line-height: 11px;
+      letter-spacing: -0.015em; }
+    .grid-article .details > h2:last-child::before {
+      color: #d5d8dc;
+      content: "\2022";
+      padding: 0 0.8rem;
+      display: inline-block;
+      line-height: 1; }
+  .grid-article .themes {
+    display: flex;
+    flex-wrap: wrap; }
+  .grid-article button {
+    margin: 4px;
+    padding: 4px 12px;
+    width: max-content;
+    border-radius: 20px;
+    border: #57c0e6 1px solid;
+    background-color: rgba(87, 192, 230, 0.2);
+    cursor: pointer; }
+    .grid-article button:hover {
+      background-color: #c6eaf7; }

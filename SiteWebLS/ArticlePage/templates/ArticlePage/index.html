@@ -1,28 +1,62 @@
 {% extends 'base_site.html' %}
 {% load extra_article %}
 {% load static %}
+{% block title %}Articles{% endblock title %}
 
 {% block MainContent %}
-<div class="container">
-    {% for themeId in theme_list %}
-    <div class="choice">
-        <input type="checkbox" name="{{themeId}}" id="{{themeId}}">
-        <label for="{{themeId}}">{{themeId|themehandle:None}}</label>
+<div class="container-article">
+    <div class="themes-filter neu">
+        <div>Selectionner les filtres à appliquer :</div>
+        <div id="choice">
+            {% for themeId in theme_list %}
+            <div class="choice">
+                <input type="checkbox" id="{{themeId}}" class="check-input" />
+                <label for="{{themeId}}" class="checkbox">
+                    <svg viewBox="0 0 22 16" fill="none">
+                        <path d="M1 6.85L8.09677 14L21 1" />
+                    </svg>
+                </label>
+                <span>{{themeId|themehandle:None}}</span>
+            </div>
+            {% endfor %}
+        </div>
+        <div id="choice-publi">
+            {% for publiId in publi_list %}
+            <div class="choice-publi">
+                <input type="checkbox" id="{{publiId}}" class="check-input" name="publication" />
+                <label for="{{publiId}}" class="checkbox">
+                    <svg viewBox="0 0 22 16" fill="none">
+                        <path d="M1 6.85L8.09677 14L21 1" />
+                    </svg>
+                </label>
+                <span>{{publiId|publihandle:None}}</span>
+            </div>
+            {% endfor %}
+        </div>
+        <button class="reset-filter neu btn">Réinitialiser les filtres :</button>
     </div>
-    {% endfor %}
-    {% for publiId in publi_list %}
-    <div class="choice-publi">
-        <input type="checkbox" name="{{publiId}}" id="publication">
-        <label for="{{publiId}}">{{publiId|publihandle:None}}</label>
+    <div class="grid-article">
+        {% for article in article_list %}
+        <div class="item-article">
+            <a href="#">
+                <h1>{{article.title}}</h1>
+            </a>
+            <div class="details">
+                <h2>{{article.author}}</h2>
+                <h2>{{article.published_date}}</h2>
+            </div>
+            <div class="themes">
+                {% for themeId in theme_list %}
+                {% if article.theme|getattribute:themeId == True %}
+                <button class="choice-btn" name="{{themeId}}">{{themeId|themehandle:'NO'}}</button>
+                {% endif %}
+                {% endfor %}
+            </div>
+            <button class="choice-publi-btn"
+                name="{{article.publication}}">{{article.publication|publihandle:'NO'}}</button>
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-    {% for article in article_list %}
-    <h1>{{article.title}}</h1>
-    <h2>{{article.author}}</h2>
-    {% for themeId in theme_list %}
-    <h3>{{themeId}} - {{ article.theme|getattribute:themeId}}</h3>
-    {% endfor %}
-    {% endfor %}
 </div>
 {% endblock %}
 
