@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Article, Theme
+from .models import Article, Source, Theme
 
 
 class ThemeInLine(admin.StackedInline):
@@ -7,9 +7,14 @@ class ThemeInLine(admin.StackedInline):
     extra = 0
 
 
+class SourceInLine(admin.TabularInline):
+    model = Source
+    extra = 2
+
+
 class ArticleAdmin(admin.ModelAdmin):
     list_filter = ['publication']
-    inlines = [ThemeInLine]
+    inlines = [ThemeInLine, SourceInLine]
     list_display = ('title', 'publication',
                     'published_date', 'was_published_recently')
 

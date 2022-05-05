@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html lang="fr-fr" dir="ltr">
+  <head>
+    <title>Article 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Hurricane&family=PT+Sans&family=Roboto+Mono:wght@600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="static/css/style.temp.css" />
+    <link rel="icon" href="static/images/favicon.png" />
+  </head>
+
+  <body>
+    <header id="nav-menu">
+      <section class="top-nav">
+        <h1>L&S Site</h1>
+        <ul class="items menu-items">
+          <li><a href="/Photo">Galerie photos</a></li>
+          <li><a href="/article/">Articles</a></li>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="#">Podcasts</a></li>
+          <li><a href="#">CV</a></li>
+        </ul>
+        <div id="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <a href="/admin/" class="connect">
+          <i class="fa-solid fa-user"></i>
+        </a>
+      </section>
+      <section class="mobile-nav">
+        <ul class="items menu-items" id="nav-items">
+          <li><a href="#">Galerie photos</a></li>
+          <li><a href="/article/">Articles</a></li>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="#">Podcasts</a></li>
+          <li><a href="#">CV</a></li>
+        </ul>
+      </section>
+    </header>
+    <section id="page-grid">
+      <div class="border"></div>
+      <div id="MainContent" class="content">
+        <section id="breadcrumbs">
+          <ul class="breadcrumbs">
+            <li class="breadcrumbs--item">
+              <a href="/"
+                ><span class="start"></span>
+                <div class="content"><span>Accueil</span></div>
+                <span class="end"></span>
+              </a>
+            </li>
+            <li class="breadcrumbs--item">
+              <a href="/article/"
+                ><span class="start"></span>
+                <div class="content"><span>Articles</span></div>
+                <span class="end"></span>
+              </a>
+            </li>
+            <li class="breadcrumbs--item">
+              <a href="/article/6/"
+                ><span class="start"></span>
+                <div class="content"><span>Article 1</span></div>
+                <span class="end"></span>
+              </a>
+            </li>
+          </ul>
+        </section>
+        <div class="container-article">
+          <div class="article">
+            <h1>Article 1</h1>
+            <h2 class="header">Publié par Auteur 1, le 1 mai 2022.</h2>
+            <p>Oui</p>
+            <h6>Sources :</h6>
+            <ol>
+              <li>Source a</li>
+              <li>Source b</li>
+            </ol>
+          </div>
+          <div class="side">
+            <h3>Thèmes couverts par l'article :</h3>
+            <div class="themes">
+              <button class="btn-theme">Enfance</button>
+              <button class="btn-theme">Etude</button>
+            </div>
+            <h3>Ecrit pour :</h3>
+            <div class="publi">
+              <button class="btn-theme">Sciences Po</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="border"></div>
+    </section>
+    <footer id="footer-page">
+      <div class="top">
+        <div class="search-bar neu center">
+          <i class="fa-solid fa-magnifying-glass center"></i>
+          <input placeholder="Rechercher" type="text" />
+          <button><i class="fa-solid fa-arrow-right center"></i></button>
+        </div>
+        <span class="about">
+          <p class="name">Lucie Lebreton</p>
+          <a href="mailto:lucie.lebreton12@gmail.com"
+            >lucie.lebreton12@gmail.com</a
+          >
+        </span>
+      </div>
+      <div class="bottom">
+        <div class="copyright">
+          <p>© Guillemet Samuel - 2022</p>
+        </div>
+        <div class="social-media">
+          <a href="#" class="github"
+            ><i class="fa-brands fa-github center"></i
+          ></a>
+          <a href="#" class="linkedin"
+            ><i class="fa-brands fa-linkedin center"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="static/js/script.js"></script>
+  </body>
+</html>

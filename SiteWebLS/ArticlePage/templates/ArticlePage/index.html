@@ -4,6 +4,7 @@
 {% block title %}Articles{% endblock title %}
 
 {% block MainContent %}
+{% include 'include/breadcrumbs.html' %}
 <div class="container-article">
     <div class="themes-filter neu">
         <div>Selectionner les filtres à appliquer :</div>
@@ -38,7 +39,7 @@
     <div class="grid-article">
         {% for article in article_list %}
         <div class="item-article">
-            <a href="#">
+            <a href="{% url 'ArticlePage:detail' article.id %}">
                 <h1>{{article.title}}</h1>
             </a>
             <div class="details">
@@ -48,15 +49,15 @@
             <div class="themes">
                 {% for themeId in theme_list %}
                 {% if article.theme|getattribute:themeId == True %}
-                <button class="choice-btn" name="{{themeId}}">{{themeId|themehandle:'NO'}}</button>
+                <button class="choice-btn btn-theme" name="{{themeId}}">{{themeId|themehandle:'NO'}}</button>
                 {% endif %}
                 {% endfor %}
             </div>
-            <button class="choice-publi-btn"
+            <button class="choice-publi-btn btn-theme"
                 name="{{article.publication}}">{{article.publication|publihandle:'NO'}}</button>
         </div>
         {% empty %}
-        <h1>Désolé il n'existe aucun article correspondant à votre sélection...</h1>
+        <h1>Désolé, il n'existe aucun article correspondant à votre sélection...</h1>
         {% endfor %}
     </div>
 </div>

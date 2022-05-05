@@ -21,7 +21,7 @@
         padding-inline-start: 0;
         padding-left: 20px;
         margin-block: 0;
-        margin-top: 16px;
+        margin: 16px 0;
 
 
         &>.breadcrumbs--item {
@@ -78,6 +78,14 @@
                     color: var(--color-text);
                     text-align: left;
                     @include text();
+
+                    @media screen and (max-width: 768px) {
+                        font-size: smaller;
+                    }
+                }
+
+                @media screen and (max-width: 768px) {
+                    padding: 0 10px;
                 }
             }
 

@@ -671,7 +671,7 @@ body {
     padding-inline-start: 0;
     padding-left: 20px;
     margin-block: 0;
-    margin-top: 16px; }
+    margin: 16px 0; }
     #breadcrumbs > .breadcrumbs > .breadcrumbs--item > a {
       background-size: auto;
       display: flex;
@@ -712,6 +712,12 @@ body {
         font-size: 16px;
         line-height: 11px;
         letter-spacing: -0.015em; }
+        @media screen and (max-width: 768px) {
+          #breadcrumbs > .breadcrumbs > .breadcrumbs--item > a > .content > span {
+            font-size: smaller; } }
+      @media screen and (max-width: 768px) {
+        #breadcrumbs > .breadcrumbs > .breadcrumbs--item > a > .content {
+          padding: 0 10px; } }
     #breadcrumbs > .breadcrumbs > .breadcrumbs--item:nth-child(1) > a {
       color: var(--color-1); }
       #breadcrumbs > .breadcrumbs > .breadcrumbs--item:nth-child(1) > a:hover {
@@ -753,6 +759,17 @@ body {
   .btn:active {
     cursor: pointer;
     box-shadow: inset -5px -5px 15px 0px #ffffff9e, inset 5px 5px 15px 0px #a3b1c6a8; }
+
+.btn-theme {
+  margin: 4px;
+  padding: 4px 12px;
+  width: max-content;
+  border-radius: 20px;
+  border: #57c0e6 1px solid;
+  background-color: rgba(87, 192, 230, 0.2);
+  cursor: pointer; }
+  .btn-theme:hover {
+    background-color: #c6eaf7; }
 
 #hamburger-menu {
   margin: 0 10px;
@@ -1160,8 +1177,8 @@ body {
 
 .container-article {
   display: flex;
-  flex-wrap: wrap;
-  min-height: 100%; }
+  flex-wrap: wrap-reverse;
+  align-items: flex-end; }
   .container-article .themes-filter {
     padding: 2em;
     height: max-content;
@@ -1203,6 +1220,8 @@ body {
   cursor: pointer;
   padding: 3px;
   transition: 0.3s all; }
+  .checkbox:hover {
+    border: 2px solid #7e8a98; }
   .checkbox svg {
     width: 20px;
     height: 20px; }
@@ -1238,7 +1257,7 @@ body {
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); } }
   .grid-article .item-article {
     background-color: rgba(0, 0, 0, 0.02);
-    height: max-content;
+    height: unset;
     padding: 16px;
     display: flex;
     flex-direction: column;
@@ -1263,7 +1282,7 @@ body {
       line-height: 11px;
       letter-spacing: -0.015em; }
     .grid-article .details > h2:last-child::before {
-      color: #d5d8dc;
+      color: #65717e;
       content: "\2022";
       padding: 0 0.8rem;
       display: inline-block;
@@ -1271,13 +1290,66 @@ body {
   .grid-article .themes {
     display: flex;
     flex-wrap: wrap; }
-  .grid-article button {
-    margin: 4px;
-    padding: 4px 12px;
-    width: max-content;
-    border-radius: 20px;
-    border: #57c0e6 1px solid;
-    background-color: rgba(87, 192, 230, 0.2);
-    cursor: pointer; }
-    .grid-article button:hover {
-      background-color: #c6eaf7; }
+
+.container-article > .side {
+  margin: 0 32px;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border-left: #7e8a98 1px solid; }
+  @media screen and (max-width: 768px) {
+    .container-article > .side {
+      border-left: none;
+      border-top: #7e8a98 1px solid;
+      margin: 0 16px;
+      width: 100%; } }
+  .container-article > .side > div:not(:first-child) {
+    margin-left: 1em; }
+  .container-article > .side .themes {
+    display: flex;
+    flex-direction: column; }
+  .container-article > .side h3 {
+    margin: 0.5em 0; }
+
+.container-article > .article {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40%; }
+  @media screen and (max-width: 768px) {
+    .container-article > .article {
+      margin: 0 16px;
+      width: auto;
+      flex-grow: 1; } }
+  .container-article > .article .header {
+    padding-bottom: 16px;
+    border-bottom: #7e8a98 1px solid;
+    margin: 0;
+    font-family: 'PT Sans', sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 11px;
+    letter-spacing: -0.015em; }
+  .container-article > .article > p {
+    padding: 16px;
+    margin: 0;
+    border-bottom: #7e8a98 1px solid;
+    font-family: 'PT Sans', sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 11px;
+    letter-spacing: -0.015em; }
+  .container-article > .article > h6 {
+    padding-top: 16px;
+    margin: 0;
+    font-family: 'PT Sans', sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 11px;
+    letter-spacing: -0.015em; }
+  .container-article > .article > ol {
+    margin: 8px 0; }
