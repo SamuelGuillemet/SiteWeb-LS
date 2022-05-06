@@ -1,10 +1,10 @@
 <footer id="footer-page">
     <div class="top">
-        <div class="search-bar neu center">
+        <form action="{% url 'HomePage:search' %}" class="search-bar neu center" role="search">
             <i class="fa-solid fa-magnifying-glass center"></i>
-            <input placeholder="Rechercher" type="text">
-            <button><i class="fa-solid fa-arrow-right center"></i></button>
-        </div>
+            <input placeholder="Rechercher" type="search" name="q">
+            <button type="submit"><i class="fa-solid fa-arrow-right center"></i></button>
+        </form>
         <span class="about">
             <p class="name">Lucie Lebreton</p>
             <a href="mailto:lucie.lebreton12@gmail.com">lucie.lebreton12@gmail.com</a>

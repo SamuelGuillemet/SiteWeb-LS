@@ -55,8 +55,9 @@ var choicePubliBtn = document.querySelectorAll(".choice-publi-btn");
 for (let index = 0; index < choiceBtn.length; index++) {
     choiceBtn[index].addEventListener("click", () => {
         const para = choiceBtn[index].name;
-        if (currentUrl.pathname.split('/').length > 3) {
-            currentUrl.pathname = "/" + currentUrl.pathname.split('/')[1] + "/";
+        if (currentUrl.pathname.split('/').length > 3 || currentUrl.pathname.split('/')[1] != 'article') {
+            currentUrl.pathname = "/article/";
+            currentUrl.searchParams.delete('q');
         }
         if (!currentUrl.searchParams.has(para)) {
             currentUrl.searchParams.append(para, 'True');
@@ -68,10 +69,11 @@ for (let index = 0; index < choiceBtn.length; index++) {
 for (let index = 0; index < choicePubliBtn.length; index++) {
     choicePubliBtn[index].addEventListener("click", () => {
         const para = choicePubliBtn[index].name;
-        if (currentUrl.pathname.split('/').length > 3) {
-            currentUrl.pathname = "/" + currentUrl.pathname.split('/')[1] + "/";
+        if (currentUrl.pathname.split('/').length > 3 || currentUrl.pathname.split('/')[1] != 'article') {
+            currentUrl.pathname = "/article/";
+            currentUrl.searchParams.delete('q');
         }
-        if (!currentUrl.searchParams.has('publication   ')) {
+        if (!currentUrl.searchParams.has('publication')) {
             currentUrl.searchParams.set('publication', para);
             window.location.href = currentUrl;
         }

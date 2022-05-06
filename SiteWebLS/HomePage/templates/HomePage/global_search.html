@@ -1,0 +1,41 @@
+{% extends 'base_site.html' %}
+{% load extra_home %}
+{% load extra_article %}
+{% load static %}
+{% block title %}
+Recherche globale
+{% endblock title %}
+
+{% block MainContent %}
+{% if search_result.has_search_result %}
+<div class="grid-article">
+    {% for article in search_result.articlepage_article %}
+    <div class="item-article">
+        <a href="{% url 'ArticlePage:detail' article.id %}">
+            <h1>{{article.title}}</h1>
+        </a>
+        <div class="details">
+            <h2>{{article.author}}</h2>
+            <h2>{{article.published_date}}</h2>
+        </div>
+        <div class="themes">
+            {% for themeId in theme_list %}
+            {% if article.theme|getattribute:themeId == True %}
+            <button class="choice-btn btn-theme" name="{{themeId}}">{{themeId|themehandle:'NO'}}</button>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <button class="choice-publi-btn btn-theme"
+            name="{{article.publication}}">{{article.publication|publihandle:'NO'}}</button>
+    </div>
+    {% endfor %}
+</div>
+<div class="blank"></div>
+{% else %}
+<h1>Désolé, nous ne trouvons rien qui corresponde à votre recherche.</h1>
+{% endif %}
+{%endblock MainContent%}
+
+{% block extraScript %}
+<script src="{% static 'js/article.js' %}"></script>
+{% endblock extraScript %}

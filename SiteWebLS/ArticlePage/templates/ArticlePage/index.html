@@ -37,7 +37,7 @@
         <button class="reset-filter neu btn">Réinitialiser les filtres :</button>
     </div>
     <div class="grid-article">
-        {% for article in article_list %}
+        {% for article in page_obj %}
         <div class="item-article">
             <a href="{% url 'ArticlePage:detail' article.id %}">
                 <h1>{{article.title}}</h1>
@@ -61,6 +61,25 @@
         {% endfor %}
     </div>
 </div>
+{% if page_obj.paginator.num_pages != 1  %}
+<div class="pagination center neu">
+    <div class="step-links">
+        <div class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </div>
+        <button class="btn neu {% if page_obj.has_previous %}active{% endif %}" {% if page_obj.has_previous %}
+            onclick="window.location.href='?page={{ page_obj.previous_page_number }}'" {% else %} disabled="disabled"
+            {% endif %}>
+            <i class="fas fa-angle-left"></i>
+        </button>
+        <button class="btn neu {% if page_obj.has_next %}active{% endif %}" {% if page_obj.has_next %}
+            onclick="window.location.href='?page={{ page_obj.next_page_number }}'" {% else %} disabled="disabled"
+            {% endif %}>
+            <i class="fas fa-angle-right"></i>
+        </button>
+    </div>
+</div>
+{% endif %}
 {% endblock %}
 
 {% block extraScript %}

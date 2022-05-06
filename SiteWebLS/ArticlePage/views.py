@@ -1,16 +1,21 @@
-from turtle import title
 from django.shortcuts import render
 from django.urls import reverse
 from .models import Article, Theme
 from django.views import generic
 from django.db.models import Q
 from django.utils import timezone
+from django.core.paginator import Paginator
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
 
 def home(request):
     queryset = createFilter(request)
+    paginator = Paginator(queryset, 9)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
     theme_list = [field.name for field in Theme._meta.get_fields()][2::]
     publi_list = [c[0] for c in Article.publication.field.choices]
     breadcrumbs_list = [
@@ -21,7 +26,9 @@ def home(request):
          'text': "Articles"
          }
     ]
+
     context = {
+        'page_obj': page_obj,
         'article_list': queryset,
         'theme_list': theme_list,
         'publi_list': publi_list,
@@ -32,7 +39,7 @@ def home(request):
 
 def createFilter(request):
     theme_list = [field.name for field in Theme._meta.get_fields()][2::]
-    queryset = Article.objects.all()
+    queryset = Article.objects.all().order_by('-published_date')
     if request.method == 'GET':
         parameters = request.GET.keys()
         if parameters is not None:
@@ -76,4 +83,6 @@ class DetailView(generic.DetailView):
         context = super().get_context_data(**kwargs)
         context['theme_list'] = theme_list
         context['breadcrumbs_list'] = breadcrumbs_list
+        if self.request.user.is_authenticated:
+            context['modify'] = True
         return context

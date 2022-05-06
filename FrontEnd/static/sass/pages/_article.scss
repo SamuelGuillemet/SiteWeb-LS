@@ -112,7 +112,7 @@
 
     & .item-article {
         background-color: rgba($color: black, $alpha: 0.02);
-        height: unset;
+        height: max-content;
         padding: 16px;
         display: flex;
         flex-direction: column;
@@ -156,9 +156,12 @@
     }
 }
 
-.container-article {
+.container-detail {
+    display: flex;
+    flex-wrap: wrap;
+
     &>.side {
-        margin: 0 32px;
+        margin: 0 32px 16px 0;
         display: flex;
         flex-direction: column;
         padding: 16px;
@@ -212,6 +215,9 @@
             margin: 0;
             border-bottom: $gray 1px solid;
             @include text();
+            font-size: 20px;
+            white-space: pre-wrap;
+            line-height: 150%;
         }
 
         &>h6 {
@@ -222,6 +228,18 @@
 
         &>ol {
             margin: 8px 0;
+        }
+    }
+}
+
+.pagination {
+    margin: 16px;
+
+    & .step-links {
+        padding: 16px;
+
+        &>.current {
+            padding-bottom: 8px;
         }
     }
 }

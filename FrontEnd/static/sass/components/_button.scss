@@ -6,7 +6,7 @@
 .btn {
     padding: 15px;
     border-radius: 30px;
-    color: $gray;
+    color: black;
     outline: none;
     cursor: pointer;
 
@@ -18,9 +18,13 @@
         font-size: 1em;
     }
 
-    &:active {
+    &:enabled:active {
         cursor: pointer;
         @include reverse-neu;
+    }
+
+    &:disabled {
+        color: $gray;
     }
 }
 

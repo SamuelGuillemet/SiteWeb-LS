@@ -18,12 +18,20 @@ if (document.getElementById("breadcrumbs") != null) {
             breadcrumbsitems.children[index].children[0].children[2].innerHTML = right;
         }
     }
+    var scale = (document.children[0].clientWidth - 32) * 0.94 / breadcrumbsitems.clientWidth;
+    if (scale >= 1) {
+        scale = 1
+    }
 
-    /*  document.getElementById("breadcrumbs").style.setProperty('--scale', document.children[0].clientWidth * 0.00115);
- 
-     window.addEventListener('resize', () => {
-         document.getElementById("breadcrumbs").style.setProperty('--scale', document.children[0].clientWidth * 0.00115);
-     }); */
+    document.getElementById("breadcrumbs").style.setProperty('--scale', scale);
+
+    window.addEventListener('resize', () => {
+        var scale = (document.children[0].clientWidth - 32) * 0.94 / breadcrumbsitems.clientWidth;
+        if (scale >= 1) {
+            scale = 1
+        }
+        document.getElementById("breadcrumbs").style.setProperty('--scale', scale);
+    });
 }
 
 

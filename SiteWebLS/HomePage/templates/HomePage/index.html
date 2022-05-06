@@ -24,22 +24,22 @@ L&S Site
                 <div class="back">
                     <h1 class="title">{{article.title}}</h1>
                     <div class="synopsis">{{article.article}}</div>
-                    <div class="learn-more btn neu"
+                    <button class="learn-more btn neu"
                         onclick="window.location.href='{% url 'ArticlePage:detail' article.id %}'">
                         <a href="{% url 'ArticlePage:detail' article.id %}">EN SAVOIR PLUS</a>
                         <i class="fa-solid fa-chevron-right center"></i>
-                    </div>
+                    </button>
                     <div class="pagenumber">{{forloop.counter}}</div>
                 </div>
                 {% else %}
                 <div class="{% if forloop.counter|modulo:'even' %}front{% else %}back{% endif %}">
                     <h1 class="title">{{article.title}}</h1>
                     <div class="synopsis">{{article.article}}</div>
-                    <div class="learn-more btn neu"
+                    <button class="learn-more btn neu"
                         onclick="window.location.href='{% url 'ArticlePage:detail' article.id %}'">
                         <a href="{% url 'ArticlePage:detail' article.id %}">EN SAVOIR PLUS</a>
                         <i class="fa-solid fa-chevron-right center"></i>
-                    </div>
+                    </button>
                     <div class="pagenumber">{{forloop.counter}}</div>
                 </div>
                 {% endif %}

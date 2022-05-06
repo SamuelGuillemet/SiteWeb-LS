@@ -5,7 +5,7 @@
 
 {% block MainContent %}
 {% include 'include/breadcrumbs.html' %}
-<div class="container-article">
+<div class="container-detail">
     <div class="article">
         <h1>{{article.title}}</h1>
         <h2 class="header">Publié par {{article.author}}, le {{article.published_date}}.</h2>
@@ -33,6 +33,9 @@
             <button class="btn-theme choice-publi-btn"
                 name="{{article.publication}}">{{article.publication|publihandle:'NO'}}</button>
         </div>
+        {% if modify %}
+        <button class="btn neu"
+            onclick="window.location.href='{% url 'admin:ArticlePage_article_change' article.pk %}'">Modifier</button>{% endif %}
     </div>
 </div>
 {% endblock MainContent %}

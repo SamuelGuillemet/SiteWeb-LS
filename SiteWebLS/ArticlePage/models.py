@@ -1,5 +1,6 @@
 import datetime
 from django.db import models
+from django.urls import reverse
 from django.utils import timezone
 from django.contrib import admin
 
@@ -32,6 +33,9 @@ class Article(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse("ArticlePage:detail", kwargs={"pk": self.pk})
 
 
 class Theme(models.Model):
