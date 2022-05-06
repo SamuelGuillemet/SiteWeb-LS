@@ -2,11 +2,11 @@
     <section class="top-nav">
         <h1>L&S Site</h1>
         <ul class="items menu-items">
-            <li><a href="/Photo">Galerie photos</a></li>
+            <li><a href="#">Galerie photos</a></li>
             <li><a href="{% url 'ArticlePage:home' %}">Articles</a></li>
             <li><a href="{% url 'HomePage:home' %}">Accueil</a></li>
             <li><a href="#">Podcasts</a></li>
-            <li><a href="#">CV</a></li>
+            <li><a href="{% url 'CVPage:home' %}">CV</a></li>
         </ul>
         <div id="hamburger-menu">
             <span></span>
@@ -23,7 +23,7 @@
             <li><a href="{% url 'ArticlePage:home' %}">Articles</a></li>
             <li><a href="{% url 'HomePage:home' %}">Accueil</a></li>
             <li><a href="#">Podcasts</a></li>
-            <li><a href="#">CV</a></li>
+            <li><a href="{% url 'CVPage:home' %}">CV</a></li>
         </ul>
     </section>
 </header>
