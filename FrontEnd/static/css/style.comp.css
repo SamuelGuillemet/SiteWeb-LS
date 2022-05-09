@@ -627,7 +627,12 @@ body {
   --color-5: #27267E;
   --color-hover-5: #1F1E65;
   --color-text: #E1E1E1;
-  width: max-content; }
+  width: 100%;
+  display: flex;
+  justify-content: space-between; }
+  #breadcrumbs > button {
+    width: 150px;
+    margin: 16px; }
   #breadcrumbs > .breadcrumbs {
     list-style: none;
     display: flex;
@@ -1163,7 +1168,7 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     margin: 16px 32px;
-    max-width: 250px;
+    max-width: 260px;
     flex-wrap: wrap; }
     @media screen and (max-width: 768px) {
       .container-article .themes-filter {
@@ -1244,6 +1249,11 @@ body {
     @media screen and (max-width: 768px) {
       .grid-article .item-article {
         padding: 8px; } }
+    .grid-article .item-article > a {
+      display: flex;
+      color: #65717e; }
+      .grid-article .item-article > a > h1 {
+        padding-left: 8px; }
   .grid-article h1 {
     margin: 0;
     color: black; }
@@ -1342,3 +1352,257 @@ body {
     padding: 16px; }
     .pagination .step-links > .current {
       padding-bottom: 8px; }
+
+.marker {
+  position: relative; }
+  .marker:after {
+    content: "";
+    width: 125px;
+    height: 30px;
+    position: absolute;
+    bottom: -28px;
+    right: -30px;
+    background-image: url(../svg/marker.svg);
+    background-repeat: no-repeat;
+    box-sizing: content-box; }
+
+.presentation {
+  margin: 32px auto;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Nunito Sans'; }
+  @media screen and (max-width: 768px) {
+    .presentation {
+      margin-left: 8px; } }
+  .presentation * {
+    margin: 0;
+    padding: 0; }
+  .presentation > h2 {
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+    font-size: 20px; }
+    @media screen and (max-width: 768px) {
+      .presentation > h2 {
+        font-size: 16px; } }
+  .presentation > h1 {
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    word-wrap: break-word; }
+    @media screen and (max-width: 768px) {
+      .presentation > h1 {
+        font-size: 24px; } }
+  .presentation > h3 {
+    font-weight: 400 !important; }
+  .presentation .social {
+    display: flex;
+    margin: 0;
+    padding: 0; }
+    .presentation .social li {
+      list-style: none;
+      padding: 8px 8px;
+      font-size: 24px; }
+      .presentation .social li > a {
+        color: black; }
+        .presentation .social li > a:hover {
+          color: gray; }
+
+.abouts {
+  display: flex;
+  margin: 64px 12.5%;
+  width: 75%;
+  flex-wrap: wrap; }
+  @media screen and (max-width: 768px) {
+    .abouts {
+      margin: 0 16px 64px 16px;
+      width: calc(100% - 32px); } }
+  .abouts > .text {
+    flex: 0 0 auto;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    min-width: 460px; }
+    @media screen and (max-width: 768px) {
+      .abouts > .text {
+        min-width: 0; } }
+    @media screen and (max-width: 768px) {
+      .abouts > .text {
+        width: 100%; } }
+    .abouts > .text > .informations {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap; }
+      .abouts > .text > .informations > .title {
+        width: 20%;
+        flex: 0 0 auto;
+        padding: 8px 0; }
+        @media screen and (max-width: 768px) {
+          .abouts > .text > .informations > .title {
+            width: 100%; } }
+      .abouts > .text > .informations > .data {
+        width: 80%;
+        flex: 0 0 auto;
+        font-weight: 700;
+        padding: 8px 0; }
+        @media screen and (max-width: 768px) {
+          .abouts > .text > .informations > .data {
+            width: 100%; } }
+  .abouts > .image {
+    margin-left: 10%;
+    flex: 0 0 auto;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    @media screen and (max-width: 768px) {
+      .abouts > .image {
+        width: 80%; } }
+    .abouts > .image > img {
+      width: 80%;
+      aspect-ratio: auto 400 / 400;
+      border-radius: 40px;
+      vertical-align: middle; }
+
+.skills {
+  display: flex;
+  flex-direction: column; }
+  .skills > h2 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 40px; }
+    @media screen and (max-width: 768px) {
+      .skills > h2 {
+        font-size: 24px; } }
+  .skills > .skills-list {
+    width: 60%;
+    margin: 64px 20%;
+    display: flex;
+    flex-wrap: wrap; }
+    @media screen and (max-width: 768px) {
+      .skills > .skills-list {
+        width: 90%;
+        margin: 64px 5%; } }
+    .skills > .skills-list > .skill {
+      display: flex;
+      flex-direction: column;
+      width: 40%;
+      margin: 16px 5%; }
+      .skills > .skills-list > .skill > .text {
+        display: flex;
+        font-weight: 700; }
+        .skills > .skills-list > .skill > .text > .title {
+          flex-grow: 1; }
+      .skills > .skills-list > .skill > .progress-bar {
+        margin-top: 8px;
+        width: 100%;
+        height: 16px;
+        border-radius: 10px;
+        background-color: white; }
+        .skills > .skills-list > .skill > .progress-bar > .progress {
+          background-color: #f6e05e;
+          border-top-left-radius: 10px;
+          border-bottom-left-radius: 10px;
+          height: 100%; }
+
+.projet {
+  display: flex;
+  flex-direction: column; }
+  .projet > h2 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 40px;
+    margin: 64px 0; }
+    @media screen and (max-width: 768px) {
+      .projet > h2 {
+        font-size: 24px; } }
+  .projet > .projects-list {
+    width: 90%;
+    margin: 32px 5%;
+    display: flex;
+    flex-wrap: wrap; }
+    .projet > .projects-list > .project-item {
+      display: flex;
+      flex-direction: column;
+      width: 25%;
+      height: max-content;
+      margin: 0; }
+      @media screen and (max-width: 768px) {
+        .projet > .projects-list > .project-item {
+          width: 100%;
+          margin: 16px; } }
+      .projet > .projects-list > .project-item figure {
+        position: relative;
+        margin: 0 8px;
+        overflow: hidden; }
+        .projet > .projects-list > .project-item figure > figcaption {
+          width: 100%;
+          position: absolute;
+          left: 0;
+          top: auto;
+          bottom: 0;
+          transition: transform 0.35s;
+          transform: translate3d(0, 100%, 0);
+          background-color: rgba(255, 255, 255, 0.75);
+          color: #000000;
+          font-weight: 700;
+          padding: 16px 0;
+          box-sizing: border-box; }
+        .projet > .projects-list > .project-item figure:hover figcaption {
+          transform: translate3d(0, 0, 0); }
+      .projet > .projects-list > .project-item img {
+        width: 100%;
+        display: block; }
+
+.experience {
+  display: flex;
+  flex-direction: column; }
+  .experience > h2 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 40px;
+    margin: 128px 0 0 0; }
+    @media screen and (max-width: 768px) {
+      .experience > h2 {
+        font-size: 24px;
+        margin-top: 32px; } }
+  .experience > .experiences-list {
+    width: 80%;
+    margin: 32px 10%;
+    display: flex;
+    flex-wrap: wrap; }
+    .experience > .experiences-list > .experience-item {
+      display: flex;
+      flex-direction: column;
+      width: 40%;
+      height: unset;
+      margin: 2.5% 5%;
+      border-radius: 15px;
+      background-color: rgba(0, 0, 0, 0.02); }
+      @media screen and (max-width: 768px) {
+        .experience > .experiences-list > .experience-item {
+          width: 95%; } }
+      .experience > .experiences-list > .experience-item > p {
+        white-space: pre-line;
+        padding: 16px;
+        margin: 0; }
+      .experience > .experiences-list > .experience-item > header {
+        background-color: rgba(0, 0, 0, 0.05);
+        padding: 16px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px; }
+        .experience > .experiences-list > .experience-item > header > .date {
+          color: #7e8a98;
+          font-size: .8em; }
+          .experience > .experiences-list > .experience-item > header > .date::before {
+            content: "("; }
+          .experience > .experiences-list > .experience-item > header > .date::after {
+            content: ")"; }
+        .experience > .experiences-list > .experience-item > header > .title {
+          font-weight: 700;
+          margin-bottom: 0.3em;
+          font-size: 1.3em; }
+        .experience > .experiences-list > .experience-item > header > .entreprise {
+          margin-bottom: 0.5em; }

@@ -33,9 +33,6 @@
             <button class="btn-theme choice-publi-btn"
                 name="{{article.publication}}">{{article.publication|publihandle:'NO'}}</button>
         </div>
-        {% if modify %}
-        <button class="btn neu"
-            onclick="window.location.href='{% url 'admin:ArticlePage_article_change' article.pk %}'">Modifier</button>{% endif %}
     </div>
 </div>
 {% endblock MainContent %}

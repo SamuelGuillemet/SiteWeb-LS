@@ -29,6 +29,14 @@ Recherche globale
             name="{{article.publication}}">{{article.publication|publihandle:'NO'}}</button>
     </div>
     {% endfor %}
+    {% for cv in search_result.cvpage_cv %}
+    <div class="item-article">
+        <a href="{% url 'CVPage:detail' cv.pk %}">
+            <img src="{{ cv.photo.url}}" height="128px" width="128px">
+            <h1>{{cv}}</h1>
+        </a>
+    </div>
+    {% endfor %}
 </div>
 <div class="blank"></div>
 {% else %}

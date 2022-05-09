@@ -3,9 +3,15 @@
 {% block title %}CV{% endblock title %}
 
 {% block MainContent %}
-{% for cv in cv_list %}
-<img src="{{ cv.photo.url}}" height="128px" width="128px">
-{{cv.nom}}
-{{cv.prenom}}
-{% endfor %}
+{% include 'include/breadcrumbs.html' %}
+<div class="grid-article">
+    {% for cv in cv_list %}
+    <div class="item-article">
+        <a href="{% url 'CVPage:detail' cv.pk %}">
+            <img src="{{ cv.photo.url}}" height="128px" width="128px">
+            <h1>{{cv}}</h1>
+        </a>
+    </div>
+    {% endfor %}
+</div>
 {% endblock MainContent %}

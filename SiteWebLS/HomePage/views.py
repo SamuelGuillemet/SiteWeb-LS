@@ -20,6 +20,7 @@ class GlobalSearchView(SearchMixin, TemplateView):
     template_name = 'HomePage/global_search.html'
     search_settings = {
         'ArticlePage.Article': ['title', 'author', 'article'],
+        'CVPage.CV': ['nom', 'prenom']
     }
 
     def get_context_data(self, **kwargs):

@@ -1,0 +1,86 @@
+{% extends 'base_site.html' %}
+{% load extra_cv %}
+{% load static %}
+{% block title %}CV de {{cv.prenom}}
+{{cv.nom}}{% endblock title %}
+
+{% block MainContent %}
+{% include 'include/breadcrumbs.html' %}
+<div class="presentation">
+    <h2>Bonjour !</h2>
+    <h1>Je suis {{cv.prenom}} {{cv.nom}}</h1>
+    <h3>{{cv.statut}}</h3>
+    <ul class="social">
+        {% for social in cv.social_set.all %}
+        <li class="link-item">
+            <a href="{{social.link}}"><i class="fa-brands {{'fa-'|brand:social.nom}}"></i></a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+<div class="abouts">
+    <div class="text">
+        <h2>Bonjour je suis {{cv.prenom}} {{cv.nom}}.</h2>
+        <p>{{cv.speech}}</p>
+        <div class="informations">
+            <div class="title">Age :</div>
+            <div class="data">{{cv.birth_date|age:None}}</div>
+            <div class="title">Email :</div>
+            <div class="data">{{cv.mail}}</div>
+            <div class="title">Téléphone :</div>
+            <div class="data">{{cv.phone}}</div>
+        </div>
+    </div>
+    <div class="image">
+        <img src="{{cv.photo.url}}" alt="{{cv.prenom}} {{cv.nom}}">
+    </div>
+</div>
+<div class="skills">
+    <h2 class="marker center">Mes compétences</h2>
+    <div class="skills-list">
+        {% for skill in cv.skill_set.all %}
+        <div class="skill">
+            <div class="text">
+                <div class="title">{{skill.nom}}</div>
+                <div class="percentage-text">{{skill.percentage}} %</div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" style="width: {{skill.percentage}}%"></div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="projet" id="projet">
+    <h2 class="marker center">Mes projets</h2>
+    <div class="projects-list">
+        {% for project in cv.project_set.all %}
+        <div class="project-item">
+            <a href="{% if project.link %}{{project.link}}{% else %}#projet{% endif %}">
+                <figure>
+                    <img src="{{project.photo.url}}" alt="{{project.nom}}">
+                    <figcaption class="center">{{project.nom}}</figcaption>
+                </figure>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="experience">
+    <h2 class="marker center">Mes expériences</h2>
+    <div class="experiences-list">
+        {% for experience in cv.experience_set.all %}
+        <div class="experience-item">
+            <header>
+                <div class="title">{{experience.role}}</div>
+                {% if experience.entreprise %}<div class="entreprise">{{experience.entreprise}}</div>{% endif %}
+                <div class="date">
+                    {{experience.date_debut}}-{% if experience.date_fin %}{{experience.date_fin}}{% else %}Now{% endif %}
+                </div>
+            </header>
+            <p>{{experience.description}}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock MainContent %}

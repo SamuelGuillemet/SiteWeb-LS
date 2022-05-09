@@ -11,7 +11,14 @@
     --color-hover-5: #1F1E65;
     --color-text: #E1E1E1;
 
-    width: max-content;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    &>button {
+        width: 150px;
+        margin: 16px;
+    }
 
     &>.breadcrumbs {
         list-style: none;

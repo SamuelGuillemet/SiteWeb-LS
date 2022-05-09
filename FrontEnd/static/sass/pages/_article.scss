@@ -26,7 +26,7 @@
         flex-direction: column;
         justify-content: flex-start;
         margin: 16px 32px;
-        max-width: 250px;
+        max-width: 260px;
         flex-wrap: wrap;
 
         @media screen and (max-width: 768px) {
@@ -122,6 +122,15 @@
 
         @media screen and (max-width: 768px) {
             padding: 8px;
+        }
+
+        &>a {
+            display: flex;
+            color: $dark-gray;
+
+            &>h1 {
+                padding-left: 8px;
+            }
         }
     }
 

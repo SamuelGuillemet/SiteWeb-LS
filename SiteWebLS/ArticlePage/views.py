@@ -85,4 +85,6 @@ class DetailView(generic.DetailView):
         context['breadcrumbs_list'] = breadcrumbs_list
         if self.request.user.is_authenticated:
             context['modify'] = True
+            context['modify_link'] = reverse(
+                'admin:ArticlePage_article_change', args=[self.kwargs['pk']])
         return context

@@ -12,4 +12,6 @@
         </li>
         {% endfor %}
     </ul>
+    {% if modify %}
+    <button class="btn neu" onclick="window.location.href='{{modify_link}}'">Modifier</button>{% endif %}
 </section>
