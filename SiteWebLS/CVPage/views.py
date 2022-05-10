@@ -42,6 +42,8 @@ def detail(request, id):
             'text': cv
         }
     ]
+    modify = False
+    modify_link = ""
     if request.user.is_authenticated:
         modify = True
         modify_link = reverse('admin:CVPage_cv_change', args=[cv.pk])

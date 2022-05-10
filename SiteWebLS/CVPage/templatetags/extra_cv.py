@@ -8,13 +8,6 @@ django.setup()
 register = template.Library()
 
 
-def getattribute(value, arg):
-    return getattr(value, arg)
-
-
-register.filter('getattribute', getattribute)
-
-
 def brand(value, arg):
     links = Social.nom.field.choices
     name = ""

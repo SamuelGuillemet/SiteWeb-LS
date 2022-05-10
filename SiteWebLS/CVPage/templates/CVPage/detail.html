@@ -13,7 +13,7 @@
     <ul class="social">
         {% for social in cv.social_set.all %}
         <li class="link-item">
-            <a href="{{social.link}}"><i class="fa-brands {{'fa-'|brand:social.nom}}"></i></a>
+            <a href="{{social.link}}"><i class="fa-brands fa-{{social.get_nom_display}}"></i></a>
         </li>
         {% endfor %}
     </ul>
