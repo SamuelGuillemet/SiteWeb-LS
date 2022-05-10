@@ -110,6 +110,7 @@
     @media screen and (max-width: 900px) {
         transform: scale(var(--scale));
         transform-origin: left;
+        flex-wrap: wrap;
 
         &>.breadcrumbs {
             padding-left: 3vw;

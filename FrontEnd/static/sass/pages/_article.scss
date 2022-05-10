@@ -112,7 +112,7 @@
 
     & .item-article {
         background-color: rgba($color: black, $alpha: 0.02);
-        height: max-content;
+        height: unset;
         padding: 16px;
         display: flex;
         flex-direction: column;

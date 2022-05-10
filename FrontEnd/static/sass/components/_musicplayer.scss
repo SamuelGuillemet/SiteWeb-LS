@@ -50,19 +50,6 @@
         }
     }
 
-    .track {
-        margin-top: 1em;
-        height: 10px;
-
-        div {
-            width: 42%;
-            height: 100%;
-            background: $track;
-            opacity: 0.75;
-            border-radius: 15px;
-        }
-    }
-
 
 
     .lyrics {
@@ -84,4 +71,8 @@
     flex-direction: row;
     justify-content: space-around;
     padding: 1em 0;
+
+    &>button {
+        color: $dark-gray;
+    }
 }

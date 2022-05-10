@@ -710,7 +710,8 @@ body {
   @media screen and (max-width: 900px) {
     #breadcrumbs {
       transform: scale(var(--scale));
-      transform-origin: left; }
+      transform-origin: left;
+      flex-wrap: wrap; }
       #breadcrumbs > .breadcrumbs {
         padding-left: 3vw; } }
 
@@ -1011,15 +1012,6 @@ body {
       margin: 0;
       font-size: 0.85em;
       color: #65717e; }
-  .iphone .track {
-    margin-top: 1em;
-    height: 10px; }
-    .iphone .track div {
-      width: 42%;
-      height: 100%;
-      background: #117397;
-      opacity: 0.75;
-      border-radius: 15px; }
   .iphone .lyrics {
     color: #7e8a98;
     margin-top: 2em;
@@ -1039,17 +1031,64 @@ body {
   flex-direction: row;
   justify-content: space-around;
   padding: 1em 0; }
+  .buttons > button {
+    color: #65717e; }
 
-audio::-webkit-media-controls-panel {
-  border-radius: 0;
-  background-color: #E5E5E5;
-  border: none; }
-
-audio {
+.slider {
+  display: flex;
   width: 100%;
-  border-radius: 0;
-  border: 1px black solid;
-  background-color: #E5E5E5; }
+  align-items: center; }
+  .slider-audio {
+    display: none; }
+  .slider-counter {
+    width: max-content;
+    text-align: center;
+    padding: 0 0.5em;
+    color: #65717e; }
+    @media screen and (max-width: 768px) {
+      .slider-counter {
+        font-size: small; } }
+  .slider-track {
+    flex-grow: 1;
+    height: 10px;
+    border-radius: 10px;
+    position: relative; }
+    .slider-track-default {
+      height: 100%;
+      width: 100%;
+      top: 0;
+      position: absolute;
+      border-radius: 10px; }
+    .slider-track-active {
+      will-change: width;
+      background-color: #117397;
+      border-radius: 10px;
+      height: 100%;
+      width: 10%;
+      top: 0;
+      z-index: 1;
+      position: absolute; }
+    .slider-track-input {
+      left: -4px;
+      appearance: none;
+      outline: none;
+      width: calc(100% + 8px);
+      cursor: pointer;
+      height: 16px;
+      background-color: rgba(0, 0, 0, 0);
+      position: absolute;
+      top: -3px;
+      z-index: 2; }
+      .slider-track-input::-webkit-slider-thumb {
+        appearance: none;
+        cursor: pointer;
+        border-radius: 50%;
+        height: 16px;
+        width: 16px;
+        background-color: white;
+        opacity: 0; }
+    .slider-track:hover .slider-track-input::-webkit-slider-thumb {
+      opacity: 1; }
 
 body {
   background-image: url("../images/Background.png") !important;
@@ -1239,7 +1278,7 @@ body {
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); } }
   .grid-article .item-article {
     background-color: rgba(0, 0, 0, 0.02);
-    height: max-content;
+    height: unset;
     padding: 16px;
     display: flex;
     flex-direction: column;
@@ -1503,8 +1542,7 @@ body {
         background-color: white; }
         .skills > .skills-list > .skill > .progress-bar > .progress {
           background-color: #f6e05e;
-          border-top-left-radius: 10px;
-          border-bottom-left-radius: 10px;
+          border-radius: 10px;
           height: 100%; }
 
 .projet {

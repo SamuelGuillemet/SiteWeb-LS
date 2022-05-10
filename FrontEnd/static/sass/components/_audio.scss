@@ -1,12 +1,74 @@
-audio::-webkit-media-controls-panel {
-    border-radius: 0;
-    background-color: #E5E5E5;
-    border: none;
-}
-
-audio {
+.slider {
+    display: flex;
     width: 100%;
-    border-radius: 0;
-    border: 1px black solid;
-    background-color: #E5E5E5;
+    align-items: center;
+
+    &-audio {
+        display: none;
+    }
+
+    &-counter {
+        width: max-content;
+        text-align: center;
+        padding: 0 0.5em;
+        color: $dark-gray;
+
+        @media screen and (max-width: 768px) {
+            font-size: small;
+        }
+    }
+
+    &-track {
+        flex-grow: 1;
+        height: 10px;
+        border-radius: 10px;
+        position: relative;
+
+        &-default {
+            height: 100%;
+            width: 100%;
+            top: 0;
+            position: absolute;
+            border-radius: 10px;
+        }
+
+        &-active {
+            will-change: width;
+            background-color: $track;
+            border-radius: 10px;
+            height: 100%;
+            width: 10%;
+            top: 0;
+            z-index: 1;
+            position: absolute;
+        }
+
+        &-input {
+            left: -4px;
+            appearance: none;
+            outline: none;
+            width: calc(100% + 8px);
+            cursor: pointer;
+            height: 16px;
+            background-color: rgba(0, 0, 0, 0);
+
+            position: absolute;
+            top: -3px;
+            z-index: 2;
+
+            &::-webkit-slider-thumb {
+                appearance: none;
+                cursor: pointer;
+                border-radius: 50%;
+                height: 16px;
+                width: 16px;
+                background-color: white;
+                opacity: 0;
+            }
+        }
+
+        &:hover &-input::-webkit-slider-thumb {
+            opacity: 1;
+        }
+    }
 }
