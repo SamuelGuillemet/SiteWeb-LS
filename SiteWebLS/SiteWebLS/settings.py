@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'HomePage.apps.HomepageConfig',
     'ArticlePage.apps.ArticlepageConfig',
     'CVPage.apps.CvpageConfig',
+    'PodcastPage.apps.PodcastpageConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
