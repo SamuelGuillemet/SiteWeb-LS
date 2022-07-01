@@ -23,5 +23,6 @@ urlpatterns = [
     path('', include('HomePage.urls')),
     path('article/', include('ArticlePage.urls')),
     path('cv/', include('CVPage.urls')),
-    path('podcast/', include('PodcastPage.urls'))
+    path('podcast/', include('PodcastPage.urls')),
+    path('gallery/', include('GalleryPage.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
