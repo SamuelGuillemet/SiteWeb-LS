@@ -112,7 +112,7 @@ class Social(models.Model):
     nom = models.CharField(
         "Nom du réseau", max_length=2, choices=NOM_CHOICES)
     link = models.URLField(
-        "Lien du réseau", max_length=100, null=True, blank=True)
+        "Lien du réseau", max_length=100, default=None)
 
     def __str__(self):
         return self.nom

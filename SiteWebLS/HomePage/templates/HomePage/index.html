@@ -34,7 +34,7 @@ L&S Site
                 {% else %}
                 <div class="{% if forloop.counter|modulo:'even' %}front{% else %}back{% endif %}">
                     <h1 class="title">{{article.title}}</h1>
-                    <div class="synopsis">{{article.article}}</div>
+                    <div class="synopsis">{{article.article|slice:":500" }}</div>
                     <button class="learn-more btn neu"
                         onclick="window.location.href='{% url 'ArticlePage:detail' article.id %}'">
                         <a href="{% url 'ArticlePage:detail' article.id %}">EN SAVOIR PLUS</a>
@@ -63,39 +63,7 @@ L&S Site
         <button class="photos shelf-icon btn neu"><i class="fa-solid fa-images"></i></button>
     </div>
     <div class="main-content">
-        <div class="iphone neu">
-            <div class="title">
-                <div>NOW PLAYING</div>
-            </div>
-            <div class="album-cover">
-                <div class="image"></div>
-                <h2 class="song-title">
-                    Redbone
-                </h2>
-                <h3 class="artist-title">
-                    Childish Gambino
-                </h3>
-            </div>
-            <div class="buttons">
-                <button class="btn lg neu button-backward-audio"><i class="fas fa-backward"></i></button>
-                <button class="btn lg neu button-play-audio"><i class="fas fa-play"></i></button>
-                <button class="btn lg neu button-forward-audio"><i class="fas fa-forward"></i></button>
-            </div>
-            <div class="slider">
-                <div class="slider-counter slider-counter-current">00:00</div>
-                <div class="slider-track track neu">
-                    <audio controls class="slider-audio" src="" preload="metadata"></audio>
-                    <div class="slider-track-default"></div>
-                    <div class="slider-track-active"></div>
-                    <input class="slider-track-input" type="range" step="0.25" min="0" value="0" />
-                </div>
-                <div class="slider-counter slider-counter-max">00:00</div>
-            </div>
-            <div class="lyrics">
-                <span>LYRICS</span>
-                <i class="fas fa-angle-down"></i>
-            </div>
-        </div>
+        {% include 'include/audioplayer.html' %}
     </div>
     <div class="blank"></div>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -162,6 +130,4 @@ L&S Site
         </path>
     </svg>
 </div>
-
-
 {%endblock MainContent%}

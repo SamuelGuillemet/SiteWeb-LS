@@ -1,0 +1,60 @@
+{% load static %}
+{% for podcast in page_obj %}
+<div class="iphone neu">
+    <div class="title">
+        <div>PODCASTS</div>
+    </div>
+    <div class="album-cover">
+        <div class="image"></div>
+        <h2 class="song-title">
+            {{podcast.title}}
+        </h2>
+        <h3 class="artist-title">
+            {{podcast.author}}
+        </h3>
+    </div>
+    <div class="buttons">
+        <button class="btn lg neu button-backward-audio" {% if page_obj.has_previous %}
+            ondblclick="window.location.href='?page={{ page_obj.previous_page_number }}#podcasts'" {% endif %}>
+            <i class="fas fa-backward"></i></button>
+        <button class="btn lg neu button-play-audio"><i class="fas fa-play"></i></button>
+        <button class="btn lg neu button-forward-audio {% if page_obj.has_next %}active{% endif %}"
+            {% if page_obj.has_next %} onclick="window.location.href='?page={{ page_obj.next_page_number }}#podcasts'"
+            {% else %} disabled="disabled" {% endif %}>
+            <i class="fas fa-forward"></i>
+        </button>
+    </div>
+    <div class="slider">
+        <div class="slider-counter slider-counter-current">00:00</div>
+        <div class="slider-track track neu">
+            <video controls class="slider-audio" preload="metadata">
+                <source src="{{podcast.audio.url}}" type="audio/mp3">
+            </video>
+            <div class="slider-track-default"></div>
+            <div class="slider-track-active"></div>
+            <input class="slider-track-input" type="range" step="0.25" min="0" value="0" />
+        </div>
+        <div class="slider-counter slider-counter-max">00:00</div>
+    </div>
+    <div class="lyrics">
+        <span>Chapitres</span>
+        <i class="fas fa-angle-down"></i>
+    </div>
+    <div class="chapitres">
+        {% for chapitre in podcast.chapitre_set.all %}
+        <div class="chapitre">
+            <div class="chapitre-content">
+                <span>{{chapitre.timestamp|time:"i:s"}}</span>
+            </div>
+            <div class="chapitre-title">
+                <span> {{chapitre.nom}}</span>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endfor %}
+
+{% block extraScript %}
+<script src="{% static 'js/podcast.js' %}" defer></script>
+{% endblock extraScript %}

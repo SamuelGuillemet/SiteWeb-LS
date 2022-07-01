@@ -72,3 +72,15 @@
         }
     }
 }
+
+.container-audio {
+    margin: 0 auto 64px auto;
+
+    @media screen and (max-width: 768px) {
+        margin-bottom: 16px;
+    }
+
+    width: 90%;
+    flex-grow: 1;
+    max-width: 800px;
+}

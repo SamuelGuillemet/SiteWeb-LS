@@ -9,6 +9,11 @@
     display: flex;
     flex-direction: column;
 
+    @media screen and (max-width: 768px) {
+        height: max-content;
+        padding: 0.5em;
+    }
+
     .title {
         display: flex;
         flex-direction: row;
@@ -23,9 +28,13 @@
         flex-direction: column;
         flex-grow: 1;
 
+        @media screen and (max-width: 768px) {
+            flex-grow: 0;
+        }
+
         .image {
             width: 100%;
-            background-color: #e22d49;
+            background-image: linear-gradient(to left top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
             flex-grow: 1;
 
             @media screen and (max-width: 768px) {
@@ -53,12 +62,15 @@
 
 
     .lyrics {
+        width: max-content;
+        margin: 0 auto;
         color: $gray;
         margin-top: 2em;
         text-align: center;
         font-size: 0.75em;
         display: flex;
         flex-direction: column;
+        cursor: pointer;
     }
 }
 
@@ -74,5 +86,65 @@
 
     &>button {
         color: $dark-gray;
+    }
+}
+
+
+.chapitres {
+    display: none;
+
+    &.chapitres-active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    & .chapitre {
+        padding: 8px 0;
+        display: flex;
+
+        & .chapitre-content {
+            font-weight: bolder;
+            padding-right: 8px;
+            cursor: pointer;
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+            &::after {
+                content: ' :';
+            }
+        }
+    }
+}
+
+.suggestions {
+    height: 250px;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    .card {
+        height: 218px;
+        width: 250px;
+        margin: 16px 16px;
+        display: flex;
+        flex-direction: column;
+        flex: 0 0 auto;
+
+        .title {
+            align-self: center;
+        }
+
+        .play-audio {
+            margin: 32px 64px;
+        }
     }
 }

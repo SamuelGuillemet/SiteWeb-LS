@@ -3,4 +3,18 @@
 {% block title %}Podcasts{% endblock title %}
 
 {% block MainContent %}
+{% include 'include/breadcrumbs.html' %}
+<div class="container-audio">
+    {% include 'include/audioplayer.html' %}
+</div>
+<div class="suggestions">
+    {% for podcast in page_obj.paginator.object_list %}
+    <div class="card neu">
+        <h1 class="title">{{podcast.title}}</h1>
+        <button class="btn lg neu play-audio" onclick="window.location.href='?page={{forloop.counter}}#podcasts'"><i
+                class="fas fa-play"></i></button>
+    </div>
+    {% endfor %}
+
+</div>
 {% endblock %}

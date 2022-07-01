@@ -730,7 +730,8 @@ body {
     cursor: pointer;
     box-shadow: inset -5px -5px 15px 0px #ffffff9e, inset 5px 5px 15px 0px #a3b1c6a8; }
   .btn:disabled {
-    color: #7e8a98; }
+    color: #7e8a98;
+    cursor: auto; }
 
 .btn-theme {
   margin: 4px;
@@ -935,13 +936,14 @@ body {
         flex-shrink: 1; }
         @media screen and (max-width: 768px) {
           .book > .page > div > .title {
-            font-size: 16px;
+            font-size: 22px;
             flex-grow: 1; } }
       .book > .page > div > .synopsis {
-        margin: 0 4vw;
-        flex-grow: 1;
+        margin: auto 4vw;
         overflow: hidden;
         max-height: 75%; }
+        .book > .page > div > .synopsis::after {
+          content: "..."; }
         @media screen and (max-width: 768px) {
           .book > .page > div > .synopsis {
             display: none; } }
@@ -957,7 +959,7 @@ body {
         .book > .page > div > .learn-more > a {
           display: flex;
           align-items: baseline;
-          padding: 10px;
+          padding-right: 10px;
           color: black;
           font-family: 'PT Sans', sans-serif;
           font-style: normal;
@@ -983,6 +985,10 @@ body {
   padding: 2em;
   display: flex;
   flex-direction: column; }
+  @media screen and (max-width: 768px) {
+    .iphone {
+      height: max-content;
+      padding: 0.5em; } }
   .iphone .title {
     display: flex;
     flex-direction: row;
@@ -994,9 +1000,12 @@ body {
     display: flex;
     flex-direction: column;
     flex-grow: 1; }
+    @media screen and (max-width: 768px) {
+      .iphone .album-cover {
+        flex-grow: 0; } }
     .iphone .album-cover .image {
       width: 100%;
-      background-color: #e22d49;
+      background-image: linear-gradient(to left top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
       flex-grow: 1; }
       @media screen and (max-width: 768px) {
         .iphone .album-cover .image {
@@ -1013,12 +1022,15 @@ body {
       font-size: 0.85em;
       color: #65717e; }
   .iphone .lyrics {
+    width: max-content;
+    margin: 0 auto;
     color: #7e8a98;
     margin-top: 2em;
     text-align: center;
     font-size: 0.75em;
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    cursor: pointer; }
 
 .neu {
   box-shadow: -5px -5px 15px 0px #ffffff9e, 5px 5px 15px 0px #a3b1c6a8;
@@ -1033,6 +1045,45 @@ body {
   padding: 1em 0; }
   .buttons > button {
     color: #65717e; }
+
+.chapitres {
+  display: none; }
+  .chapitres.chapitres-active {
+    display: flex;
+    flex-direction: column; }
+  .chapitres .chapitre {
+    padding: 8px 0;
+    display: flex; }
+    .chapitres .chapitre .chapitre-content {
+      font-weight: bolder;
+      padding-right: 8px;
+      cursor: pointer; }
+      .chapitres .chapitre .chapitre-content:hover {
+        text-decoration: underline; }
+      .chapitres .chapitre .chapitre-content::after {
+        content: ' :'; }
+
+.suggestions {
+  height: 250px;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+  flex-wrap: nowrap;
+  -webkit-overflow-scrolling: touch; }
+  .suggestions::-webkit-scrollbar {
+    display: none; }
+  .suggestions .card {
+    height: 218px;
+    width: 250px;
+    margin: 16px 16px;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto; }
+    .suggestions .card .title {
+      align-self: center; }
+    .suggestions .card .play-audio {
+      margin: 32px 64px; }
 
 .slider {
   display: flex;
@@ -1090,6 +1141,15 @@ body {
     .slider-track:hover .slider-track-input::-webkit-slider-thumb {
       opacity: 1; }
 
+.container-audio {
+  margin: 0 auto 64px auto;
+  width: 90%;
+  flex-grow: 1;
+  max-width: 800px; }
+  @media screen and (max-width: 768px) {
+    .container-audio {
+      margin-bottom: 16px; } }
+
 body {
   background-image: url("../images/Background.png") !important;
   background-size: contain !important;
@@ -1110,7 +1170,10 @@ body {
     grid-area: 1 / 2 / 2 / 3;
     display: flex;
     flex-direction: column;
-    max-width: calc(100vw - 32px); }
+    max-width: calc(100vw - 128px); }
+    @media screen and (max-width: 768px) {
+      #page-grid > .content {
+        max-width: calc(100vw - 32px); } }
     #page-grid > .content > .home {
       display: flex;
       align-items: center;
