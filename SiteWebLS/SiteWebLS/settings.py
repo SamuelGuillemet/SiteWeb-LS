@@ -92,13 +92,21 @@ WSGI_APPLICATION = 'SiteWebLS.wsgi.application'
 } """
 
 DATABASES = {
-    'default': {
+    'mysql': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'DjangoDev',
         'USER': 'dev',
         'PASSWORD': 'q=!*w^9_izaIGD%1f3d9363-fzr94^aa8&kkw2w%f8',
         'HOST': 'localhost',
         'PORT': '3306',
+    },
+    'default' : {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'djangodev',
+        'USER': 'dev',
+        'PASSWORD': 'q=!*w^9_izaIGD%1f3d9363-fzr94^aa8&kkw2w%f8',
+        'HOST': 'localhost',
+        'PORT': '5432',   
     }
 }
 

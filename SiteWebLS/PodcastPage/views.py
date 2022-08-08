@@ -19,12 +19,15 @@ def home(request):
          },
         {'link': reverse('PodcastPage:home'),
          'text': "Podcasts"
-         },
-        {
+         }
+    ]
+    
+    if paginator.count > 0:
+        breadcrumbs_list.append({
             'link': '#',
             'text': page_obj[0].title
-        }
-    ]
+        })
+        
 
     context = {
         'page_obj': page_obj,
