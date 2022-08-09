@@ -91,14 +91,14 @@
         }
 
         &>.arrow-left {
-            border-bottom: 5px solid rgba(0, 0, 0, 0.3);
-            border-left: 5px solid rgba(0, 0, 0, 0.3);
+            border-bottom: 5px solid rgba(0, 0, 0, 0.7);
+            border-left: 5px solid rgba(0, 0, 0, 0.7);
             transform: translateX(25%) rotate(45deg);
         }
 
         &>.arrow-right {
-            border-right: 5px solid rgba(0, 0, 0, 0.3);
-            border-top: 5px solid rgba(0, 0, 0, 0.3);
+            border-right: 5px solid rgba(0, 0, 0, 0.7);
+            border-top: 5px solid rgba(0, 0, 0, 0.7);
             transform: translateX(-25%) rotate(45deg);
         }
 

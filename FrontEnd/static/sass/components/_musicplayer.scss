@@ -119,7 +119,6 @@
 }
 
 .suggestions {
-    height: 250px;
     display: flex;
     overflow-x: auto;
     overflow-y: hidden;
@@ -132,7 +131,6 @@
     }
 
     .card {
-        height: 218px;
         width: 250px;
         margin: 16px 16px;
         display: flex;
