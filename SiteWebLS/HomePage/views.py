@@ -5,20 +5,23 @@ from django.views.generic import TemplateView
 from PodcastPage.models import Podcast
 from .mixins import SearchMixin
 from django.core.paginator import Paginator
+from GalleryPage.models import Photo
 
 # Create your views here.
 
 
 def home(request):
-    queryset = Article.objects.filter(
+    querysetArticle = Article.objects.filter(
         published_date__lte=timezone.now()).order_by('-published_date')[:4]
+    querysetPhoto = Photo.objects.all()
     podcasts = Podcast.objects.all()[:2]
-    paginator = Paginator(podcasts, 1)
+    paginatorPodcast = Paginator(podcasts, 1)
     page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)
+    page_obj = paginatorPodcast.get_page(page_number)
     context = {
-        'article_list': queryset,
+        'article_list': querysetArticle,
         'page_obj': page_obj,
+        'photo_list': querysetPhoto
     }
     return render(request, 'HomePage/index.html', context)
 
@@ -27,7 +30,8 @@ class GlobalSearchView(SearchMixin, TemplateView):
     template_name = 'HomePage/global_search.html'
     search_settings = {
         'ArticlePage.Article': ['title', 'author', 'article'],
-        'CVPage.CV': ['nom', 'prenom']
+        'CVPage.CV': ['nom', 'prenom'],
+        'GalleryPage.Photo': ['name', 'description'],
     }
 
     def get_context_data(self, **kwargs):

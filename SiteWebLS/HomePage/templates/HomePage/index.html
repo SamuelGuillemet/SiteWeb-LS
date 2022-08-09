@@ -81,41 +81,19 @@ L&S Site
     <div class="main-content">
         <section id="carousel">
             <div class="slider neu">
-                <div class="item active neu" id="item-0">
-                    <div class="content"></div>
+                {% for photo in photo_list %}
+                <div class="item neu {% if forloop.first %}active{% endif %} {% if forloop.counter == 2 %}next{% endif %}"
+                    id="item-{{forloop.counter0}}">
+                    <div class="content">
+                        <img src="{{photo.image.url}}" alt="{{photo.name}} "
+                            style="object-fit: scale-down; width: 100%; height: 100%">
+                    </div>
                     <span class="neu btn">
-                        <a href="">EN SAVOIR PLUS</a>
+                        <a href="{% url 'GalleryPage:detail' photo.pk %}">EN SAVOIR PLUS</a>
                         <i class="fa-solid fa-chevron-right center"></i>
                     </span>
                 </div>
-                <div class="item next" id="item-1">
-                    <div class="content"></div>
-                    <span class="neu btn">
-                        <a href="">EN SAVOIR PLUS</a>
-                        <i class="fa-solid fa-chevron-right center"></i>
-                    </span>
-                </div>
-                <div class="item" id="item-2">
-                    <div class="content"></div>
-                    <span class="neu btn">
-                        <a href="">EN SAVOIR PLUS</a>
-                        <i class="fa-solid fa-chevron-right center"></i>
-                    </span>
-                </div>
-                <div class="item" id="item-3">
-                    <div class="content"></div>
-                    <span class="neu btn">
-                        <a href="">EN SAVOIR PLUS</a>
-                        <i class="fa-solid fa-chevron-right center"></i>
-                    </span>
-                </div>
-                <div class="item" id="item-4">
-                    <div class="content"></div>
-                    <span class="neu btn">
-                        <a href="">EN SAVOIR PLUS</a>
-                        <i class="fa-solid fa-chevron-right center"></i>
-                    </span>
-                </div>
+                {% endfor %}
             </div>
             <div class="control">
                 <div class="arrow-left" id="carousel-arrow-left"></div>

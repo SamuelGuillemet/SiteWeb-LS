@@ -37,6 +37,18 @@ Recherche globale
         </a>
     </div>
     {% endfor %}
+    {% for photo in search_result.gallerypage_photo %}
+    <div class="item-article">
+        <h2>Photo :</h2>
+        <a href="{% url 'GalleryPage:detail' photo.pk %}">
+            <img src="{{ photo.image.url}}" height="128px">
+        </a>
+        <div class="details">
+            <h2>{{photo.name}}</h2>
+            <h2>{{photo.date}}</h2>
+        </div>
+    </div>
+    {% endfor %}
 </div>
 <div class="blank"></div>
 {% else %}
