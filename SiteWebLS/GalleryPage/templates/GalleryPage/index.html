@@ -5,4 +5,13 @@
 
 {% block MainContent %}
 {% include 'include/breadcrumbs.html' %}
+<!-- Galerie photos -->
+<div class="gallery">
+    {% for photo in photo_list %}
+    <div class="gallery-item" onclick="window.location.href = '{% url 'GalleryPage:detail' photo.pk %}'">
+        <img class="thumb" src="{{ photo.image.url }}" alt="{{ photo.name }}">
+        <div class="caption"><span>{{ photo.name }}</span></div>
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}

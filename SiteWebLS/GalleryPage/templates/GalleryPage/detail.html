@@ -1,0 +1,18 @@
+{% extends 'base_site.html' %}
+{% load extra_article %}
+{% load static %}
+{% block title %}Photo {{photo.name}}{% endblock title %}
+
+{% block MainContent %}
+{% include 'include/breadcrumbs.html' %}
+<div class='container-photo'>
+    <div class="detail">
+        <h1>{{photo.name}}</h1>
+        <p class='description'>{% if photo.description %}{{photo.description}}{% endif %}</p>
+        <p class='date'>{{photo.date}}</p>
+    </div>
+    <div class="photo">
+        <img src="{{photo.image.url}}" alt="{{photo.name}}" />
+    </div>
+</div>
+{% endblock %}
