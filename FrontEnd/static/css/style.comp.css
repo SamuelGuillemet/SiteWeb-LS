@@ -1484,12 +1484,10 @@ body {
       font-size: 16px;
       line-height: normal;
       letter-spacing: -0.015em;
+      font-size: 20px;
       white-space: pre-wrap;
-      overflow-wrap: anywhere; }
-      @media screen and (min-width: 768px) {
-        .container-detail > .article > p {
-          line-height: 150%;
-          font-size: 20px; } }
+      overflow-wrap: anywhere;
+      line-height: 150%; }
     .container-detail > .article > h6 {
       padding-top: 16px;
       margin: 0;
