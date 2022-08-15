@@ -1189,15 +1189,26 @@ body {
     width: 100%;
     justify-content: center; }
     .container-photo .photo img {
-      min-width: 50vw;
+      max-width: calc(100vw - 144px - 4em);
       max-height: 80vh;
-      object-fit: contain; }
+      object-fit: contain;
+      padding: 4px;
+      border: #7e8a98 1px solid; }
+      @media screen and (max-width: 768px) {
+        .container-photo .photo img {
+          max-width: calc(100vw - 40px - 4em); } }
+      @media screen and (max-width: 400px) {
+        .container-photo .photo img {
+          max-width: calc(100vw - 40px); } }
   .container-photo .detail {
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     min-width: 300px; }
+    @media screen and (max-width: 450px) {
+      .container-photo .detail {
+        min-width: 250px; } }
     .container-photo .detail .description {
       flex-grow: 1; }
 
