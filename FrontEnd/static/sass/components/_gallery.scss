@@ -52,9 +52,20 @@
         justify-content: center;
 
         img {
-            min-width: 50vw;
+            max-width: calc(100vw - 144px - 4em);
+            //min-width: 45vw;
             max-height: 80vh;
             object-fit: contain;
+            padding: 4px;
+            border: $gray 1px solid;
+
+            @media screen and (max-width: 768px) {
+                max-width: calc(100vw - 40px - 4em);
+            }
+
+            @media screen and (max-width: 400px) {
+                max-width: calc(100vw - 40px);
+            }
         }
     }
 
@@ -64,6 +75,10 @@
         flex-direction: column;
         align-items: center;
         min-width: 300px;
+
+        @media screen and (max-width: 450px) {
+            min-width: 250px;
+        }
 
         .description {
             flex-grow: 1;
