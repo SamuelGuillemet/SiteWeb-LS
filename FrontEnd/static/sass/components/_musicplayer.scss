@@ -138,11 +138,16 @@
         flex: 0 0 auto;
 
         .title {
-            align-self: center;
+            flex-grow: 1;
+            width: 100%;
+            padding: 0 0.5em;
+            font-size: 24px;
+            color: $dark-gray;
         }
 
         .play-audio {
-            margin: 32px 64px;
+            margin: 1em auto;
+            color: $dark-gray;
         }
     }
 }
