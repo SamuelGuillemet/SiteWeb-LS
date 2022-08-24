@@ -119,6 +119,7 @@
 }
 
 .suggestions {
+    margin: 32px 0;
     display: flex;
     overflow-x: auto;
     overflow-y: hidden;
@@ -127,11 +128,13 @@
     -webkit-overflow-scrolling: touch;
 
     &::-webkit-scrollbar {
-        display: none;
+        @media screen and (min-width: 768px) {
+            display: none;
+        }
     }
 
     .card {
-        width: 250px;
+        width: 220px;
         margin: 16px 16px;
         display: flex;
         flex-direction: column;
