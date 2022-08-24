@@ -760,7 +760,7 @@ body {
   cursor: pointer; }
   @media screen and (max-width: 768px) {
     .btn {
-      padding: 4px 8px; } }
+      padding: 10px; } }
   .btn.lg {
     font-size: 1em; }
   .btn:enabled:active {
@@ -1101,24 +1101,31 @@ body {
         content: ' :'; }
 
 .suggestions {
+  margin: 32px 0;
   display: flex;
   overflow-x: auto;
   overflow-y: hidden;
   width: 100%;
   flex-wrap: nowrap;
   -webkit-overflow-scrolling: touch; }
-  .suggestions::-webkit-scrollbar {
-    display: none; }
+  @media screen and (min-width: 768px) {
+    .suggestions::-webkit-scrollbar {
+      display: none; } }
   .suggestions .card {
-    width: 250px;
+    width: 220px;
     margin: 16px 16px;
     display: flex;
     flex-direction: column;
     flex: 0 0 auto; }
     .suggestions .card .title {
-      align-self: center; }
+      flex-grow: 1;
+      width: 100%;
+      padding: 0 0.5em;
+      font-size: 24px;
+      color: #65717e; }
     .suggestions .card .play-audio {
-      margin: 32px 64px; }
+      margin: 1em auto;
+      color: #65717e; }
 
 .slider {
   display: flex;
