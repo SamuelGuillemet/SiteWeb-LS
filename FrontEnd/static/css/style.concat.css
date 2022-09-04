@@ -781,6 +781,27 @@ body {
   .btn-theme:hover {
     background-color: #c6eaf7; }
 
+.learn-more {
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+  margin: 32px 0; }
+  @media screen and (max-width: 768px) {
+    .learn-more {
+      margin: 8px 0; } }
+  .learn-more > a {
+    display: flex;
+    align-items: baseline;
+    padding-right: 10px;
+    color: black;
+    font-family: 'PT Sans', sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: normal;
+    letter-spacing: -0.015em; }
+
 #hamburger-menu {
   margin: 0 10px;
   width: max-content;
@@ -984,26 +1005,6 @@ body {
         @media screen and (max-width: 768px) {
           .book > .page > div > .synopsis {
             display: none; } }
-      .book > .page > div > .learn-more {
-        align-self: center;
-        display: flex;
-        justify-content: center;
-        z-index: 10;
-        margin: 32px 0; }
-        @media screen and (max-width: 768px) {
-          .book > .page > div > .learn-more {
-            margin: 0; } }
-        .book > .page > div > .learn-more > a {
-          display: flex;
-          align-items: baseline;
-          padding-right: 10px;
-          color: black;
-          font-family: 'PT Sans', sans-serif;
-          font-style: normal;
-          font-weight: 200;
-          font-size: 16px;
-          line-height: normal;
-          letter-spacing: -0.015em; }
       .book > .page > div > .pagenumber {
         flex-shrink: 1;
         align-self: center;
