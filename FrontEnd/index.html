@@ -1,50 +1,66 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+
+<html lang="fr-fr" dir="ltr">
 
 <head>
-    <title>Index page</title>
+    <title>
+
+        L&S Site
+
+    </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hurricane&family=PT+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Hurricane&family=PT+Sans&family=Nunito+Sans:wght@300;400;700;800&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link rel="stylesheet" href="static/css/style.temp.css">
+    <link rel="stylesheet" href="./static/css/style.temp.css">
+    <link rel="icon" href="./static/images/favicon.png">
 </head>
 
 <body>
+
     <header id="nav-menu">
         <section class="top-nav">
             <h1>L&S Site</h1>
             <ul class="items menu-items">
-                <li><a href="/Photo">Galerie photos</a></li>
-                <li><a href="#">Articles</a></li>
-                <li class="active"><a href="#">Acceuil</a></li>
-                <li><a href="#">Podcasts</a></li>
-                <li><a href="#">CV</a></li>
+                <li><a href="/gallery/">Galerie photos</a></li>
+                <li><a href="/article/">Articles</a></li>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/podcast/">Podcasts</a></li>
+                <li><a href="/cv/">CV</a></li>
             </ul>
             <div id="hamburger-menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-            <a href="#" class="connect">
-                <i class="fa-solid fa-user"></i>
-            </a>
+            <div class="connect">
+                <a href="/admin/" class="admin">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+            </div>
         </section>
         <section class="mobile-nav">
             <ul class="items menu-items" id="nav-items">
-                <li><a href="#">Galerie photos</a></li>
-                <li><a href="#">Articles</a></li>
-                <li class="active"><a href="#">Acceuil</a></li>
-                <li><a href="#">Podcasts</a></li>
-                <li><a href="#">CV</a></li>
+                <li class="admin-btn">
+                    <a href="/admin/" class="admin">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                </li>
+                <li><a href="/gallery/">Galerie photos</a></li>
+                <li><a href="/article/">Articles</a></li>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/podcast/">Podcasts</a></li>
+                <li><a href="/cv/">CV</a></li>
             </ul>
+
         </section>
     </header>
-
     <section id="page-grid">
         <div class="border"></div>
-        <div class="content" id="MainContent">
+        <div id="MainContent" class="content">
+
             <div id="articles" class="home">
                 <div class="shelf buttons neu">
                     <button class="articles shelf-icon active btn neu"><i class="fa-solid fa-newspaper"></i></button>
@@ -53,66 +69,61 @@
                 </div>
                 <div class="main-content">
                     <div class="book">
+
+
                         <div class="page active neu">
+
+
                             <div class="front">
                                 <h1 class="title">Aperçu des articles</h1>
                             </div>
                             <div class="back">
-                                <h1 class="title">
-                                    L’Afrique face à un embouteillage de vaccins contre le Covid-19
-                                </h1>
-                                <div class="synopsis">
-                                    Après avoir souffert d’une pénurie de vaccins au pic de la pandémie de Covid-19,
-                                    l’Afrique croule aujourd’hui sous des millions de doses que la plupart des pays
-                                    ne
-                                    sont pas en mesure d’absorber. En cause, le manque de moyens logistiques pour
-                                    les
-                                    distribuer, ou de volontaires parmi des populations, toujours peu convaincues de
-                                    la
-                                    nécessité de se protéger par la vaccination. Les dons promis par les pays riches
-                                    dans le cadre d’accords bilatéraux, et les livraisons assurées à travers le
-                                    mécanisme de solidarité internationale Covax affluent de manière désordonnée et
-                                    avec
-                                    des délais d’expiration encore trop courts.
-                                </div>
-                                <div class="learn-more btn neu">
-                                    <a href="">EN SAVOIR PLUS</a>
+                                <h1 class="title">Sam</h1>
+                                <div class="synopsis">ofpl,zeopf,zopn,fopzenfopz,eompf,zeompf,mzope,f
+                                    nzinizndz
+                                    zdnozndoznd
+                                    zdnoznddoznd
+                                    zodnozndoazodinazlndazd
+                                    azdnoazndânozpdnaz
+                                    azidpazdmaonzdnopanzdopa
+                                    kapozdoianzodikbaziozsu hdpa
+                                    zhidoadud oazjioaza z aozidd paz</div>
+                                <button class="learn-more btn neu" onclick="window.location.href='/article/1/'">
+                                    <a href="/article/1/">EN SAVOIR PLUS</a>
                                     <i class="fa-solid fa-chevron-right center"></i>
-                                </div>
+                                </button>
                                 <div class="pagenumber">1</div>
                             </div>
+
+
                         </div>
+
+
+
                         <div class="page neu">
+
+
                             <div class="front">
-                                <h1 class="title"></h1>
-                                <div class="synopsis"></div>
-                                <div class="learn-more btn neu">
-                                    <a href="">EN SAVOIR PLUS</a>
+                                <h1 class="title">Nouveau</h1>
+                                <div class="synopsis">La troisième période de canicule se poursuit en France hexagonale.
+                                    Mardi 9 août, pas moins de 18 départements ont été placés en vigilance orange
+                                    canicule par Météo-France, avant des orages attendus à partir de dimanche.
+
+                                    Les 18 départements concernés sont les suivants : la Charente (16), la
+                                    Charente-Maritime (17), la Dordogne (24), le Gard (30), la Haute-Garonne (31), le
+                                    Gers (32), la Gironde (33), les Landes (40), la Loire-Atlantique (44), le Lot (46),
+                                    le Lot-et-Garonne (47), les Pyrénées-Atl</div>
+                                <button class="learn-more btn neu" onclick="window.location.href='/article/2/'">
+                                    <a href="/article/2/">EN SAVOIR PLUS</a>
                                     <i class="fa-solid fa-chevron-right center"></i>
-                                </div>
+                                </button>
                                 <div class="pagenumber">2</div>
                             </div>
-                            <div class="back">
-                                <h1 class="title"></h1>
-                                <div class="synopsis"></div>
-                                <div class="learn-more btn neu">
-                                    <a href="">EN SAVOIR PLUS</a>
-                                    <i class="fa-solid fa-chevron-right center"></i>
-                                </div>
-                                <div class="pagenumber">3</div>
-                            </div>
+
+
                         </div>
-                        <div class="page neu">
-                            <div class="front">
-                                <h1 class="title"></h1>
-                                <div class="synopsis"></div>
-                                <div class="learn-more btn neu">
-                                    <a href="">EN SAVOIR PLUS</a>
-                                    <i class="fa-solid fa-chevron-right center"></i>
-                                </div>
-                                <div class="pagenumber">4</div>
-                            </div>
-                        </div>
+
+
                     </div>
                 </div>
                 <div class="blank"></div>
@@ -129,32 +140,55 @@
                     <button class="photos shelf-icon btn neu"><i class="fa-solid fa-images"></i></button>
                 </div>
                 <div class="main-content">
+
+
                     <div class="iphone neu">
                         <div class="title">
-                            <div>NOW PLAYING</div>
+                            <div>PODCASTS</div>
                         </div>
                         <div class="album-cover">
                             <div class="image"></div>
                             <h2 class="song-title">
-                                Redbone
+                                Aquatrip
                             </h2>
                             <h3 class="artist-title">
-                                Childish Gambino
+                                Hippocampe fou
                             </h3>
                         </div>
                         <div class="buttons">
-                            <button class="btn lg neu"><i class="fas fa-backward"></i></button>
-                            <button class="btn lg neu"><i class="fas fa-play"></i></button>
-                            <button class="btn lg neu"><i class="fas fa-forward"></i></button>
+                            <button class="btn lg neu button-backward-audio">
+                                <i class="fas fa-backward"></i></button>
+                            <button class="btn lg neu button-play-audio"><i class="fas fa-play"></i></button>
+                            <button class="btn lg neu button-forward-audio active"
+                                onclick="window.location.href='?page=2#podcasts'">
+                                <i class="fas fa-forward"></i>
+                            </button>
                         </div>
-                        <div class="track neu">
-                            <div></div>
+                        <div class="slider">
+                            <div class="slider-counter slider-counter-current">00:00</div>
+                            <div class="slider-track track neu">
+                                <video controls class="slider-audio" preload="metadata">
+                                    <source src="/media/podcasts/01_-_Aquatrip_hippocampe_Fou.mp3" type="audio/mp3">
+                                </video>
+                                <div class="slider-track-default"></div>
+                                <div class="slider-track-active"></div>
+                                <input class="slider-track-input" type="range" step="0.25" min="0" value="0" />
+                            </div>
+                            <div class="slider-counter slider-counter-max">00:00</div>
                         </div>
                         <div class="lyrics">
-                            <i class="fas fa-angle-up"></i>
-                            <span>LYRICS</span>
+                            <span>Chapitres</span>
+                            <i class="fas fa-angle-down"></i>
+                        </div>
+                        <div class="chapitres">
+
                         </div>
                     </div>
+
+
+
+                    <script src="/static/js/podcast.js" defer></script>
+
                 </div>
                 <div class="blank"></div>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -172,41 +206,17 @@
                 <div class="main-content">
                     <section id="carousel">
                         <div class="slider neu">
-                            <div class="item active neu" id="item-0">
-                                <div class="content"></div>
-                                <span class="neu btn">
-                                    <a href="">EN SAVOIR PLUS</a>
+                            <div class="item neu  " id="item-0">
+                                <div class="content">
+                                    <img src="/media/photos/PP.jpg" alt="Moi "
+                                        style="object-fit: scale-down; width: 100%; height: 100%">
+                                </div>
+                                <button class="learn-more btn neu" onclick="window.location.href='/article/1/'">
+                                    <a href="/article/1/">EN SAVOIR PLUS</a>
                                     <i class="fa-solid fa-chevron-right center"></i>
-                                </span>
+                                </button>
                             </div>
-                            <div class="item next" id="item-1">
-                                <div class="content"></div>
-                                <span class="neu btn">
-                                    <a href="">EN SAVOIR PLUS</a>
-                                    <i class="fa-solid fa-chevron-right center"></i>
-                                </span>
-                            </div>
-                            <div class="item" id="item-2">
-                                <div class="content"></div>
-                                <span class="neu btn">
-                                    <a href="">EN SAVOIR PLUS</a>
-                                    <i class="fa-solid fa-chevron-right center"></i>
-                                </span>
-                            </div>
-                            <div class="item" id="item-3">
-                                <div class="content"></div>
-                                <span class="neu btn">
-                                    <a href="">EN SAVOIR PLUS</a>
-                                    <i class="fa-solid fa-chevron-right center"></i>
-                                </span>
-                            </div>
-                            <div class="item" id="item-4">
-                                <div class="content"></div>
-                                <span class="neu btn">
-                                    <a href="">EN SAVOIR PLUS</a>
-                                    <i class="fa-solid fa-chevron-right center"></i>
-                                </span>
-                            </div>
+
                         </div>
                         <div class="control">
                             <div class="arrow-left" id="carousel-arrow-left"></div>
@@ -221,19 +231,20 @@
                     </path>
                 </svg>
             </div>
+
         </div>
         <div class="border"></div>
     </section>
     <footer id="footer-page">
         <div class="top">
-            <div class="search-bar neu center">
+            <form action="/search/" class="search-bar neu center" role="search">
                 <i class="fa-solid fa-magnifying-glass center"></i>
-                <input placeholder="Rechercher" type="text">
-                <button><i class="fa-solid fa-arrow-right center"></i></button>
-            </div>
+                <input placeholder="Rechercher" type="search" name="q">
+                <button type="submit"><i class="fa-solid fa-arrow-right center"></i></button>
+            </form>
             <span class="about">
                 <p class="name">Lucie Lebreton</p>
-                <a href="mailto:lucie.lebreton12@gmail.com">lucie.lebreton12@gmail.com</a>
+                <a href="mailto:lucielebreton12@gmail.com">lucielebreton12@gmail.com</a>
             </span>
         </div>
         <div class="bottom">
@@ -241,12 +252,16 @@
                 <p>© Guillemet Samuel - 2022</p>
             </div>
             <div class="social-media">
-                <a href="#" class="github"><i class="fa-brands fa-github center"></i></a>
-                <a href="#" class="linkedin"><i class="fa-brands fa-linkedin center"></i></a>
+                <a href="https://github.com/SamuelGuillemet" class="github"><i
+                        class="fa-brands fa-github center"></i></a>
+                <a href="https://www.linkedin.com/in/samuelguillemet" class="linkedin"><i
+                        class="fa-brands fa-linkedin center"></i></a>
             </div>
         </div>
     </footer>
-    <script src="static/js/script.js"></script>
+
+
+    <script src="./static/js/script.js"></script>
 </body>
 
 </html>

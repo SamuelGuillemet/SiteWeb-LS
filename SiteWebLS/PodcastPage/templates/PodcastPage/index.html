@@ -11,8 +11,8 @@
     {% for podcast in page_obj.paginator.object_list %}
     <div class="card neu">
         <h1 class="title">{{podcast.title}}</h1>
-        <button class="btn lg neu play-audio" onclick="window.location.href='?page={{forloop.counter}}#podcasts'"><i
-                class="fas fa-play"></i></button>
+        <button class="btn lg neu play-audio" onclick="window.location.href='?page={{forloop.counter}}#podcasts'"
+            id="{{forloop.counter}}"><i class="fas fa-play"></i></button>
     </div>
     {% endfor %}
 

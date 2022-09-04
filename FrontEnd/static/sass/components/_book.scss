@@ -121,25 +121,25 @@
                 }
             }
 
-            &>.learn-more {
-                align-self: center;
-                display: flex;
-                justify-content: center;
-                z-index: 10;
-                margin: 32px 0;
+            // &>.learn-more {
+            //     align-self: center;
+            //     display: flex;
+            //     justify-content: center;
+            //     z-index: 10;
+            //     margin: 32px 0;
 
-                @media screen and (max-width: 768px) {
-                    margin: 0;
-                }
+            //     @media screen and (max-width: 768px) {
+            //         margin: 0;
+            //     }
 
-                &>a {
-                    display: flex;
-                    align-items: baseline;
-                    padding-right: 10px;
-                    color: black;
-                    @include text();
-                }
-            }
+            //     &>a {
+            //         display: flex;
+            //         align-items: baseline;
+            //         padding-right: 10px;
+            //         color: black;
+            //         @include text();
+            //     }
+            // }
 
             &>.pagenumber {
                 flex-shrink: 1;
