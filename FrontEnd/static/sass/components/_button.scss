@@ -62,3 +62,27 @@
         @include text();
     }
 }
+
+.admin {
+    margin: 0 16px 0 8px;
+    background: #E1E1E1;
+    height: 32px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 32px;
+    border-radius: 100%;
+    align-self: center;
+    flex-shrink: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &>i {
+        color: $dark-gray;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    &:hover {
+        box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+}
