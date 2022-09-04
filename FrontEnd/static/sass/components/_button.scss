@@ -42,3 +42,23 @@
         background-color: rgba($color: lighten($blue, 25%), $alpha: 1.0);
     }
 }
+
+.learn-more {
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+    margin: 32px 0;
+
+    @media screen and (max-width: 768px) {
+        margin: 8px 0;
+    }
+
+    &>a {
+        display: flex;
+        align-items: baseline;
+        padding-right: 10px;
+        color: black;
+        @include text();
+    }
+}
