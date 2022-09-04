@@ -13,12 +13,17 @@
             <span></span>
             <span></span>
         </div>
-        <a href="{% url 'admin:index' %}" class="connect">
-            <i class="fa-solid fa-user"></i>
-        </a>
+        <div class="connect">
+            <a href="{% url 'admin:index' %}" class="admin">
+                <i class="fa-solid fa-user"></i>
+            </a>
+        </div>
     </section>
     <section class="mobile-nav">
         <ul class="items menu-items" id="nav-items">
+            <li class="admin-btn">
+                <a href="/admin/" class="admin"><i class="fa-solid fa-user"></i></a>
+            </li>
             <li><a href="{% url 'GalleryPage:home' %}">Galerie photos</a></li>
             <li><a href="{% url 'ArticlePage:home' %}">Articles</a></li>
             <li><a href="{% url 'HomePage:home' %}">Accueil</a></li>
