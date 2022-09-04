@@ -88,10 +88,11 @@ L&S Site
                         <img src="{{photo.image.url}}" alt="{{photo.name}} "
                             style="object-fit: scale-down; width: 100%; height: 100%">
                     </div>
-                    <span class="neu btn">
+                    <button class="learn-more btn neu"
+                        onclick="window.location.href='{% url 'GalleryPage:detail' photo.pk %}'">
                         <a href="{% url 'GalleryPage:detail' photo.pk %}">EN SAVOIR PLUS</a>
                         <i class="fa-solid fa-chevron-right center"></i>
-                    </span>
+                    </button>
                 </div>
                 {% endfor %}
             </div>
