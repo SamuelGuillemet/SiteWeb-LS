@@ -83,14 +83,6 @@ class Experience(models.Model):
     def __str__(self):
         return 'Expérience en tant que ' + self.role
 
-    class Meta:
-        constraints = [
-            CheckConstraint(
-                check=Q(date_fin__gte=F('date_debut')),
-                name='check_start_date',
-            ),
-        ]
-
     def clean(self):
         if (self.date_debut is not None) and (self.date_fin is not None):
             if self.date_debut > self.date_fin:
