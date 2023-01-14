@@ -116,13 +116,6 @@ abbr[title] {
   /* 2 */ }
 
 /**
- * Add the correct font weight in Chrome, Edge, and Safari.
- */
-b,
-strong {
-  font-weight: bolder; }
-
-/**
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
  */
@@ -1374,7 +1367,7 @@ body {
   display: flex;
   justify-content: space-between;
   width: max-content;
-  margin: .5rem;
+  margin: 0.5rem;
   align-items: center; }
   .choice span,
   .choice-publi span {
@@ -1413,7 +1406,7 @@ body {
       font-size: 16px;
       line-height: normal;
       letter-spacing: -0.015em;
-      font-family: 'Roboto Mono', monospace;
+      font-family: "Roboto Mono", monospace;
       font-size: 1.5em;
       line-height: normal; }
     .container-article .themes-filter > .reset-filter {
@@ -1537,6 +1530,13 @@ body {
     flex-direction: column;
     justify-content: center;
     width: 40%; }
+    .container-detail > .article hr {
+      border: 0;
+      clear: both;
+      display: block;
+      width: 96%;
+      background-color: #42423d;
+      height: 1px; }
     @media screen and (max-width: 768px) {
       .container-detail > .article {
         margin: 0 16px;
@@ -1546,6 +1546,7 @@ body {
       padding-bottom: 16px;
       border-bottom: #7e8a98 1px solid;
       margin: 0;
+      margin-bottom: 16px;
       font-family: 'PT Sans', sans-serif;
       font-style: normal;
       font-weight: 200;
@@ -1553,9 +1554,8 @@ body {
       line-height: normal;
       letter-spacing: -0.015em; }
     .container-detail > .article > p {
-      padding: 16px;
+      padding: 8px;
       margin: 0;
-      border-bottom: #7e8a98 1px solid;
       font-family: 'PT Sans', sans-serif;
       font-style: normal;
       font-weight: 200;
@@ -1567,10 +1567,21 @@ body {
       @media screen and (min-width: 768px) {
         .container-detail > .article > p {
           line-height: 150%;
-          font-size: 20px; } }
+          font-size: 16px;
+          line-height: 24px; } }
+    .container-detail > .article > h1,
+    .container-detail > .article h2,
+    .container-detail > .article h3,
+    .container-detail > .article h4,
+    .container-detail > .article h5,
+    .container-detail > .article h6 {
+      margin: 0; }
+    .container-detail > .article > h1 {
+      margin: 12px 0px; }
+    .container-detail > .article > h2 {
+      margin: 10px 0px; }
     .container-detail > .article > h6 {
       padding-top: 16px;
-      margin: 0;
       font-family: 'PT Sans', sans-serif;
       font-style: normal;
       font-weight: 200;
@@ -1604,7 +1615,7 @@ body {
   margin: 32px auto;
   display: flex;
   flex-direction: column;
-  font-family: 'Nunito Sans'; }
+  font-family: "Nunito Sans"; }
   @media screen and (max-width: 768px) {
     .presentation {
       margin-left: 8px; } }
@@ -1761,7 +1772,7 @@ body {
       flex-direction: column;
       width: 25%;
       height: max-content;
-      margin: 0; }
+      margin: 16px 0; }
       @media screen and (max-width: 768px) {
         .projet > .projects-list > .project-item {
           width: 100%;
@@ -1828,7 +1839,7 @@ body {
         border-top-right-radius: 15px; }
         .experience > .experiences-list > .experience-item > header > .date {
           color: #7e8a98;
-          font-size: .8em; }
+          font-size: 0.8em; }
           .experience > .experiences-list > .experience-item > header > .date::before {
             content: "("; }
           .experience > .experiences-list > .experience-item > header > .date::after {
