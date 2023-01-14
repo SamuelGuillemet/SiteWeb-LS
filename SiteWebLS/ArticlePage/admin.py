@@ -14,10 +14,11 @@ class SourceInLine(admin.TabularInline):
 
 class ArticleAdmin(admin.ModelAdmin):
     list_filter = ['publication']
-    inlines = [ThemeInLine, SourceInLine]
+    inlines = [SourceInLine]
     list_display = ('title', 'publication',
                     'published_date', 'was_published_recently')
 
 
 # Register your models here.
 admin.site.register(Article, ArticleAdmin)
+admin.site.register(Theme)
