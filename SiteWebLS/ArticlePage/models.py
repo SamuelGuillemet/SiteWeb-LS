@@ -3,6 +3,7 @@ from django.db import models
 from django.urls import reverse
 from django.utils import timezone
 from django.contrib import admin
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 
@@ -12,15 +13,20 @@ class Article(models.Model):
     PUBLICATION_CHOICES = [
         ('SP', 'Sciences Po'),
         ('ML', 'La manche libre'),
+        ('OF', 'Ouest France'),
+        ('EP', 'Ecrits personnels')
     ]
 
     title = models.CharField('Titre', max_length=150, default=None)
     author = models.CharField('Auteur', max_length=50, default=None)
-    article = models.TextField(default=None)
+    # article = models.TextField(default=None)
+    article = RichTextField()
     published_date = models.DateField('Date de publication',
                                       default=datetime.date.today)
     publication = models.CharField(
         'Publication', max_length=2, choices=PUBLICATION_CHOICES, default='SP')
+    
+    themes = models.ManyToManyField('Theme', blank=True)
 
     @admin.display(
         boolean=True,
@@ -37,18 +43,23 @@ class Article(models.Model):
     def get_absolute_url(self):
         return reverse("ArticlePage:detail", kwargs={"pk": self.pk})
 
-
 class Theme(models.Model):
-    article = models.OneToOneField(
-        Article, on_delete=models.CASCADE, default=None)
-    EF = models.BooleanField('Enfance', default=False)
-    PO = models.BooleanField('Portrait', default=False)
-    RE = models.BooleanField('Reportage', default=False)
-    EN = models.BooleanField('Enquête', default=False)
-    ET = models.BooleanField('Etude', default=False)
-
+    title = models.CharField('Titre', max_length=50, default=None)
+    
     def __str__(self):
-        return "Themes de l'article : {}".format(self.article)
+        return self.title
+
+# class Theme(models.Model):
+#     article = models(
+#         Article, on_delete=models.CASCADE, default=None)
+#     EF = models.BooleanField('Enfance', default=False)
+#     PO = models.BooleanField('Portrait', default=False)
+#     RE = models.BooleanField('Reportage', default=False)
+#     EN = models.BooleanField('Enquête', default=False)
+#     ET = models.BooleanField('Etude', default=False)
+
+#     def __str__(self):
+#         return "Themes de l'article : {}".format(self.article)
 
 
 class Source(models.Model):

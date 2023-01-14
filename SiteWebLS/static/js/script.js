@@ -52,7 +52,7 @@ var currentUrl = new URL(window.location.href);
 for (let index = 0; index < menuItems[0].childElementCount; index++) {
     if ((new URL(menuItems[0].children[index].children[0].href)).pathname.split('/')[1] == currentUrl.pathname.split('/')[1]) {
         menuItems[0].children[index].classList.add("active");
-        menuItems[1].children[index].classList.add("active");
+        menuItems[1].children[index+1].classList.add("active");
     }
 }
 

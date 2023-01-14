@@ -36,6 +36,7 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
+    'ckeditor',
     'HomePage.apps.HomepageConfig',
     'ArticlePage.apps.ArticlepageConfig',
     'CVPage.apps.CvpageConfig',
@@ -80,6 +81,41 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'SiteWebLS.wsgi.application'
 
+CKEDITOR_CONFIGS = {
+    "default": {
+        'tabSpaces': 8,
+        'removePlugins': 'elementspath',
+        'toolbar_YourCustomToolbarConfig': [
+            {'name': 'yourcustomtools', 'items': [
+                'Preview',
+                'Maximize',
+                '-',
+            ]},
+            {'name': 'paragraph',
+             'items': ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote','-',
+                       'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock']},
+            {'name': 'links', 'items': ['Link', 'Unlink', 'Anchor']},
+            {'name': 'insert', 'items': ['HorizontalRule', 'Smiley', 'SpecialChar', 'CodeSnippet']},
+            {'name': 'colors', 'items': ['TextColor', 'BGColor']},
+            '/',
+            {'name': 'basicstyles',
+             'items': ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript']},
+            {'name': 'styles', 'items': ['Styles', 'Format', 'Font', 'FontSize']},
+        ],
+        'toolbar': 'YourCustomToolbarConfig',
+        'toolbarCanCollapse': True,
+        'extraPlugins': ','.join([
+            'div',
+            'autolink',
+            'lineutils',
+            'clipboard',
+            'dialog',
+            'dialogui',
+            'codesnippet',
+        ]),
+    }
+}
+
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
@@ -92,21 +128,13 @@ WSGI_APPLICATION = 'SiteWebLS.wsgi.application'
 } """
 
 DATABASES = {
-    'mysql': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'DjangoDev',
-        'USER': 'dev',
-        'PASSWORD': 'q=!*w^9_izaIGD%1f3d9363-fzr94^aa8&kkw2w%f8',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    },
     'default' : {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'djangodev',
         'USER': 'dev',
         'PASSWORD': 'q=!*w^9_izaIGD%1f3d9363-fzr94^aa8&kkw2w%f8',
         'HOST': 'localhost',
-        'PORT': '5432',   
+        'PORT': '15432',   
     }
 }
 

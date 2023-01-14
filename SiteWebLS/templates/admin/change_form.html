@@ -1,0 +1,18 @@
+{% extends "admin/change_form.html" %}
+
+{% block extrahead %}
+{{ block.super }}
+<script>
+    let keysDown = {};
+    window.addEventListener("keydown", function (e) {
+        keysDown[e.key] = true;
+        if (keysDown.Control && keysDown.s) {
+            e.preventDefault();
+            document.getElementsByName("_continue")[0].click();
+        }
+    });
+    window.addEventListener("keyup", function (e) {
+        keysDown[e.key] = false;
+    });
+</script>
+{% endblock %}
