@@ -19,10 +19,8 @@ Recherche globale
             <h2>{{article.published_date}}</h2>
         </div>
         <div class="themes">
-            {% for themeId in theme_list %}
-            {% if article.theme|getattribute:themeId == True %}
-            <button class="choice-btn btn-theme" name="{{themeId}}">{{themeId|themehandle:'NO'}}</button>
-            {% endif %}
+            {% for theme in article.themes.all %}
+            <button class="btn-theme choice-btn" name="{{theme.title}}">{{theme.title}}</button>
             {% endfor %}
         </div>
         <button class="choice-publi-btn btn-theme"

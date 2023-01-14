@@ -9,7 +9,10 @@
     <div class="article">
         <h1>{{article.title}}</h1>
         <h2 class="header">Publié par {{article.author}}, le {{article.published_date}}.</h2>
-        <p>{{article.article}}</p>
+        {% autoescape off %}
+        {{article.article}}
+        {% endautoescape %}
+        <div class="header"></div>
         {% if article.source_set.all %}
         <h6>Sources :</h6>
         <ol>
@@ -22,10 +25,8 @@
     <div class="side">
         <h3>Thèmes couverts par l'article :</h3>
         <div class="themes">
-            {% for themeId in theme_list %}
-            {% if article.theme|getattribute:themeId == True %}
-            <button class="btn-theme choice-btn" name="{{themeId}}">{{themeId|themehandle:'NO'}}</button>
-            {% endif %}
+            {% for theme in article.themes.all %}
+            <button class="btn-theme choice-btn" name="{{theme.title}}">{{theme.title}}</button>
             {% endfor %}
         </div>
         <h3>Ecrit pour :</h3>

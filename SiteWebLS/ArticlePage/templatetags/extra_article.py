@@ -14,17 +14,6 @@ def getattribute(value, arg):
 register.filter('getattribute', getattribute)
 
 
-def themehandle(value, arg):
-    name = Theme._meta.get_field(value).verbose_name
-    number = Theme.objects.filter(**{value: True}).count()
-    if arg == 'NO':
-        return name
-    return name + " : " + number.__str__()
-
-
-register.filter('themehandle', themehandle)
-
-
 def publicationhandle(value, arg):
     choices = Article.publication.field.choices
     name = ""
