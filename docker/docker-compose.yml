@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  db:
+    image: postgres:14.5-alpine
+    volumes:
+      - ./db_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: q=!*w^9_izaIGD%1f3d9363-fzr94^aa8&kkw2w%f8
+      POSTGRES_USER: dev
+      POSTGRES_DB: djangodev
+    ports:
+      - 15432:5432
