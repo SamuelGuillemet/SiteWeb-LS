@@ -1,30 +1,31 @@
-{% extends 'base_site.html' %}
-{% load extra_home %}
-{% block title %}
-L&S Site
-{% endblock title %}
-
-{% block MainContent %}
-<div id="articles" class="home">
+{% extends 'base_site.html' %} {% load extra_home %} {% block title %} L&S Site {% endblock title %} {% block MainContent %}
+<div
+    id="articles"
+    class="home">
     <div class="shelf buttons neu">
-        <button class="articles shelf-icon active btn neu"><i class="fa-solid fa-newspaper"></i></button>
-        <button class="podcasts shelf-icon btn neu"><i class="fa-solid fa-podcast"></i></button>
-        <button class="photos shelf-icon btn neu"><i class="fa-solid fa-images"></i></button>
+        <button class="articles shelf-icon active btn neu">
+            <i class="fa-solid fa-newspaper"></i>
+        </button>
+        <button class="podcasts shelf-icon btn neu">
+            <i class="fa-solid fa-podcast"></i>
+        </button>
+        <button class="photos shelf-icon btn neu">
+            <i class="fa-solid fa-images"></i>
+        </button>
     </div>
     <div class="main-content">
         <div class="book">
-            {% for article in article_list %}
-            {% if forloop.counter|modulo:'even' or forloop.first %}
+            {% for article in article_list %} {% if forloop.counter|modulo:'even' or forloop.first %}
             <div class="page {% if forloop.first %}active {% endif %}neu">
-                {% endif %}
-                {% if forloop.first %}
+                {% endif %} {% if forloop.first %}
                 <div class="front">
                     <h1 class="title">Aperçu des articles</h1>
                 </div>
                 <div class="back">
                     <h1 class="title">{{article.title}}</h1>
-                    <div class="synopsis">{{article.article}}</div>
-                    <button class="learn-more btn neu"
+                    <div class="synopsis">{% autoescape off %} {{article.article}} {% endautoescape %}</div>
+                    <button
+                        class="learn-more btn neu"
                         onclick="window.location.href='{% url 'ArticlePage:detail' article.id %}'">
                         <a href="{% url 'ArticlePage:detail' article.id %}">EN SAVOIR PLUS</a>
                         <i class="fa-solid fa-chevron-right center"></i>
@@ -34,61 +35,84 @@ L&S Site
                 {% else %}
                 <div class="{% if forloop.counter|modulo:'even' %}front{% else %}back{% endif %}">
                     <h1 class="title">{{article.title}}</h1>
-                    <div class="synopsis">{{article.article|slice:":500" }}</div>
-                    <button class="learn-more btn neu"
+                    <div class="synopsis">{% autoescape off %} {{article.article}} {% endautoescape %}</div>
+                    <button
+                        class="learn-more btn neu"
                         onclick="window.location.href='{% url 'ArticlePage:detail' article.id %}'">
                         <a href="{% url 'ArticlePage:detail' article.id %}">EN SAVOIR PLUS</a>
                         <i class="fa-solid fa-chevron-right center"></i>
                     </button>
                     <div class="pagenumber">{{forloop.counter}}</div>
                 </div>
-                {% endif %}
-                {% if forloop.counter|modulo:'odd' or forloop.first or forloop.last %}
+                {% endif %} {% if forloop.counter|modulo:'odd' or forloop.first or forloop.last %}
             </div>
-            {% endif %}
-            {% endfor %}
+            {% endif %} {% endfor %}
         </div>
     </div>
     <div class="blank"></div>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path fill="#68B3B5" fill-opacity="1"
-            d="M0,64L48,80C96,96,192,128,288,122.7C384,117,480,75,576,64C672,53,768,75,864,112C960,149,1056,203,1152,192C1248,181,1344,107,1392,69.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
-        </path>
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320">
+        <path
+            fill="#68B3B5"
+            fill-opacity="1"
+            d="M0,64L48,80C96,96,192,128,288,122.7C384,117,480,75,576,64C672,53,768,75,864,112C960,149,1056,203,1152,192C1248,181,1344,107,1392,69.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
     </svg>
 </div>
-<div id="podcasts" class="home">
+<div
+    id="podcasts"
+    class="home">
     <div class="shelf buttons neu">
-        <button class="articles shelf-icon btn neu"><i class="fa-solid fa-newspaper"></i></button>
-        <button class="podcasts shelf-icon active btn neu"><i class="fa-solid fa-podcast"></i></button>
-        <button class="photos shelf-icon btn neu"><i class="fa-solid fa-images"></i></button>
+        <button class="articles shelf-icon btn neu">
+            <i class="fa-solid fa-newspaper"></i>
+        </button>
+        <button class="podcasts shelf-icon active btn neu">
+            <i class="fa-solid fa-podcast"></i>
+        </button>
+        <button class="photos shelf-icon btn neu">
+            <i class="fa-solid fa-images"></i>
+        </button>
     </div>
-    <div class="main-content">
-        {% include 'include/audioplayer.html' %}
-    </div>
+    <div class="main-content">{% include 'include/audioplayer.html' %}</div>
     <div class="blank"></div>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path fill="#68B3B5" fill-opacity="1"
-            d="M0,64L48,80C96,96,192,128,288,122.7C384,117,480,75,576,64C672,53,768,75,864,112C960,149,1056,203,1152,192C1248,181,1344,107,1392,69.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
-        </path>
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320">
+        <path
+            fill="#68B3B5"
+            fill-opacity="1"
+            d="M0,64L48,80C96,96,192,128,288,122.7C384,117,480,75,576,64C672,53,768,75,864,112C960,149,1056,203,1152,192C1248,181,1344,107,1392,69.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
     </svg>
 </div>
-<div id="photos" class="home">
+<div
+    id="photos"
+    class="home">
     <div class="shelf buttons neu">
-        <button class="articles shelf-icon btn neu"><i class="fa-solid fa-newspaper"></i></button>
-        <button class="podcasts shelf-icon btn neu"><i class="fa-solid fa-podcast"></i></button>
-        <button class="photos shelf-icon active btn neu"><i class="fa-solid fa-images"></i></button>
+        <button class="articles shelf-icon btn neu">
+            <i class="fa-solid fa-newspaper"></i>
+        </button>
+        <button class="podcasts shelf-icon btn neu">
+            <i class="fa-solid fa-podcast"></i>
+        </button>
+        <button class="photos shelf-icon active btn neu">
+            <i class="fa-solid fa-images"></i>
+        </button>
     </div>
     <div class="main-content">
         <section id="carousel">
             <div class="slider neu">
                 {% for photo in photo_list %}
-                <div class="item neu {% if forloop.first %}active{% endif %} {% if forloop.counter == 2 %}next{% endif %}"
+                <div
+                    class="item neu {% if forloop.first %}active{% endif %} {% if forloop.counter == 2 %}next{% endif %}"
                     id="item-{{forloop.counter0}}">
                     <div class="content">
-                        <img src="{{photo.image.url}}" alt="{{photo.name}} "
-                            style="object-fit: scale-down; width: 100%; height: 100%">
+                        <img
+                            src="{{photo.image.url}}"
+                            alt="{{photo.name}} "
+                            style="object-fit: scale-down; width: 100%; height: 100%" />
                     </div>
-                    <button class="learn-more btn neu"
+                    <button
+                        class="learn-more btn neu"
                         onclick="window.location.href='{% url 'GalleryPage:detail' photo.pk %}'">
                         <a href="{% url 'GalleryPage:detail' photo.pk %}">EN SAVOIR PLUS</a>
                         <i class="fa-solid fa-chevron-right center"></i>
@@ -97,16 +121,23 @@ L&S Site
                 {% endfor %}
             </div>
             <div class="control">
-                <div class="arrow-left" id="carousel-arrow-left"></div>
-                <div class="arrow-right" id="carousel-arrow-right"></div>
+                <div
+                    class="arrow-left"
+                    id="carousel-arrow-left"></div>
+                <div
+                    class="arrow-right"
+                    id="carousel-arrow-right"></div>
             </div>
         </section>
     </div>
     <div class="blank"></div>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path fill="#68B3B5" fill-opacity="1"
-            d="M0,64L48,80C96,96,192,128,288,122.7C384,117,480,75,576,64C672,53,768,75,864,112C960,149,1056,203,1152,192C1248,181,1344,107,1392,69.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
-        </path>
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320">
+        <path
+            fill="#68B3B5"
+            fill-opacity="1"
+            d="M0,64L48,80C96,96,192,128,288,122.7C384,117,480,75,576,64C672,53,768,75,864,112C960,149,1056,203,1152,192C1248,181,1344,107,1392,69.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
     </svg>
 </div>
 {%endblock MainContent%}
